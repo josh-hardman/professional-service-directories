@@ -1,18 +1,20 @@
 import React, {Component} from 'react'
-import { HashRouter as Router, Route, Switch} from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 //child components
+import Header from './components/Header'
 import Landing from './components/Landing'
-import Search from './components/Search'
 import Listing from './components/Listing'
+import Search from './components/Search'
 
 export default class App extends Component {
 
   render() {
 
     return (
-      <div>
-        <h1>Header</h1>
-        <Router>
+      <Router>
+        <div>
+          <Header />
+
           <Switch>
             <Route
               exact={true}
@@ -28,9 +30,10 @@ export default class App extends Component {
               component={Listing}
             />
           </Switch>
-        </Router>
-        <h1>Footer</h1>
-      </div>
+
+          <h1>Footer</h1>
+        </div>
+      </Router>
     )
   }
 }
