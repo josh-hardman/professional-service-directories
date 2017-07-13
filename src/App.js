@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { HashRouter, Route, Switch} from 'react-router-dom'
+import { HashRouter as Router, Route, Switch} from 'react-router-dom'
 //child components
 import Landing from './components/Landing'
 import Search from './components/Search'
@@ -10,13 +10,27 @@ export default class App extends Component {
   render() {
 
     return (
-      <HashRouter>
-        <Switch>
-          <Route path="/landing" component={Landing} />
-          <Route path="/search" component={Search} />
-          <Route path="/listing" component={Listing} />
-        </Switch>
-      </HashRouter>
+      <div>
+        <h1>Header</h1>
+        <Router>
+          <Switch>
+            <Route
+              exact={true}
+              path="/"
+              component={Landing}
+            />
+            <Route
+              path="/search"
+              component={Search}
+            />
+            <Route
+              path="/listing/:practiceId"
+              component={Listing}
+            />
+          </Switch>
+        </Router>
+        <h1>Footer</h1>
+      </div>
     )
   }
 }
