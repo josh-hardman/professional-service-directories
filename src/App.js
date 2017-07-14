@@ -7,6 +7,7 @@ import Listing from './components/Listing'
 import Search from './components/Search'
 
 import 'normalize.css'
+import './app.less'
 
 export default class App extends Component {
 
