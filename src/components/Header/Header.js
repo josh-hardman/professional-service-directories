@@ -7,7 +7,10 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1 className="header__logo">Dentto</h1>
+        <div className="header__baseline">
+          <h1 className="header__baseline__logo">Dentto</h1>
+          <p className="header__baseline__description">Discover your perfect dentist.</p>
+        </div>
         {/* <ul>
           <li>
             <Link to='/'>

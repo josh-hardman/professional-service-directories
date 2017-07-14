@@ -3,15 +3,26 @@
 
 .header {
   width: 100%;
-  height: 60px;
+  height: 30px;
   background: @blue;
+  padding: 15px;
 }
 
-.header__logo {
-  position: absolute;
-  left: 20px;
-  top: 12px;
+.header__baseline {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.header__baseline__logo {
   margin: 0;
-  padding: 0;
   color: @white;
+  display: inline-block;
+}
+
+.header__baseline__description {
+  margin: 0;
+  padding-left: 8px;
+  color: @white;
+  display: inline-block;
 }
