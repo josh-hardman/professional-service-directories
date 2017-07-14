@@ -14,27 +14,25 @@ export default class App extends Component {
 
     return (
       <Router>
-        <div>
-          <Header />
-
-          <Switch>
-            <Route
-              exact={true}
-              path="/"
-              component={Landing}
-            />
-            <Route
-              path="/search"
-              component={Search}
-            />
-            <Route
-              path="/listing/:practiceId"
-              component={Listing}
-            />
-          </Switch>
-
-          <h1>Footer</h1>
-        </div>
+          <div>
+            <Header />
+            <Switch>
+              <Route
+                exact={true}
+                path="/"
+                component={Landing}
+              />
+              <Route
+                path="/search"
+                component={Search}
+              />
+              <Route
+                path="/listing/:practiceId"
+                component={Listing}
+              />
+            </Switch>
+            <h1>Footer</h1>
+          </div>
       </Router>
     )
   }

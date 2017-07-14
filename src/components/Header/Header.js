@@ -1,20 +1,12 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 
-import styled from 'styled-components'
-
-const Background = styled.div`
-  height: 60px;
-  width: 100%;
-  background: blue;
-  margin: 0;
-  padding: 0;
-`
+import './header.less'
 
 export default class Header extends Component {
   render() {
     return (
-      <Background>
+      <div className="header">
         {/* <ul>
           <li>
             <Link to='/'>
@@ -27,7 +19,7 @@ export default class Header extends Component {
             </Link>
           </li>
         </ul> */}
-      </Background>
+      </div>
     )
   }
 }
