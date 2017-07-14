@@ -41,5 +41,12 @@ module.exports = {
       filename: 'index.html'
     }),
     new ReactRootPlugin('root')
-  ]
+  ],
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src')
+    },
+    extensions: ['.js', '.jsx', '.json'],
+    modules: ['node_modules']
+  }
 }

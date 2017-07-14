@@ -1,5 +1,17 @@
+@import (reference) "~src/less/theme/dentto-vars.less";
+@import (reference) "~src/less/mixins/display-flex.less";
+
 .header {
   width: 100%;
   height: 60px;
-  background: blue;
+  background: @blue;
+}
+
+.header__logo {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  margin: 0;
+  padding: 0;
+  color: @white;
 }
