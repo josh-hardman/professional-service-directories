@@ -34,7 +34,7 @@ class App extends Component {
                 component={Listing}
               />
             </Switch>
-            <h1>Footer</h1>
+            {/* <h1>Footer</h1> */}
           </div>
       </Router>
     )

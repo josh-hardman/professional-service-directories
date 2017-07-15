@@ -15,7 +15,6 @@
   "rules": {
     "no-console": 0,
     "no-underscore-dangle": 1,
-    "quotes": [2, "single"],
     "react/display-name": 0,
     "react/no-danger": 1,
     "react/prop-types": 1,
