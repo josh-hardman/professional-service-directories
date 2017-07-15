@@ -26,11 +26,13 @@
     "transform-runtime": "^0.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1",
+    "uuid": "^3.1.0",
     "webpack": "^3.2.0",
     "webpack-dev-server": "^2.5.1"
   }

@@ -1,0 +1,33 @@
+@import (reference) "~src/less/theme/dentto-vars.less";
+@import (reference) "~src/less/mixins/font-size.less";
+@import (reference) "~src/less/mixins/transform.less";
+
+.aria-description {
+  display: none;
+}
+
+.search-dropdown {
+  position: relative;
+}
+
+.search-dropdown__arrow {
+  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  line-height: 40px;
+  padding-right: 14px;
+}
+
+.search-dropdown__arrow > .icon {
+  transition: all .3s;
+}
+
+.search-dropdown--active {
+  > .icon {
+    fill: blue;
+    .transform(rotate(90deg));
+  }
+}
