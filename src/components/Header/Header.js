@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import './header.less'
 
@@ -11,14 +10,14 @@ const Header = ({ header, subHeader }) => (
       <p className="header__baseline__description">{subHeader}</p>
       <ul className="header__nav">
         <li className="header__nav__item">
-          <Link to='/about'>
+          {/* <Link to='/about'> */}
             About
-          </Link>
+          {/* </Link> */}
         </li>
         <li className="header__nav__item">
-          <Link to='/contact'>
+          {/* <Link to='/contact'> */}
             Contact
-          </Link>
+          {/* </Link> */}
         </li>
       </ul>
     </div>

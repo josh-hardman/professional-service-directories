@@ -14,7 +14,7 @@
   ],
   "rules": {
     "no-console": 0,
-    "no-underscore-dangle": 1,
+    "no-underscore-dangle": 0,
     "react/display-name": 0,
     "react/no-danger": 1,
     "react/prop-types": 1,
