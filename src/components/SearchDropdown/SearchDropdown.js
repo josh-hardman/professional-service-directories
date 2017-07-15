@@ -22,7 +22,6 @@ class SearchDropdown extends Component {
 
   static propTypes = {
     placeholder: PropTypes.string,
-    fieldId:     PropTypes.string,
     options:     PropTypes.arrayOf(
                     PropTypes.shape({
                       name: PropTypes.string,
@@ -190,17 +189,16 @@ class SearchDropdown extends Component {
 
   render () {
     const options = this.getFilteredOptions()
-    const { value, placeholder, disabled, fieldId } = this.props
+    const { value, placeholder, disabled } = this.props
     const { focused, focusIndex } = this.state
     return (
       <div
-        // aria-live="polite"
         onFocus={this.openMenu}
         onKeyDown={this.handleKeyDown}
         className='search-dropdown'
         ref={ node => this.node = node }
       >
-        <span
+        {/* <span
           className={
             classnames({
               'search-dropdown__arrow': true,
@@ -208,16 +206,9 @@ class SearchDropdown extends Component {
             })
           }
         >
-          {/* <Icon icon="down_arrow" color="grey" size={12} /> */}
-        </span>
-        <span id={this.searchDropdownId} className="aria-description">
-          This is an awesome description. Use arrows to select options.
-        </span>
+          <Icon icon="down_arrow" color="grey" size={12} />
+        </span> */}
         <input
-          aria-describedby={this.searchDropdownId}
-          aria-labelledby={fieldId}
-          // aria-autocomplete="list"
-          aria-owns="searchMenu"
           onChange={this.handleSearchChange}
           className={
             classnames({

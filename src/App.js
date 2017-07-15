@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return(
       <Router>
-          <div>
+          <div className='app-wrapper'>
             <Header
               header='Dentto'
               subHeader='Discover your perfect dentist.'

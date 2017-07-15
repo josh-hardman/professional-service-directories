@@ -31,3 +31,49 @@
     .transform(rotate(90deg));
   }
 }
+
+
+
+// System Field
+.sys-field {
+  width: 100%;
+  border: 1px solid @gray;
+  color: @text-default;
+  border-radius: 3px;
+  .font-size(18);
+  // font-family: @entrata-font;
+  transition: all 0.25s ease;
+
+  &:focus {
+    border-color: @highlight-blue;
+    outline: none;
+  }
+
+  &[disabled],
+  &[aria-disabled="true"],
+  &[readonly] {
+    background: gray;
+    color: red;
+  }
+
+  // remove disabled styles in the artboard of the editor
+  // so it looks more like it will in the preview
+  .sortable & {
+    &[disabled],
+    &[aria-disabled="true"],
+    &[readonly] {
+      background: @white;
+    }
+  }
+}
+
+.sys-field--large {
+  min-height: 40px;
+  padding: 4px 8px;
+}
+
+.sys-field--small {
+  min-height: 30px;
+  .font-size(13);
+  padding: 4px;
+}

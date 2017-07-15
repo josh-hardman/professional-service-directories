@@ -15,17 +15,21 @@ const Landing = () => (
           <h1>Find Your Dentist</h1>
           <h3>Search our curated list of highly reputable dentists near you</h3>
           <SearchDropdown
+            placeholder='City Name'
             options={[
-              { name: 'test', value: 1 },
-              { name: 'thing', value: 2 },
-              { name: 'dudad', value: 3 },
+              { name: 'Highland', value: 1 },
+              { name: 'Orem', value: 2 },
+              { name: 'Vineyard', value: 3 },
+              { name: 'Pleasant Grove', value: 3 },
+              { name: 'Spanish Fork', value: 3 },
+              { name: 'Sandy', value: 3 },
+              { name: 'Lehi', value: 3 },
+              { name: 'Riverton', value: 3 },
+              { name: 'Nefi', value: 3 },
+              { name: 'Ogden', value: 3 },
+              { name: 'Provo', value: 3 },
+              { name: 'Draper', value: 3 },
             ]}
-            // options:     PropTypes.arrayOf(
-            //                 PropTypes.shape({
-            //                   name: PropTypes.string,
-            //                   value: PropTypes.any
-            //                 })
-            //               ).isRequired,
           />
         </div>
       </FlexCenteredHV>
