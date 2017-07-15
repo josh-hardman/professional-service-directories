@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 //child components
@@ -7,23 +7,39 @@ import Landing from './components/Landing'
 import Listing from './components/Listing'
 import Search from './components/Search'
 
+import * as theme from './themes.js'
+
 import 'normalize.css'
 import './app.less'
 
-export default class App extends Component {
-  getChildContext() {
-    return {color: 'purple'}
+const headerLinks = [
+  {
+    name: 'About',
+    path: '/about'
+  },
+  {
+    name: 'Contact',
+    path: '/contact'
   }
+]
 
-  static childContextTypes = {
-    color: PropTypes.string
+class App extends Component {
+  getChildContext() {
+    return {
+      color: 'purple'
+    }
   }
 
   render() {
-    return (
+    return(
       <Router>
           <div>
-            <Header />
+            <Header
+              bgColor={theme.DENTTO_BASE_BLUE}
+              header='Dentto'
+              subHeader='Discover your perfect dentist.'
+              links={headerLinks}
+            />
             <Switch>
               <Route
                 exact={true}
@@ -45,3 +61,9 @@ export default class App extends Component {
     )
   }
 }
+
+App.childContextTypes = {
+  color: PropTypes.string
+}
+
+export default App
