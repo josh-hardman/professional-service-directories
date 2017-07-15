@@ -4,38 +4,26 @@ import { Link } from 'react-router-dom'
 
 import './header.less'
 
-const HeaderLink = ({link}) => (
-  <li>
-    <Link to={link.path}>
-      {link.name}
-    </Link>
-  </li>
-)
-
-HeaderLink.propTypes = {
-  link: PropTypes.object
-}
-
-const Header = ({ header, bgColor, subHeader, links }, context) => (
-  <div className="header" style={{background: bgColor}}>
+const Header = ({ header, subHeader }) => (
+  <div className="header">
     <div className="header__baseline">
-      <h1 className="header__baseline__logo">{`${header} ${context.color}`}</h1>
+      <h1 className="header__baseline__logo">{`${header}`}</h1>
       <p className="header__baseline__description">{subHeader}</p>
     </div>
     <ul>
-      { links && links.map( (link, i) =>
-        <HeaderLink
-          key={i}
-          link={link}
-        />
-      ) }
+      <li>
+        <Link to='/about'>
+          About
+        </Link>
+      </li>
+      <li>
+        <Link to='/contact'>
+          Contact
+        </Link>
+      </li>
     </ul>
   </div>
 )
-
-Header.contextTypes = {
-  color: PropTypes.string
-}
 
 Header.propTypes = {
   bgColor:    PropTypes.string,
