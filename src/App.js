@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 //child components
 import Header from './components/Header'
@@ -10,9 +11,15 @@ import 'normalize.css'
 import './app.less'
 
 export default class App extends Component {
+  getChildContext() {
+    return {color: 'purple'}
+  }
+
+  static childContextTypes = {
+    color: PropTypes.string
+  }
 
   render() {
-
     return (
       <Router>
           <div>
