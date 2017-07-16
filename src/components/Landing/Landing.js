@@ -3,6 +3,8 @@ import React from 'react'
 import FlexCenteredHV from 'src/components/FlexCenteredHV'
 import SearchDropdown from 'src/components/SearchDropdown'
 import Header from 'src/components/Header'
+// containers
+import FilterContainer from 'src/containers/FilterContainer'
 // styling
 import './landing.less'
 
@@ -18,7 +20,8 @@ const Landing = () => (
         subHeader={"Discover your perfect Dentist"}
       />
       <FlexCenteredHV>
-        <div>
+        <FilterContainer />
+        {/* <div>
           <h1>Find Your Dentist</h1>
           <h3>Search our curated list of highly reputable dentists near you</h3>
           <SearchDropdown
@@ -38,7 +41,7 @@ const Landing = () => (
               { name: 'Draper', value: 3 },
             ]}
           />
-        </div>
+        </div> */}
       </FlexCenteredHV>
       <div className='opacity-screen' />
   </div>

@@ -3,15 +3,13 @@ import {
   UPDATE_FILTER
 } from './actions'
 
-const filters = (state=[], action) => {
+const filters = (state={}, action) => {
   switch (action.type) {
     case UPDATE_FILTER:
-      return [
+      return {
         ...state,
-        {
-          filter: action.filter
-        }
-      ]
+        [action.name]: action.value
+      }
     default:
       return state
   }
