@@ -6,10 +6,10 @@ import filters from './redux/reducers'
 // Router
 import { Route, Router, hashHistory } from 'react-router'
 // child components
-import Header from './components/Header'
 import Landing from './components/Landing'
 import Listing from './components/Listing'
 import Search from './components/Search'
+import About from './components/About'
 // global styling
 import 'normalize.css'
 import './app.less'
@@ -26,6 +26,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={hashHistory}>
           <Route path='/' component={Landing} />
+          <Route path="/about" component={About} />
           <Route path="/search" component={Search} />
           <Route path="/listing/:practiceId" component={Listing} />
         </Router>

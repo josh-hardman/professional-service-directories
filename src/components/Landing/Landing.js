@@ -1,6 +1,9 @@
 import React from 'react'
+// child components
 import FlexCenteredHV from 'src/components/FlexCenteredHV'
 import SearchDropdown from 'src/components/SearchDropdown'
+import Header from 'src/components/Header'
+// styling
 import './landing.less'
 
 const Landing = () => (
@@ -10,6 +13,10 @@ const Landing = () => (
       background: "url('http://www.oralanswers.com/wp-content/uploads/2011/03/dentist_license_verification_all_states.jpg') no-repeat 60% 10%"
     }}
     >
+      <Header
+        header={'Dentto'}
+        subHeader={"Discover your perfect Dentist"}
+      />
       <FlexCenteredHV>
         <div>
           <h1>Find Your Dentist</h1>
