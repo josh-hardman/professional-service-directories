@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import SearchDropdown from 'src/components/SearchDropdown'
+import LandingSearch from 'src/components/LandingSearch'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions'
@@ -25,30 +25,12 @@ class FilterContainer extends Component {
   }
 
   render() {
+    const { location, update } = this.props
     return (
-      <div>
-        <h1>Find Your Dentist</h1>
-        <h3>Search our curated list of highly reputable dentists near you</h3>
-        <SearchDropdown
-          placeholder='City Name'
-          value={this.props.location}
-          onChange={this.props.update}
-          options={[
-            { name: 'Highland', value: '1' },
-            { name: 'Orem', value: '2' },
-            { name: 'Vineyard', value: '3' },
-            { name: 'Pleasant Grove', value: '4' },
-            { name: 'Spanish Fork', value: '5' },
-            { name: 'Sandy', value: '6' },
-            { name: 'Lehi', value: '7' },
-            { name: 'Riverton', value: '8' },
-            { name: 'Nefi', value: '9' },
-            { name: 'Ogden', value: '10' },
-            { name: 'Provo', value: '11' },
-            { name: 'Draper', value: '12' }
-          ]}
-        />
-      </div>
+      <LandingSearch
+        location={location}
+        update={update}
+      />
     )
   }
 }
