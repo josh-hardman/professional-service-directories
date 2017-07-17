@@ -10,6 +10,7 @@ import Landing from './components/Landing'
 import Listing from './components/Listing'
 import Search from './components/Search'
 import About from './components/About'
+import Header from 'src/components/Header'
 // global styling
 import 'normalize.css'
 import './app.less'
@@ -23,14 +24,20 @@ class App extends Component {
   render() {
 
     return(
-      <Provider store={store}>
-        <Router history={hashHistory}>
-          <Route path='/' component={Landing} />
-          <Route path="/about" component={About} />
-          <Route path="/search" component={Search} />
-          <Route path="/listing/:practiceId" component={Listing} />
-        </Router>
-      </Provider>
+      <div className='app-wrap'>
+        <Header
+          header={'Dentto'}
+          subHeader={"Discover your perfect Dentist"}
+        />
+        <Provider store={store}>
+          <Router history={hashHistory}>
+            <Route path='/' component={Landing} />
+            <Route path="/about" component={About} />
+            <Route path="/search" component={Search} />
+            <Route path="/listing/:practiceId" component={Listing} />
+          </Router>
+        </Provider>
+      </div>
     )
   }
 }
