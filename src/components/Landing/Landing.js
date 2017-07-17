@@ -1,10 +1,9 @@
 import React from 'react'
 // child components
 import FlexCenteredHV from 'src/components/FlexCenteredHV'
-import SearchDropdown from 'src/components/SearchDropdown'
 import Header from 'src/components/Header'
 // containers
-import FilterContainer from 'src/containers/FilterContainer'
+import LandingFilterContainer from 'src/containers/LandingFilterContainer'
 // styling
 import './landing.less'
 
@@ -20,28 +19,7 @@ const Landing = () => (
         subHeader={"Discover your perfect Dentist"}
       />
       <FlexCenteredHV>
-        <FilterContainer />
-        {/* <div>
-          <h1>Find Your Dentist</h1>
-          <h3>Search our curated list of highly reputable dentists near you</h3>
-          <SearchDropdown
-            placeholder='City Name'
-            options={[
-              { name: 'Highland', value: 1 },
-              { name: 'Orem', value: 2 },
-              { name: 'Vineyard', value: 3 },
-              { name: 'Pleasant Grove', value: 3 },
-              { name: 'Spanish Fork', value: 3 },
-              { name: 'Sandy', value: 3 },
-              { name: 'Lehi', value: 3 },
-              { name: 'Riverton', value: 3 },
-              { name: 'Nefi', value: 3 },
-              { name: 'Ogden', value: 3 },
-              { name: 'Provo', value: 3 },
-              { name: 'Draper', value: 3 },
-            ]}
-          />
-        </div> */}
+        <LandingFilterContainer />
       </FlexCenteredHV>
       <div className='opacity-screen' />
   </div>

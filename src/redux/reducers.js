@@ -8,7 +8,7 @@ const filters = (state={}, action) => {
     case UPDATE_FILTER:
       return {
         ...state,
-        [action.name]: action.value
+        [action.key]: action.value
       }
     default:
       return state
