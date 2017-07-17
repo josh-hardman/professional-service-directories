@@ -6,7 +6,7 @@ import LandingFilterContainer from 'src/containers/LandingFilterContainer'
 // styling
 import './landing.less'
 
-const Landing = () => (
+const LandingPage = () => (
   <div
     className='landing'
     style={{
@@ -20,4 +20,4 @@ const Landing = () => (
   </div>
 )
 
-export default Landing
+export default LandingPage

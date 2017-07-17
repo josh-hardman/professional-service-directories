@@ -6,9 +6,9 @@ import filters from './redux/reducers'
 // Router
 import { Route, Router, hashHistory } from 'react-router'
 // child components
-import Landing from './components/Landing'
+import LandingPage from './components/LandingPage'
+import SearchPage from './components/SearchPage'
 import Listing from './components/Listing'
-import Search from './components/Search'
 import About from './components/About'
 import Header from 'src/components/Header'
 // global styling
@@ -31,9 +31,9 @@ class App extends Component {
         />
         <Provider store={store}>
           <Router history={hashHistory}>
-            <Route path='/' component={Landing} />
+            <Route path='/' component={LandingPage} />
+            <Route path="/search" component={SearchPage} />
             <Route path="/about" component={About} />
-            <Route path="/search" component={Search} />
             <Route path="/listing/:practiceId" component={Listing} />
           </Router>
         </Provider>
