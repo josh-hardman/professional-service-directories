@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-// import LandingSearch from 'src/components/LandingSearch'
-import SearchDropdown from 'src/components/SearchDropdown'
+import SearchPageFilterBar from 'src/components/SearchPageFilterBar'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions'
@@ -32,37 +31,10 @@ class FilterContainer extends Component {
 
     return (
       <div>
-        <SearchDropdown
-          placeholder='Location'
-          filterKey='location'
-          value={location}
-          onChange={update}
-          options={[
-            { name: 'Highland', value: '1' },
-            { name: 'Orem', value: '2' },
-            { name: 'Vineyard', value: '3' },
-            { name: 'Pleasant Grove', value: '4' },
-            { name: 'Spanish Fork', value: '5' },
-            { name: 'Sandy', value: '6' },
-            { name: 'Lehi', value: '7' },
-            { name: 'Riverton', value: '8' },
-            { name: 'Nefi', value: '9' },
-            { name: 'Ogden', value: '10' },
-            { name: 'Provo', value: '11' },
-            { name: 'Draper', value: '12' }
-          ]}
-        />
-        <SearchDropdown
-          placeholder='Insurance Provider'
-          filterKey='insurance'
-          value={insurance}
-          onChange={update}
-          options={[
-            { name: 'Blue Cross', value: '1' },
-            { name: 'Select Health', value: '2' },
-            { name: 'Wonderful Health', value: '3' },
-            { name: 'Blissful', value: '4' }
-          ]}
+        <SearchPageFilterBar
+          location={location}
+          insurance={insurance}
+          update={update}
         />
       </div>
     )

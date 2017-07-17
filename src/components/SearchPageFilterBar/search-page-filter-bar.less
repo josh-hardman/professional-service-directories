@@ -1,0 +1,29 @@
+@import (reference) "~src/less/theme/dentto-vars.less";
+@import (reference) "~src/less/mixins/font-size.less";
+@import (reference) "~src/less/mixins/display-flex.less";
+
+.search-page-filter-bar {
+  width: 100%;
+  height: 80px;
+  background: @white;
+  .display-flex();
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+}
+
+.search-page-filter-bar__wrapper {
+  width: 900px;
+  // border: 1px solid red;
+  height: 40px;
+  .display-flex();
+  justify-content: center;
+  align-items: center;
+}
+
+.search-page-filter-bar__wrapper__filter {
+  width: 280px;
+  margin-left: 10px;
+  margin-right: 10px;
+  // border: 1px solid green;
+}
