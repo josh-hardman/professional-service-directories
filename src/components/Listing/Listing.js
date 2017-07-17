@@ -1,15 +1,10 @@
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class Listing extends Component {
-  static propTypes = {
-    match: PropTypes.object
-  }
+const Listing = ({match}) => (
+  <h1>{`Listing Page ${match.params.practiceId}`}</h1>
+)
 
-  render() {
-    const { match } = this.props
-    return (
-      <h1>{`Listing Page ${match.params.practiceId}`}</h1>
-    )
-  }
+Listing.propTypes = {
+  match: PropTypes.object
 }
