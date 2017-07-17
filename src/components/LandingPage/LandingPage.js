@@ -2,7 +2,7 @@ import React from 'react'
 // child components
 import FlexCenteredHV from 'src/components/FlexCenteredHV'
 // containers
-import LandingFilterContainer from 'src/containers/LandingFilterContainer'
+import LandingPageFilterContainer from 'src/containers/LandingPageFilterContainer'
 // styling
 import './landing.less'
 
@@ -14,7 +14,7 @@ const LandingPage = () => (
     }}
     >
       <FlexCenteredHV>
-        <LandingFilterContainer />
+        <LandingPageFilterContainer />
       </FlexCenteredHV>
       <div className='opacity-screen' />
   </div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchFilterContainer from 'src/containers/SearchFilterContainer'
+import SearchPageFilterContainer from 'src/containers/SearchPageFilterContainer'
 
 const SearchPage = () => (
   <div>
-    <SearchFilterContainer
+    <SearchPageFilterContainer
 
     />
   </div>
