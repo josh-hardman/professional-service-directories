@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import TransitionGroup from 'react-transition-group/TransitionGroup'
-// import FirstChild from 'common/components/FirstChild'
+import TransitionGroup from 'react-addons-transition-group'
+import FirstChild from 'src/components/FirstChild'
 import SearchMenu from './SearchMenu'
 // import Icon from 'common/components/Icon'
 // utils
 import classnames from 'classnames'
 import contains from 'src/utils/contains'
 import v4 from 'uuid'
+
 // styles
 import './search-dropdown.less'
 
@@ -221,7 +222,7 @@ class SearchDropdown extends Component {
           ref={ node => this.searchField = node }
           value={this.getDisplayValue()}
         />
-        {/* <TransitionGroup component={FirstChild}> */}
+        <TransitionGroup component={FirstChild}>
           {
             focused &&
             <SearchMenu
@@ -233,7 +234,7 @@ class SearchDropdown extends Component {
               setFocusedRef={this.setFocusedRef}
             />
           }
-        {/* </TransitionGroup> */}
+        </TransitionGroup>
       </div>
     )
   }

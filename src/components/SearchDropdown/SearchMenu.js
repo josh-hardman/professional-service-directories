@@ -1,4 +1,4 @@
-/* global TweenMax, Power2 */
+import { TweenMax, Power2 } from "gsap"
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
@@ -33,7 +33,7 @@ export default class SearchMenu extends Component {
       {
         autoAlpha: 0,
         height: 0,
-        // ease: Power2.easeOut,
+        ease: Power2.easeOut,
         onComplete: callback
       }
     )
