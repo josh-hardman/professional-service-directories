@@ -10,6 +10,7 @@ const Listing = ({ location, update }) => (
     <h3>Search our curated list of highly reputable dentists near you</h3>
     <SearchDropdown
       placeholder='City Name'
+      filterKey='location'
       value={location}
       onChange={update}
       options={[

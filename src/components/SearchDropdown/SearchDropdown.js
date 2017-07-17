@@ -23,6 +23,7 @@ class SearchDropdown extends Component {
 
   static propTypes = {
     placeholder: PropTypes.string,
+    filterKey:   PropTypes.string,
     options:     PropTypes.arrayOf(
                     PropTypes.shape({
                       name: PropTypes.string,
@@ -59,7 +60,10 @@ class SearchDropdown extends Component {
   }
 
   handleSearchChange = (e) => {
-    this.props.onChange('')
+    this.props.onChange({
+        filterKey: this.props.filterKey,
+        value: ''
+    })
     this.setState({
       searchText: e.target.value,
       searching: true,
@@ -78,7 +82,10 @@ class SearchDropdown extends Component {
   onClickOption = (e) => {
     const value = e.target.getAttribute('data-value')
 
-    this.props.onChange(value)
+    this.props.onChange({
+      filterKey: this.props.filterKey,
+      value
+    })
 
     this.setState({
       searchText: '',
@@ -146,7 +153,11 @@ class SearchDropdown extends Component {
       e.preventDefault()
 
       if (focused) {
-        this.props.onChange( this.getValueByFocusIndex() )
+        this.props.onChange({
+          filterKey: this.props.filterKey,
+          value: this.getValueByFocusIndex()
+        })
+        
         this.setState({
           searchText: '',
           searching: false,

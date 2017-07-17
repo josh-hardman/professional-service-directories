@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import LandingSearch from 'src/components/LandingSearch'
+// import LandingSearch from 'src/components/LandingSearch'
 import SearchDropdown from 'src/components/SearchDropdown'
 // redux
 import { connect } from 'react-redux'
@@ -9,12 +9,13 @@ import { updateFilter } from 'src/redux/actions'
 
 // import PropTypes from 'prop-types'
 const mapStateToProps = (state) => ({
-  location: state.location
+  location: state.location,
+  insurance: state.insurance
 })
 
 const mapDispatchToProps = dispatch => ({
-  update: (value) => dispatch(updateFilter({
-    key: 'location',
+  update: ({ filterKey, value }) => dispatch(updateFilter({
+    filterKey,
     value
   }))
 })
@@ -22,15 +23,18 @@ const mapDispatchToProps = dispatch => ({
 class FilterContainer extends Component {
   static propTypes = {
     location: PropTypes.string,
+    insurance: PropTypes.string,
     update:   PropTypes.func
   }
 
   render() {
     const { location, insurance, update } = this.props
+
     return (
       <div>
         <SearchDropdown
           placeholder='Location'
+          filterKey='location'
           value={location}
           onChange={update}
           options={[
@@ -50,6 +54,7 @@ class FilterContainer extends Component {
         />
         <SearchDropdown
           placeholder='Insurance Provider'
+          filterKey='insurance'
           value={insurance}
           onChange={update}
           options={[

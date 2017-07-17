@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import LandingSearch from 'src/components/LandingSearch'
+import LandingPageSearch from 'src/components/LandingPageSearch'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions'
@@ -12,8 +12,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  update: (value) => dispatch(updateFilter({
-    key: 'location',
+  update: ({ filterKey, value }) => dispatch(updateFilter({
+    filterKey,
     value
   }))
 })
@@ -27,7 +27,7 @@ class FilterContainer extends Component {
   render() {
     const { location, update } = this.props
     return (
-      <LandingSearch
+      <LandingPageSearch
         location={location}
         update={update}
       />
