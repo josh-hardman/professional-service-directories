@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import SearchDropdown from 'src/components/SearchDropdown'
 import './search-page-filter-bar.less'
 
-const SearchPageFilterBar = ({ location, insurance, update }) => (
+const SearchPageFilterBar = ({ location, insurance, update, reason }) => (
   <div className='search-page-filter-bar'>
     <div className='search-page-filter-bar__wrapper'>
       <div className='search-page-filter-bar__wrapper__filter'>
@@ -45,15 +45,15 @@ const SearchPageFilterBar = ({ location, insurance, update }) => (
       </div>
       <div className='search-page-filter-bar__wrapper__filter'>
         <SearchDropdown
-          placeholder='Insurance Provider'
-          filterKey='insurance'
-          value={insurance}
+          placeholder='Reason for Visit'
+          filterKey='reason'
+          value={reason}
           onChange={update}
           options={[
-            { name: 'Blue Cross', value: '1' },
-            { name: 'Select Health', value: '2' },
-            { name: 'Wonderful Health', value: '3' },
-            { name: 'Blissful', value: '4' }
+            { name: 'Tooth Ache', value: '1' },
+            { name: 'Cleaning', value: '2' },
+            { name: 'Standard Checkup', value: '3' },
+            { name: 'Root Canal', value: '4' }
           ]}
         />
       </div>
@@ -64,6 +64,7 @@ const SearchPageFilterBar = ({ location, insurance, update }) => (
 SearchPageFilterBar.propTypes = {
   location: PropTypes.string,
   insurance: PropTypes.string,
+  reason: PropTypes.string,
   update:   PropTypes.func
 }
 
