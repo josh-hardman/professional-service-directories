@@ -1,13 +1,14 @@
-import { createStore, applyMiddleware } from 'redux'
-import filters from 'src/redux/reducers'
+import { createStore, applyMiddleware, compose } from 'redux'
+import rootReducer from 'src/redux/reducers/rootReducer'
 // import rootReducer from './rootRecucer'
 import thunk from 'redux-thunk'
 
+const middleware = applyMiddleware(thunk)
+
 const configureStore = () => (
   createStore(
-   filters,
-   applyMiddleware(thunk),
-   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+   rootReducer,
+   compose( middleware, window.devToolsExtension ? window.devToolsExtension() : f => f )
   )
 )
 

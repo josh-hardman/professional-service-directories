@@ -5,7 +5,8 @@ import SearchPageFilterBar from 'src/components/SearchPageFilterBar'
 import ResultsPane from 'src/components/ResultsPane'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter, fetchPractices } from 'src/redux/actions'
+import { fetchPractices } from 'src/redux/actions/fetchActions'
+import { updateFilter } from 'src/redux/actions/filterActions'
 
 
 // import PropTypes from 'prop-types'

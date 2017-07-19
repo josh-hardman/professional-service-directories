@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import LandingPageSearch from 'src/components/LandingPageSearch'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter } from 'src/redux/actions'
+import { updateFilter } from 'src/redux/actions/filterActions'
 
 // import PropTypes from 'prop-types'
 const mapStateToProps = (state) => ({
