@@ -10,7 +10,7 @@ import { updateFilter } from 'src/redux/actions/filterActions'
 
 
 // import PropTypes from 'prop-types'
-const mapStateToProps = ({ location, insurance, reason }) => ({
+const mapStateToProps = ({ filters: { location, insurance, reason } }) => ({
   location,
   insurance,
   reason
