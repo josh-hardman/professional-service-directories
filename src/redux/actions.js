@@ -1,14 +1,14 @@
-/*
- * action types
- */
-
-export const UPDATE_FILTER = 'UPDATE_FILTER'
-
+import * as ActionTypes from 'src/redux/actionTypes'
 /*
  * action creators
  */
 
 export const updateFilter = (filter) => ({
-  type: UPDATE_FILTER,
+  type: ActionTypes.UPDATE_FILTER,
   ...filter
+})
+
+export const fetchPractices = () => ({
+  type: ActionTypes.FETCH_PRACTICES,
+  payload: 'something'
 })

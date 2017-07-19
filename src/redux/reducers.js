@@ -1,23 +1,9 @@
-// import { combineReducers } from 'redux'
-import {
-  UPDATE_FILTER
-} from './actions'
+import { combineReducers } from 'redux'
+import filters from 'src/redux/filters'
 
-const filters = (state={}, action) => {
-  switch (action.type) {
-    case UPDATE_FILTER:
-      return {
-        ...state,
-        [action.filterKey]: action.value
-      }
-    default:
-      return state
-  }
-}
 
-// const denttoApp = combineReducers({
-//   visibilityFilter,
-//   todos
-// })
+const denttoApp = combineReducers({
+  filters
+})
 
-export default filters
+export default denttoApp

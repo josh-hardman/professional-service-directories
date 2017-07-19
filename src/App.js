@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // Redux
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import filters from './redux/reducers'
+
+import configureStore from './redux/configureStore'
 // Router
 import { Route, Router, hashHistory } from 'react-router'
 // child components
@@ -15,12 +15,10 @@ import Header from 'src/components/Header'
 import 'normalize.css'
 import './app.less'
 
-const store = createStore(
- filters,
- window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const store = configureStore()
 
 class App extends Component {
+
   render() {
 
     return(
