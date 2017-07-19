@@ -17,7 +17,10 @@ const ResultsPane = () => (
 )
 
 ResultsPane.propTypes = {
-
+  location:   PropTypes.string,
+  insurance:  PropTypes.string,
+  reason:     PropTypes.string,
+  update:     PropTypes.func
 }
 
 export default ResultsPane
