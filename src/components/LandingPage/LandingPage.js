@@ -16,7 +16,6 @@ const LandingPage = () => (
       <FlexCenteredHV>
         <LandingPageFilterContainer />
       </FlexCenteredHV>
-      <div className='opacity-screen' />
   </div>
 )
 

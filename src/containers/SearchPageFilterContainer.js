@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
 import SearchPageFilterBar from 'src/components/SearchPageFilterBar'
+import ResultsPane from 'src/components/ResultsPane'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions'
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
   }))
 })
 
-class FilterContainer extends Component {
+class SearchPageFilterContainer extends Component {
   static propTypes = {
     location:   PropTypes.string,
     insurance:  PropTypes.string,
@@ -29,15 +30,14 @@ class FilterContainer extends Component {
   }
 
   render() {
-    const { location, insurance, reason, update } = this.props
 
     return (
       <div>
         <SearchPageFilterBar
-          location={location}
-          insurance={insurance}
-          reason={reason}
-          update={update}
+          {...this.props}
+        />
+        <ResultsPane
+          {...this.props}
         />
       </div>
     )
@@ -47,4 +47,4 @@ class FilterContainer extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FilterContainer)
+)(SearchPageFilterContainer)

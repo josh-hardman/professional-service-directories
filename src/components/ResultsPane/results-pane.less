@@ -1,0 +1,21 @@
+@import (reference) "~src/less/theme/dentto-vars.less";
+@import (reference) "~src/less/mixins/font-size.less";
+@import (reference) "~src/less/mixins/display-flex.less";
+@import (reference) "~src/less/theme/breakpoints.less";
+
+.results-pane {
+  .display-flex();
+  justify-content: center;
+  align-items: center;
+}
+
+.results-pane__column {
+  margin: 8px;
+  width: @850;
+}
+
+.results-pane__column__board {
+  background: @medium-gray;
+  .display-flex();
+  
+}

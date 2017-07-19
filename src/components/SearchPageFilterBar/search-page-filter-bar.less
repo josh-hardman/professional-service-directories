@@ -1,6 +1,7 @@
 @import (reference) "~src/less/theme/dentto-vars.less";
 @import (reference) "~src/less/mixins/font-size.less";
 @import (reference) "~src/less/mixins/display-flex.less";
+@import (reference) "~src/less/theme/breakpoints.less";
 
 .search-page-filter-bar {
   width: 100%;
@@ -13,7 +14,7 @@
 }
 
 .search-page-filter-bar__wrapper {
-  width: 900px;
+  width: @850;
   // border: 1px solid red;
   height: 40px;
   .display-flex();
