@@ -6,10 +6,11 @@ const initialState = {
 
 export default (state=initialState, action) => {
   switch (action.type) {
-    case ActionTypes.FETCH_PRACTICES:
+    case ActionTypes.DATA:
       return {
         ...state,
-        fetching: true
+        stuff: true,
+        data: action.data
       }
     default:
       return state
