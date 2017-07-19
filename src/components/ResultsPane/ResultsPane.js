@@ -11,6 +11,10 @@ const ResultsPane = () => (
       <p>9 Results</p>
       <div className="results-pane__column__board">
         <ResultCard />
+        <ResultCard />
+        <ResultCard />
+        <ResultCard />
+        <ResultCard />
       </div>
     </div>
   </div>
