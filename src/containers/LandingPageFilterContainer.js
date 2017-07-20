@@ -4,24 +4,30 @@ import PropTypes from 'prop-types'
 import LandingPageSearch from 'src/components/LandingPageSearch'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter } from 'src/redux/actions/filterActions'
+import { updateFilter, fetchFilterData } from 'src/redux/actions/filterActions'
 
 // import PropTypes from 'prop-types'
-const mapStateToProps = (state) => ({
-  location: state.location
+const mapStateToProps = () => ({
+
 })
 
 const mapDispatchToProps = dispatch => ({
   update: ({ filterKey, value }) => dispatch(updateFilter({
     filterKey,
     value
-  }))
+  })),
+  fetchFilterData: key => dispatch( fetchFilterData(key) )
 })
 
 class FilterContainer extends Component {
   static propTypes = {
-    location: PropTypes.string,
-    update:   PropTypes.func
+    location:         PropTypes.string,
+    update:           PropTypes.func,
+    fetchFilterData:  PropTypes.func
+  }
+
+  componentDidMount() {
+    this.props.fetchFilterData('Citie')
   }
 
   render() {

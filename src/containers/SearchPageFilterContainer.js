@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 import { fetchPractices } from 'src/redux/actions/fetchActions'
 import { updateFilter } from 'src/redux/actions/filterActions'
 
-
 // import PropTypes from 'prop-types'
 const mapStateToProps = ({ filters: { location, insurance, reason } }) => ({
   location,
