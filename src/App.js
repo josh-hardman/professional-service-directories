@@ -8,7 +8,7 @@ import { Route, Router, hashHistory } from 'react-router'
 // child components
 import LandingPage from './components/LandingPage'
 import SearchPage from './components/SearchPage'
-import Listing from './components/Listing'
+// import Listing from './components/Listing'
 import About from './components/About'
 import Header from 'src/components/Header'
 // global styling
@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/' component={LandingPage} />
             <Route path="/search" component={SearchPage} />
             <Route path="/about" component={About} />
-            <Route path="/listing/:practiceId" component={Listing} />
+            {/* <Route path="/listing/:practiceId" component={Listing} /> */}
           </Router>
         </Provider>
       </div>

@@ -4,11 +4,11 @@ import fetch from 'isomorphic-fetch'
 const api = 'https://api.graph.cool/simple/v1/cj590hy2dfdtl0105kwjxsfpv'
 
 const getData = data => ({
-  type: ActionTypes.DATA,
+  type: ActionTypes.RECEIVE_FILTER_DATA,
   data
 })
 
-export const fetchPractices = filters => {
+export const fetchPractices = () => {
   return dispatch => {
    return fetch(api, {
       method: 'post',
@@ -25,11 +25,10 @@ export const fetchPractices = filters => {
       `),
     })
       .then(
-       response => response.json()
+        response => response.json()
       )
       .then(data => {
-          dispatch(getData(data))
-          console.log()
+        dispatch(getData(data))
     }).catch(error => { throw error })
   }
 }

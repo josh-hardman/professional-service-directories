@@ -27,7 +27,7 @@ class SearchDropdown extends Component {
     options:     PropTypes.arrayOf(
                     PropTypes.shape({
                       name: PropTypes.string,
-                      value: PropTypes.any
+                      id: PropTypes.any
                     })
                   ).isRequired,
     value:        PropTypes.string,
@@ -37,7 +37,7 @@ class SearchDropdown extends Component {
 
   getSelectedOptionName = () => {
     const { options, value } = this.props
-    const selectedOption = options.find( opt => opt.value === value )
+    const selectedOption = options.find( opt => opt.id === value )
     return selectedOption ? selectedOption.name : ''
   }
 
@@ -118,7 +118,7 @@ class SearchDropdown extends Component {
       i == this.state.focusIndex
     ))
 
-    return option.value
+    return option.id
   }
 
   handleKeyDown = (e) => {

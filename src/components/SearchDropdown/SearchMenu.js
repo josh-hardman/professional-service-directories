@@ -12,7 +12,7 @@ export default class SearchMenu extends Component {
     options:        PropTypes.arrayOf(
                       PropTypes.shape({
                         name: PropTypes.string,
-                        value: PropTypes.any
+                        id: PropTypes.any
                       })
                     ).isRequired,
     selected:       PropTypes.string,
@@ -70,12 +70,12 @@ export default class SearchMenu extends Component {
               role="option"
               aria-selected={focusIndex == i}
               data-index={i}
-              data-value={item.value}
+              data-value={item.id}
               className={
                 classnames({
                   'dropdown__menu-item': true,
                   'dropdown__menu-item--focused': focusIndex == i,
-                  'dropdown__menu-item--selected': selected == item.value
+                  'dropdown__menu-item--selected': selected == item.id
                 })
               }
               onClick={onClickOption}

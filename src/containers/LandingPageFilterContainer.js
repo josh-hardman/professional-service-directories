@@ -4,11 +4,13 @@ import PropTypes from 'prop-types'
 import LandingPageSearch from 'src/components/LandingPageSearch'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter, fetchCities } from 'src/redux/actions/filterActions'
+import { fetchCities } from 'src/redux/actions/filterDataActions'
+import { updateFilter } from 'src/redux/actions/filterActions'
 
 // import PropTypes from 'prop-types'
 const mapStateToProps = state => ({
-  allCities: state.filters ? state.filters.allCities : []
+  allCities: state.filterData.allCities ? state.filterData.allCities : [],
+  value:     state.filters.location ? state.filters.location : ''
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -21,9 +23,12 @@ const mapDispatchToProps = dispatch => ({
 
 class FilterContainer extends Component {
   static propTypes = {
-    location:         PropTypes.string,
+    value:            PropTypes.string,
+    allCities:        PropTypes.arrayOf(
+                        PropTypes.object
+                      ),
     update:           PropTypes.func,
-    fetchCities:  PropTypes.func
+    fetchCities:      PropTypes.func
   }
 
   componentDidMount() {
@@ -31,11 +36,12 @@ class FilterContainer extends Component {
   }
 
   render() {
-    const { location, update, allCities } = this.props
+    const { value, update, allCities } = this.props
+
     return (
       <LandingPageSearch
         allCities={allCities}
-        location={location}
+        value={value}
         update={update}
       />
     )
