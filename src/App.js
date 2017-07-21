@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-// Redux
+import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
 import { Provider } from 'react-redux'
-
 import configureStore from './redux/configureStore'
 // Router
 import { Route, Router, hashHistory } from 'react-router'
@@ -19,6 +18,14 @@ const store = configureStore()
 
 class App extends Component {
 
+  createClient() {
+    return new ApolloClient({
+      networkInterface: createNetworkInterface({
+        uri: 'https://api.graph.cool/simple/v1/cj590hy2dfdtl0105kwjxsfpv'
+      })
+    })
+  }
+
   render() {
 
     return(
@@ -28,12 +35,14 @@ class App extends Component {
           subHeader={"Discover your perfect Dentist"}
         />
         <Provider store={store}>
-          <Router history={hashHistory}>
-            <Route path='/' component={LandingPage} />
-            <Route path="/search" component={SearchPage} />
-            <Route path="/about" component={About} />
-            {/* <Route path="/listing/:practiceId" component={Listing} /> */}
-          </Router>
+          <ApolloProvider client={this.createClient()}>
+            <Router history={hashHistory}>
+              <Route path='/' component={LandingPage} />
+              <Route path="/search" component={SearchPage} />
+              <Route path="/about" component={About} />
+              {/* <Route path="/listing/:practiceId" component={Listing} /> */}
+            </Router>
+          </ApolloProvider>
         </Provider>
       </div>
     )
