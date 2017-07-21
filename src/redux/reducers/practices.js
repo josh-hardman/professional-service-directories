@@ -1,16 +1,11 @@
 import * as ActionTypes from 'src/redux/actionTypes'
 
-const initialState = {
-  fetching: false
-}
-
-export default (state=initialState, action) => {
+export default (state={}, action) => {
   switch (action.type) {
-    case ActionTypes.DATA:
+    case ActionTypes.RECEIVE_PRACTICES:
       return {
         ...state,
-        stuff: true,
-        data: action.data
+        ...action.data
       }
     default:
       return state

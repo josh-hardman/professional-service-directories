@@ -10,6 +10,7 @@ import {
   fetchInsurances,
   fetchVisitReasons
 } from 'src/redux/actions/filterDataActions'
+import { fetchPractices } from 'src/redux/actions/practicesActions'
 import { updateFilter } from 'src/redux/actions/filterActions'
 
 const mapStateToProps = state => ({
@@ -18,9 +19,7 @@ const mapStateToProps = state => ({
   allVisitReasons:    state.filterData.allVisitReasons ? state.filterData.allVisitReasons : [],
   cityValue:          state.filters.city ? state.filters.city : '',
   insuranceValue:     state.filters.insurance ? state.filters.insurance : '',
-  visitReasonValue:   state.filters.reason ? state.filters.reason : '',
-
-  value:     state.filters.location ? state.filters.location : ''
+  visitReasonValue:   state.filters.reason ? state.filters.reason : ''
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -30,21 +29,27 @@ const mapDispatchToProps = dispatch => ({
   })),
   fetchCities: () => dispatch( fetchCities() ),
   fetchInsurances: () => dispatch( fetchInsurances() ),
-  fetchVisitReasons: () => dispatch( fetchVisitReasons() )
+  fetchVisitReasons: () => dispatch( fetchVisitReasons() ),
+  fetchPractices: () => dispatch( fetchPractices() )
 })
 
 class SearchPageFilterContainer extends Component {
   static propTypes = {
-    update:           PropTypes.func,
-    fetchCities:      PropTypes.func,
-    fetchInsurances:  PropTypes.func,
-    fetchVisitReasons:  PropTypes.func
+    update:             PropTypes.func,
+    fetchCities:        PropTypes.func,
+    fetchInsurances:    PropTypes.func,
+    fetchVisitReasons:  PropTypes.func,
+    fetchPractices:     PropTypes.func
   }
 
   componentDidMount() {
     this.props.fetchCities(),
     this.props.fetchInsurances(),
     this.props.fetchVisitReasons()
+  }
+
+  componentDidUpdate() {
+    this.props.fetchPractices()
   }
 
   render() {
