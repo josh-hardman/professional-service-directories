@@ -22,7 +22,7 @@ const mapStateToProps = state => ({
   visitReasonValue:   state.filters.reason ? state.filters.reason : ''
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   update: ({ filterKey, value }) => dispatch(updateFilter({
     filterKey,
     value
@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCities: () => dispatch( fetchCities() ),
   fetchInsurances: () => dispatch( fetchInsurances() ),
   fetchVisitReasons: () => dispatch( fetchVisitReasons() ),
-  fetchPractices: () => dispatch( fetchPractices() )
+  fetchPractices: filterValues => dispatch( fetchPractices(filterValues) )
 })
 
 class SearchPageFilterContainer extends Component {
@@ -39,7 +39,11 @@ class SearchPageFilterContainer extends Component {
     fetchCities:        PropTypes.func,
     fetchInsurances:    PropTypes.func,
     fetchVisitReasons:  PropTypes.func,
-    fetchPractices:     PropTypes.func
+    fetchPractices:     PropTypes.func,
+    cityValue:          PropTypes.string,
+    insuranceValue:     PropTypes.string,
+    visitReasonValue:   PropTypes.string
+
   }
 
   componentDidMount() {
@@ -49,7 +53,12 @@ class SearchPageFilterContainer extends Component {
   }
 
   componentDidUpdate() {
-    this.props.fetchPractices()
+    const { fetchPractices, cityValue, insuranceValue, visitReasonValue } = this.props
+    fetchPractices({
+      cityValue,
+      insuranceValue,
+      visitReasonValue
+    })
   }
 
   render() {

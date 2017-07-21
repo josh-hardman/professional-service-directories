@@ -8,7 +8,12 @@ const getGraphQLData = data => ({
 })
 
 // fetch filter data
-export const fetchPractices = () => {
+export const fetchPractices = ({
+  cityValue,
+  insuranceValue,
+  visitReasonValue
+}) => {
+
   return dispatch => {
     return fetch(api, {
        method: 'post',
@@ -19,10 +24,20 @@ export const fetchPractices = () => {
        body: JSON.stringify({
          query: `
             query {
-                allDentists {
-                  id,
-                  name
+              allDentists(filter: {
+                cities_some: {
+                  id:"${cityValue}"
                 }
+                insurances_some: {
+                  id:"${insuranceValue}"
+                }
+                visitReasons_some: {
+                  id:"${visitReasonValue}"
+                }
+              }) {
+                id,
+                name
+              }
             }
           `
        })
