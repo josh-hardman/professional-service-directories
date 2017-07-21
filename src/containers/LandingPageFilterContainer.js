@@ -7,8 +7,8 @@ import { connect } from 'react-redux'
 import { updateFilter, fetchCities } from 'src/redux/actions/filterActions'
 
 // import PropTypes from 'prop-types'
-const mapStateToProps = () => ({
-
+const mapStateToProps = state => ({
+  allCities: state.filters ? state.filters.allCities : []
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -31,9 +31,10 @@ class FilterContainer extends Component {
   }
 
   render() {
-    const { location, update } = this.props
+    const { location, update, allCities } = this.props
     return (
       <LandingPageSearch
+        allCities={allCities}
         location={location}
         update={update}
       />

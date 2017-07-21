@@ -157,7 +157,7 @@ class SearchDropdown extends Component {
           filterKey: this.props.filterKey,
           value: this.getValueByFocusIndex()
         })
-        
+
         this.setState({
           searchText: '',
           searching: false,
