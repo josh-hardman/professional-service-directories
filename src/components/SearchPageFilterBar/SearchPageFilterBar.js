@@ -4,57 +4,42 @@ import PropTypes from 'prop-types'
 import SearchDropdown from 'src/components/SearchDropdown'
 import './search-page-filter-bar.less'
 
-const SearchPageFilterBar = ({ location, insurance, update, reason }) => (
+const SearchPageFilterBar = ({
+  allCities,
+  allInsurances,
+  allVisitReasons,
+  cityValue,
+  insuranceValue,
+  visitReasonValue,
+  update
+}) => (
   <div className='search-page-filter-bar'>
     <div className='search-page-filter-bar__wrapper'>
       <div className='search-page-filter-bar__wrapper__filter'>
         <SearchDropdown
-          placeholder='Location'
-          filterKey='location'
-          value={location}
+          placeholder='City'
+          filterKey='city'
+          value={cityValue}
           onChange={update}
-          options={[
-            { name: 'Highland', value: '1' },
-            { name: 'Orem', value: '2' },
-            { name: 'Vineyard', value: '3' },
-            { name: 'Pleasant Grove', value: '4' },
-            { name: 'Spanish Fork', value: '5' },
-            { name: 'Sandy', value: '6' },
-            { name: 'Lehi', value: '7' },
-            { name: 'Riverton', value: '8' },
-            { name: 'Nefi', value: '9' },
-            { name: 'Ogden', value: '10' },
-            { name: 'Provo', value: '11' },
-            { name: 'Draper', value: '12' }
-          ]}
+          options={allCities}
         />
       </div>
       <div className='search-page-filter-bar__wrapper__filter'>
         <SearchDropdown
           placeholder='Insurance Provider'
           filterKey='insurance'
-          value={insurance}
+          value={insuranceValue}
           onChange={update}
-          options={[
-            { name: 'Blue Cross', value: '1' },
-            { name: 'Select Health', value: '2' },
-            { name: 'Wonderful Health', value: '3' },
-            { name: 'Blissful', value: '4' }
-          ]}
+          options={allInsurances}
         />
       </div>
       <div className='search-page-filter-bar__wrapper__filter'>
         <SearchDropdown
           placeholder='Reason for Visit'
           filterKey='reason'
-          value={reason}
+          value={visitReasonValue}
           onChange={update}
-          options={[
-            { name: 'Tooth Ache', value: '1' },
-            { name: 'Cleaning', value: '2' },
-            { name: 'Standard Checkup', value: '3' },
-            { name: 'Root Canal', value: '4' }
-          ]}
+          options={allVisitReasons}
         />
       </div>
     </div>
@@ -62,10 +47,19 @@ const SearchPageFilterBar = ({ location, insurance, update, reason }) => (
 )
 
 SearchPageFilterBar.propTypes = {
-  location: PropTypes.string,
-  insurance: PropTypes.string,
-  reason: PropTypes.string,
-  update:   PropTypes.func
+  allCities:        PropTypes.arrayOf(
+                      PropTypes.object
+                    ),
+  allInsurances:    PropTypes.arrayOf(
+                      PropTypes.object
+                    ),
+  allVisitReasons:  PropTypes.arrayOf(
+                      PropTypes.object
+                    ),
+  cityValue:        PropTypes.string,
+  insuranceValue:   PropTypes.string,
+  visitReasonValue: PropTypes.string,
+  update:           PropTypes.func
 }
 
 export default SearchPageFilterBar

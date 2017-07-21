@@ -4,18 +4,18 @@ import { Link } from 'react-router'
 // child components
 import SearchDropdown from 'src/components/SearchDropdown'
 
-const LandingPageSearch = ({ value, update, allCities }) => (
+const LandingPageSearch = ({ cityValue, update, allCities }) => (
   <div>
     <h1>Find Your Dentist</h1>
     <h3>Search our curated list of highly reputable dentists near you</h3>
     <SearchDropdown
       placeholder='City Name'
-      filterKey='location'
-      value={value}
+      filterKey='city'
+      value={cityValue}
       onChange={update}
       options={allCities}
     />
-    { value &&
+    { cityValue &&
       <Link to='/search'>
         Search
       </Link>
@@ -24,7 +24,7 @@ const LandingPageSearch = ({ value, update, allCities }) => (
 )
 
 LandingPageSearch.propTypes = {
-  location:     PropTypes.string,
+  cityValue:  PropTypes.string,
   update:       PropTypes.func,
   allCities:    PropTypes.arrayOf(
                   PropTypes.object
