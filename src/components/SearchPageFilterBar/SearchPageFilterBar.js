@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// child components
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+
 import SearchDropdown from 'src/components/SearchDropdown'
 import './search-page-filter-bar.less'
 
 const SearchPageFilterBar = ({
-  allCities,
-  allInsurances,
-  allVisitReasons,
+  data: {
+    allCities=[],
+    allInsurances=[],
+    allVisitReasons=[]
+  },
   cityValue,
   insuranceValue,
   visitReasonValue,
@@ -47,19 +51,36 @@ const SearchPageFilterBar = ({
 )
 
 SearchPageFilterBar.propTypes = {
-  allCities:        PropTypes.arrayOf(
-                      PropTypes.object
-                    ),
-  allInsurances:    PropTypes.arrayOf(
-                      PropTypes.object
-                    ),
-  allVisitReasons:  PropTypes.arrayOf(
-                      PropTypes.object
-                    ),
+  data:             PropTypes.shape({
+                      allCities:        PropTypes.arrayOf(
+                                          PropTypes.object
+                                        ),
+                      allInsurances:    PropTypes.arrayOf(
+                                          PropTypes.object
+                                        ),
+                      allVisitReasons:  PropTypes.arrayOf(
+                                          PropTypes.object
+                                        ),
+                    }),
   cityValue:        PropTypes.string,
   insuranceValue:   PropTypes.string,
   visitReasonValue: PropTypes.string,
   update:           PropTypes.func
 }
 
-export default SearchPageFilterBar
+export default graphql(gql`
+  query {
+    allCities {
+      name,
+      id
+    },
+    allInsurances {
+      name,
+      id
+    },
+    allVisitReasons {
+      name,
+      id
+    }
+  }
+`)(SearchPageFilterBar)

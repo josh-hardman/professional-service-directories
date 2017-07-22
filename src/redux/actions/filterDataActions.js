@@ -8,7 +8,6 @@ const getGraphQLData = data => ({
 })
 
 // fetch filter data
-
 export const fetchCities = () => {
   return dispatch => {
     return fetch(api, {

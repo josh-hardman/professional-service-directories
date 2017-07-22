@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
-import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
+import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
-// Router
 import { Route, Router, hashHistory } from 'react-router'
-// child components
+
 import LandingPage from './components/LandingPage'
 import SearchPage from './components/SearchPage'
 // import Listing from './components/Listing'
 import About from './components/About'
 import Header from 'src/components/Header'
-// global styling
+
 import 'normalize.css'
 import './app.less'
 

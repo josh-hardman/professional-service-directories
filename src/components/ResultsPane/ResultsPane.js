@@ -7,7 +7,7 @@ import ResultCard from 'src/components/ResultCard'
 
 import './results-pane.less'
 
-const ResultsPane = ({ data, cityValue, insuranceValue, visitReasonValue }) => (
+const ResultsPane = () => (
   <div className="results-pane">
     <div className="results-pane__column">
       <p>9 Results</p>
