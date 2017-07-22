@@ -10,3 +10,12 @@ export const colors = {
 }
 
 export const fontSize = size => `font-size: ${(size/16).toFixed(5)}rem`
+
+export const breakpoints = {
+  _500: '31.25em',
+  _600: '37.5em',
+  _767: '47.9375em',
+  _768: '48em',
+  _850: '53.125em',
+  _960: '60em'
+}

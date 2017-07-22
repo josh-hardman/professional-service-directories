@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
 import styled from 'styled-components'
-import { colors, fontSize } from 'src/constants'
+import { colors, fontSize, breakpoints } from 'src/constants'
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -39,13 +39,18 @@ const CatchPhrase = styled.p`
 `
 
 const NavBar = styled.ul`
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  right: 0;
-  text-align: right;
-  list-style: none;
-  line-height: 36px;
+  display: none;
+
+  @media (min-width: ${breakpoints._600}) {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    text-align: right;
+    list-style: none;
+    line-height: 36px;
+	}
 `
 
 const NavItem = styled.li`
