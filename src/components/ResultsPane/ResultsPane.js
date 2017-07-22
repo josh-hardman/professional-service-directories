@@ -7,26 +7,33 @@ import ResultCard from 'src/components/ResultCard'
 
 import './results-pane.less'
 
-const ResultsPane = () => (
+const ResultsPane = ({ data: { allDentists=[] }}) => (
   <div className="results-pane">
     <div className="results-pane__column">
-      <p>9 Results</p>
+      <p>{`${allDentists.length} Results`}</p>
       <div className="results-pane__column__board">
+        { allDentists && allDentists.map( (dentist, i) => (
+          <ResultCard
+            key={i}
+            name={dentist.name}
+          />
+        ))}
+        {/* <ResultCard />
         <ResultCard />
         <ResultCard />
         <ResultCard />
-        <ResultCard />
-        <ResultCard />
+        <ResultCard /> */}
       </div>
     </div>
   </div>
 )
 
 ResultsPane.propTypes = {
-  location:   PropTypes.string,
-  insurance:  PropTypes.string,
-  reason:     PropTypes.string,
-  update:     PropTypes.func
+  location:     PropTypes.string,
+  insurance:    PropTypes.string,
+  reason:       PropTypes.string,
+  update:       PropTypes.func,
+  data:         PropTypes.object
 }
 
 export default graphql(gql`
