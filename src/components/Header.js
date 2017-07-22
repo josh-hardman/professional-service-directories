@@ -7,26 +7,42 @@ import { colors, fontSize, breakpoints } from 'src/constants'
 
 const StyledHeader = styled.div`
   width: 100%;
-  height: 60px;
+  height: 40px;
   background: ${colors.blue};
+  transition: all .2s;
+
+  @media (min-width: ${breakpoints._600}) {
+    height: 60px;
+	}
 `
 
 const Baseline = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 10px;
+  padding-top: 8px;
   display: flex;
   align-items: baseline;
+  transition: all .2s;
+
+  @media (min-width: ${breakpoints._600}) {
+    padding-top: 12px;
+	}
 `
 
 const Logo = styled.h1`
   margin: 0;
-  padding-left: 36px;
+  padding-left: 18px;
   color: ${colors.white};
   display: inline-block;
   font-weight: bold;
-  ${fontSize(35)};
+  ${fontSize(24)};
+  transition: all .2s;
+
+  @media (min-width: ${breakpoints._600}) {
+    ${fontSize(35)};
+    padding-left: 36px;
+	}
 `
 
 const CatchPhrase = styled.p`
@@ -35,7 +51,12 @@ const CatchPhrase = styled.p`
   color: ${colors.white};
   display: inline-block;
   font-weight: 100;
-  ${fontSize(16)};
+  ${fontSize(12)};
+  transition: all .2s;
+
+  @media (min-width: ${breakpoints._600}) {
+    ${fontSize(16)};
+	}
 `
 
 const NavBar = styled.ul`
