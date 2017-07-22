@@ -9,10 +9,9 @@ import thunk from 'redux-thunk'
 // router
 import { Route, Router, hashHistory } from 'react-router'
 // child components
-import LandingPage from './components/LandingPage'
+import LandingPage from './components/LandingPage.js'
 import SearchPage from './components/SearchPage'
 import About from './components/About'
-import Header from 'src/components/Header.js'
 // styling
 import 'normalize.css'
 import './app.less'
@@ -39,21 +38,15 @@ class App extends Component {
   render() {
 
     return(
-      <div className='app-wrap'>
-        <Header
-          header={'Dentto'}
-          subHeader={"Discover your perfect Dentist"}
-        />
-        <Provider store={configureStore()}>
-          <ApolloProvider client={client}>
-            <Router history={hashHistory}>
-              <Route path='/' component={LandingPage} />
-              <Route path="/search" component={SearchPage} />
-              <Route path="/about" component={About} />
-            </Router>
-          </ApolloProvider>
-        </Provider>
-      </div>
+      <Provider store={configureStore()}>
+        <ApolloProvider client={client}>
+          <Router history={hashHistory}>
+            <Route path='/' component={LandingPage} />
+            <Route path="/search" component={SearchPage} />
+            <Route path="/about" component={About} />
+          </Router>
+        </ApolloProvider>
+      </Provider>
     )
   }
 }

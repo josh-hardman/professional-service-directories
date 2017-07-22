@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router'
+// import { Link } from 'react-router'
 
 import styled from 'styled-components'
 import { colors, fontSize, breakpoints } from 'src/constants'
@@ -9,6 +9,7 @@ const StyledHeader = styled.div`
   width: 100%;
   height: 40px;
   background: ${colors.blue};
+  z-index: 10;
   transition: all .2s;
 
   @media (min-width: ${breakpoints._600}) {
@@ -75,13 +76,16 @@ const NavBar = styled.ul`
 `
 
 const NavItem = styled.li`
-  text-decoration: none;
   color: ${colors.white};
   ${fontSize(18)};
   font-weight: 200;
   float: right;
   padding: 8px;
   padding-right: 40px;
+
+  &:visited {
+    color: ${colors.white}
+  }
 
   &:hover {
     color: ${colors.red};
@@ -96,14 +100,14 @@ const Header = ({ header, subHeader }) => (
       <CatchPhrase>{subHeader}</CatchPhrase>
       <NavBar>
         <NavItem>
-          <Link to='/about'>
+          {/* <Link to='/about'> */}
             About
-          </Link>
+          {/* </Link> */}
         </NavItem>
         <NavItem>
-          <Link to='/contact'>
+          {/* <Link to='/contact'> */}
             Contact
-          </Link>
+          {/* </Link> */}
         </NavItem>
       </NavBar>
     </Baseline>
