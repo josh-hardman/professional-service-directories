@@ -19,3 +19,10 @@ export const breakpoints = {
   _850: '53.125em',
   _960: '60em'
 }
+
+export const displayFlex = () => `
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+`
