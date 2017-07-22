@@ -12,7 +12,7 @@ import { Route, Router, hashHistory } from 'react-router'
 import LandingPage from './components/LandingPage'
 import SearchPage from './components/SearchPage'
 import About from './components/About'
-import Header from 'src/components/Header'
+import Header from 'src/components/Header.js'
 // styling
 import 'normalize.css'
 import './app.less'
