@@ -16,7 +16,7 @@ const StyledLanding = styled.div`
   height: 100%;
   opacity: .5;
   z-index: -1;
-  background: url('http://www.oralanswers.com/wp-content/uploads/2011/03/dentist_license_verification_all_states.jpg') no-repeat 90% 10%;
+  background: url('http://2oseib2jk7sm2ch5uy3ibuss.wpengine.netdna-cdn.com/wp-content/uploads/2015/08/TheDentistTakesCareofMyTeeth.jpg') no-repeat 50% 0%;
 }
 `
 
