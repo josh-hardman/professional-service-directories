@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router'
+import { Link } from 'react-router'
 
 import styled from 'styled-components'
 import { colors, fontSize, breakpoints } from 'src/constants'
@@ -96,7 +96,9 @@ const NavItem = styled.li`
 const Header = ({ header, subHeader }) => (
   <StyledHeader>
     <Baseline>
-      <Logo>{`${header}`}</Logo>
+      <Link to='/'>
+        <Logo>{`${header}`}</Logo>
+      </Link>
       <CatchPhrase>{subHeader}</CatchPhrase>
       <NavBar>
         <NavItem>
