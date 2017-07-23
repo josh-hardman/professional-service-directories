@@ -6,10 +6,15 @@ export const colors = {
   highlightGray: '#f7f7f7',
   highlightBlue: '#00A0DC',
   white: '#fff',
-  shadow: 'rgba(137, 137, 137, .5)'
+  shadow: 'rgba(137, 137, 137, .5)',
+  textDefault: '#222',
+  textDark: '#414042',
+  textMedium: '#666',
+  textLight: '#999',
+  placeholderText: '#a6a6a6'
 }
 
-export const fontSize = size => `font-size: ${(size/16).toFixed(5)}rem`
+export const fontSize = size => `font-size: ${(size/16).toFixed(5)}rem;`
 
 export const breakpoints = {
   _500: '31.25em',

@@ -4,30 +4,66 @@ import { Link } from 'react-router'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import styled from 'styled-components'
-import { colors, fontSize, breakpoints } from 'src/constants'
+import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
 // child components
 import SearchDropdown from 'src/components/SearchDropdown'
 
 const StyledPageSearch = styled.div`
-  background: red;
+  padding: 20px;
+`
+
+const Header = styled.div`
+  ${ fontSize(64) }
+  text-align: center;
+  color: ${colors.textDefault};
+`
+
+const Info = styled.div`
+  ${ fontSize(18) }
+  text-align: center;
+  color: ${colors.textDefault};
+`
+
+const FilterWrapper = styled.div`
+  ${ displayFlex() }
+  padding: 20px;
+  justify-content: center;
+`
+
+const Filter = styled.div`
+  position: relative;
+  width: 80%;
+`
+
+const SearchButton = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
 `
 
 const LandingPageSearch = ({ cityValue, update, data: { allCities=[] } }) => (
   <StyledPageSearch>
-    <h1>Find Your Dentist</h1>
-    <h3>Search our curated list of highly reputable dentists near you</h3>
-    <SearchDropdown
-      placeholder='City Name'
-      filterKey='city'
-      value={cityValue}
-      onChange={update}
-      options={allCities}
-    />
-    { cityValue &&
-      <Link to='/search'>
-        Search
-      </Link>
-    }
+    <Header>Find Your Dentist</Header>
+    <Info>Search our curated list of highly reputable dentists near you</Info>
+    <FilterWrapper>
+      <Filter>
+        <SearchDropdown
+          placeholder='City Name'
+          filterKey='city'
+          value={cityValue}
+          onChange={update}
+          options={allCities}
+        />
+        { cityValue &&
+          <SearchButton>
+            <Link to='/search'>
+              Search
+            </Link>
+          </SearchButton>
+        }
+      </Filter>
+    </FilterWrapper>
   </StyledPageSearch>
 )
 
