@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import styled from 'styled-components'
-import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
+import { colors, fontSize, displayFlex } from 'src/constants'
 // child components
 import SearchDropdown from 'src/components/SearchDropdown'
 
@@ -14,6 +14,7 @@ const StyledPageSearch = styled.div`
 
 const Header = styled.div`
   ${ fontSize(64) }
+  font-weight: 200;
   text-align: center;
   color: ${colors.textDefault};
 `
@@ -21,6 +22,7 @@ const Header = styled.div`
 const Info = styled.div`
   ${ fontSize(18) }
   text-align: center;
+  font-weight: 200;
   color: ${colors.textDefault};
 `
 

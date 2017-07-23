@@ -6,13 +6,18 @@ import styled from 'styled-components'
 import { displayFlex } from 'src/constants.js'
 
 const StyledLanding = styled.div`
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
+
+  &:before {
+  content: "";
   position: absolute;
-  background: url('http://www.oralanswers.com/wp-content/uploads/2011/03/dentist_license_verification_all_states.jpg') no-repeat 60% 10%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  z-index: -1;
+  background: url('http://www.oralanswers.com/wp-content/uploads/2011/03/dentist_license_verification_all_states.jpg') no-repeat 90% 10%;
+}
 `
 
 const IslandPosition = styled.div`

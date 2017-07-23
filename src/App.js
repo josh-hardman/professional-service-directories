@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 import { Route, Router, hashHistory } from 'react-router'
 // child components
 import LandingPage from './components/LandingPage.js'
-import SearchPage from './components/SearchPage'
+import SearchPage from './components/SearchPage.js'
 import About from './components/About'
 // styling
 import 'normalize.css'
