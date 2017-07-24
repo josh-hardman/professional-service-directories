@@ -52,13 +52,28 @@ const Rating = styled.p`
   ${ fontSize(12) }
 `
 
-const ResultCard = ({ name, rating }) => (
+const Social = styled.ul`
+  list-style: none;
+  padding: 0;
+  ${ fontSize(12) }
+`
+
+const MediaLink = styled.li`
+
+`
+
+const ResultCard = ({ name, rating, social }) => (
   <Card>
     <InfoSection>
       <Image />
       <Info>
         <PracticeName>{name}</PracticeName>
         <Rating>rating: {rating ? rating : 'N/A'}</Rating>
+        { social &&
+          <Social>
+            <MediaLink>{social.website}</MediaLink>
+          </Social>
+        }
       </Info>
     </InfoSection>
   </Card>

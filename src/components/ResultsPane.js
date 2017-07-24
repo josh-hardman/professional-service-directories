@@ -48,6 +48,7 @@ class ResultsPane extends Component {
                 key={i}
                 name={dentist.name}
                 rating={this.averageReview(dentist.reviews)}
+                social={dentist.contact}
               />
             ))}
         </FlexContainer>
@@ -71,6 +72,9 @@ export default graphql(gql`
     {
       name,
       id,
+      contact {
+        website
+      }
       reviews {
         name,
         rating
