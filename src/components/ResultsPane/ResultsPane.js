@@ -15,7 +15,7 @@ const averageReview = reviews => {
   return reviews.length && total/reviews.length
 }
 
-const ResultsPane = ({ data: { allDentists=[] }}) => {
+const ResultsPane = ( { data: { allDentists=[] } } ) => {
 
   return(
     <div className="results-pane">
@@ -43,12 +43,18 @@ ResultsPane.propTypes = {
 }
 
 export default graphql(gql`
-  query( $insuranceValue: ID! ) {
-    allDentists( filter: {
-        insurances_some: {
-          id: $insuranceValue
-      }
-    }) {
+  query
+  {
+    # ( $insuranceValue: ID! ) 
+    allDentists
+    # (
+    #   filter: {
+    #     insurances_some: {
+    #       id: $insuranceValue
+    #     }
+    #   }
+    # )
+    {
       name,
       id,
       reviews {
