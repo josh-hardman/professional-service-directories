@@ -5,8 +5,15 @@ import { graphql } from 'react-apollo'
 
 import SearchDropdown from 'src/components/SearchDropdown'
 import styled from 'styled-components'
+import { colors, shadow } from 'src/constants'
 
 const StyledFilterBar = styled.div`
+  ${shadow}
+  margin-left: 12px;
+  margin-right: 12px;
+`
+
+const FilterBarInner = styled.div`
 
 `
 
