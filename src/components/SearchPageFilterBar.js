@@ -5,7 +5,7 @@ import { graphql } from 'react-apollo'
 
 import SearchDropdown from 'src/components/SearchDropdown'
 import styled from 'styled-components'
-import { colors, shadow } from 'src/constants'
+import { colors, shadow, displayFlex } from 'src/constants'
 
 const StyledFilterBar = styled.div`
   ${shadow}
@@ -13,8 +13,12 @@ const StyledFilterBar = styled.div`
   margin-right: 12px;
 `
 
-const FilterBarInner = styled.div`
-
+const FilterWrapper = styled.div`
+  ${ displayFlex() }
+  background: ${colors.darkGrey};
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
 `
 
 const SearchPageFilterBar = ({
@@ -29,29 +33,33 @@ const SearchPageFilterBar = ({
   update
 }) => (
   <StyledFilterBar>
-    <SearchDropdown
-      placeholder='City'
-      filterKey='city'
-      value={cityValue}
-      onChange={update}
-      options={allCities}
-    />
-
-    <SearchDropdown
-      placeholder='Insurance Provider'
-      filterKey='insurance'
-      value={insuranceValue}
-      onChange={update}
-      options={allInsurances}
-    />
-
-    <SearchDropdown
-      placeholder='Reason for Visit'
-      filterKey='reason'
-      value={visitReasonValue}
-      onChange={update}
-      options={allVisitReasons}
-    />
+    <FilterWrapper>
+      <SearchDropdown
+        placeholder='City'
+        filterKey='city'
+        value={cityValue}
+        onChange={update}
+        options={allCities}
+      />
+    </FilterWrapper>
+    <FilterWrapper>
+      <SearchDropdown
+        placeholder='Insurance Provider'
+        filterKey='insurance'
+        value={insuranceValue}
+        onChange={update}
+        options={allInsurances}
+      />
+    </FilterWrapper>
+    <FilterWrapper>
+      <SearchDropdown
+        placeholder='Reason for Visit'
+        filterKey='reason'
+        value={visitReasonValue}
+        onChange={update}
+        options={allVisitReasons}
+      />
+    </FilterWrapper>
   </StyledFilterBar>
 )
 

@@ -34,7 +34,7 @@ class ResultsPane extends Component {
       return prev + current.rating
     }, 0)
 
-    return reviews.length && total/reviews.length
+    return reviews.length ? total/reviews.length : null
   }
 
   render() {

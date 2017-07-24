@@ -10,18 +10,18 @@ const FlexContainer = styled.div`
 `
 
 const FlexInner = styled.div`
-  width: 80%;
+  width: 1130px;
   padding-top: 80px;
   ${displayFlex()}
   justify-content: space-around;
 `
 
 const FilterAside = styled.div`
-  width: 30%;
+  width: 20%;
 `
 
 const ResultsAside = styled.div`
-  width: 70%;
+  width: 80%;
 `
 
 const SearchPageWrapper = (props) => (
