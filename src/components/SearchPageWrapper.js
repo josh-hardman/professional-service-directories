@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchPageFilterBar from 'src/components/SearchPageFilterBar'
-import ResultsPane from 'src/components/ResultsPane'
+import ResultsPane from 'src/components/ResultsPane.js'
 import styled from 'styled-components'
 import { displayFlex } from 'src/constants'
 
