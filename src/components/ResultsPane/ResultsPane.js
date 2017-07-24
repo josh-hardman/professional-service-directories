@@ -6,12 +6,14 @@ import { graphql } from 'react-apollo'
 import ResultCard from 'src/components/ResultCard'
 
 import './results-pane.less'
-//
-// const averageReview = reviews => {
-//   const total = reviews.reduce( (prev, current) => ({
-//     return prev + current.rating
-//   }, 0))
-// }
+
+const averageReview = reviews => {
+  const total = reviews.reduce( (prev, current) => {
+    return prev + current.rating
+  }, 0)
+
+  return reviews.length && total/reviews.length
+}
 
 const ResultsPane = ({ data: { allDentists=[] }}) => {
 
@@ -23,7 +25,7 @@ const ResultsPane = ({ data: { allDentists=[] }}) => {
             <ResultCard
               key={i}
               name={dentist.name}
-              // rating={dentist.}
+              rating={averageReview(dentist.reviews)}
             />
           ))}
         </div>
@@ -51,7 +53,7 @@ export default graphql(gql`
       id,
       reviews {
         name,
-        review
+        rating
       }
     }
   }

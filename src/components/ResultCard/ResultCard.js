@@ -14,14 +14,18 @@ border-radius: 3px;
 box-shadow: 2px 2px 4px black;
 `
 
-const ResultCard = ({name}) => (
+const ResultCard = ({ name, rating }) => (
   <Card>
     <h4>{name}</h4>
+    { rating &&
+      <p>rating: {rating}</p>
+    }
   </Card>
 )
 
 ResultCard.propTypes = {
-  name:   PropTypes.string
+  name:   PropTypes.string,
+  rating: PropTypes.number
 }
 
 export default ResultCard
