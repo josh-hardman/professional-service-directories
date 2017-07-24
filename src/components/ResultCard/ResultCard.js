@@ -1,17 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { colors, shadow } from 'src/constants'
 
 import './result-card.less'
 
 const Card = styled.div`
-width: 48%;
-display: flex;
-justify-content: center;
-align-items: center;
-background: white;
-border-radius: 3px;
-box-shadow: 2px 2px 4px black;
+  width: 48%;
+  margin: 1%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  ${ shadow }
 `
 
 const ResultCard = ({ name, rating }) => (

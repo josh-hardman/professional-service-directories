@@ -3,8 +3,22 @@ import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import styled from 'styled-components'
+import { displayFlex, colors } from 'src/constants.js'
 // child components
 import ResultCard from 'src/components/ResultCard'
+
+const StyledResultsPane = styled.div`
+  width: 100%;
+  background: ${ colors.lightGray };
+  ${ displayFlex() }
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+`
+
+const FlexContainer = styled.div`
+  width: 100%;
+`
 
 class ResultsPane extends Component {
   static propTypes = {
@@ -27,9 +41,8 @@ class ResultsPane extends Component {
     const { data: { allDentists=[] } } = this.props
 
     return(
-      <div className="results-pane">
-        <div className="results-pane__column">
-          <div className="results-pane__column__board">
+      <StyledResultsPane>
+        <FlexContainer>
             { allDentists && allDentists.map( (dentist, i) => (
               <ResultCard
                 key={i}
@@ -37,9 +50,8 @@ class ResultsPane extends Component {
                 rating={this.averageReview(dentist.reviews)}
               />
             ))}
-          </div>
-        </div>
-      </div>
+        </FlexContainer>
+      </StyledResultsPane>
     )
   }
 }
