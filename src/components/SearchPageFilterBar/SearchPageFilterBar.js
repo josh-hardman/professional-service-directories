@@ -4,7 +4,13 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
 import SearchDropdown from 'src/components/SearchDropdown'
-import './search-page-filter-bar.less'
+import styled from 'styled-components'
+import { colors, fontSize, breakpoints } from 'src/constants'
+// import './search-page-filter-bar.less'
+
+const StyledFilterBar = styled.div`
+
+`
 
 const SearchPageFilterBar = ({
   data: {
@@ -17,37 +23,31 @@ const SearchPageFilterBar = ({
   visitReasonValue,
   update
 }) => (
-  <div className='search-page-filter-bar'>
-    <div className='search-page-filter-bar__wrapper'>
-      <div className='search-page-filter-bar__wrapper__filter'>
-        <SearchDropdown
-          placeholder='City'
-          filterKey='city'
-          value={cityValue}
-          onChange={update}
-          options={allCities}
-        />
-      </div>
-      <div className='search-page-filter-bar__wrapper__filter'>
-        <SearchDropdown
-          placeholder='Insurance Provider'
-          filterKey='insurance'
-          value={insuranceValue}
-          onChange={update}
-          options={allInsurances}
-        />
-      </div>
-      <div className='search-page-filter-bar__wrapper__filter'>
-        <SearchDropdown
-          placeholder='Reason for Visit'
-          filterKey='reason'
-          value={visitReasonValue}
-          onChange={update}
-          options={allVisitReasons}
-        />
-      </div>
-    </div>
-  </div>
+  <StyledFilterBar>
+    <SearchDropdown
+      placeholder='City'
+      filterKey='city'
+      value={cityValue}
+      onChange={update}
+      options={allCities}
+    />
+
+    <SearchDropdown
+      placeholder='Insurance Provider'
+      filterKey='insurance'
+      value={insuranceValue}
+      onChange={update}
+      options={allInsurances}
+    />
+
+    <SearchDropdown
+      placeholder='Reason for Visit'
+      filterKey='reason'
+      value={visitReasonValue}
+      onChange={update}
+      options={allVisitReasons}
+    />
+  </StyledFilterBar>
 )
 
 SearchPageFilterBar.propTypes = {

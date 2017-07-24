@@ -8,7 +8,7 @@ const SearchPage = () => (
       header={'Dentto'}
       subHeader={'Discover your perfect Dentist'}
     />
-    <SearchPageFilterContainer />
+    <SearchPageFilterContainer/>
   </div>
 )
 

@@ -6,27 +6,32 @@ import { graphql } from 'react-apollo'
 import ResultCard from 'src/components/ResultCard'
 
 import './results-pane.less'
+//
+// const averageReview = reviews => {
+//   const total = reviews.reduce( (prev, current) => ({
+//     return prev + current.rating
+//   }, 0))
+// }
 
-const ResultsPane = ({ data: { allDentists=[] }}) => (
-  <div className="results-pane">
-    <div className="results-pane__column">
-      <p>{`${allDentists.length} Results`}</p>
-      <div className="results-pane__column__board">
-        { allDentists && allDentists.map( (dentist, i) => (
-          <ResultCard
-            key={i}
-            name={dentist.name}
-          />
-        ))}
-        {/* <ResultCard />
-        <ResultCard />
-        <ResultCard />
-        <ResultCard />
-        <ResultCard /> */}
+const ResultsPane = ({ data: { allDentists=[] }}) => {
+
+  return(
+    <div className="results-pane">
+      <div className="results-pane__column">
+        <p>{`${allDentists.length} Results`}</p>
+        <div className="results-pane__column__board">
+          { allDentists && allDentists.map( (dentist, i) => (
+            <ResultCard
+              key={i}
+              name={dentist.name}
+              // rating={dentist.}
+            />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 ResultsPane.propTypes = {
   location:     PropTypes.string,
@@ -44,7 +49,11 @@ export default graphql(gql`
       }
     }) {
       name,
-      id
+      id,
+      reviews {
+        name,
+        review
+      }
     }
   }
 `, {
