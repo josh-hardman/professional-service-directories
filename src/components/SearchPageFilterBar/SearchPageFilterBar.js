@@ -5,8 +5,6 @@ import { graphql } from 'react-apollo'
 
 import SearchDropdown from 'src/components/SearchDropdown'
 import styled from 'styled-components'
-import { colors, fontSize, breakpoints } from 'src/constants'
-// import './search-page-filter-bar.less'
 
 const StyledFilterBar = styled.div`
 

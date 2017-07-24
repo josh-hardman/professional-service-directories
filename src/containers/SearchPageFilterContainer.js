@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import SearchPageFilterBar from 'src/components/SearchPageFilterBar'
-import ResultsPane from 'src/components/ResultsPane'
+import SearchPageWrapper from 'src/components/SearchPageWrapper'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
@@ -31,14 +30,9 @@ class SearchPageFilterContainer extends Component {
   render() {
 
     return (
-      <div>
-        <SearchPageFilterBar
-          {...this.props}
-        />
-        <ResultsPane
-          {...this.props}
-        />
-      </div>
+      <SearchPageWrapper
+        {...this.props}
+      />
     )
   }
 }
