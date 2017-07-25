@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router'
-
+import Media from 'react-media'
 import styled from 'styled-components'
 import { colors, fontSize, breakpoints } from 'src/constants'
+
+import MobileNav from 'src/components/MobileNav.js'
+import DesktopNav from 'src/components/DesktopNav.js'
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -60,39 +63,6 @@ const CatchPhrase = styled.p`
 	}
 `
 
-const NavBar = styled.ul`
-  display: none;
-
-  @media (min-width: ${breakpoints._600}) {
-    display: block;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    right: 0;
-    text-align: right;
-    list-style: none;
-    line-height: 36px;
-	}
-`
-
-const NavItem = styled.li`
-  color: ${colors.white};
-  ${fontSize(18)};
-  font-weight: 200;
-  float: right;
-  padding: 8px;
-  padding-right: 40px;
-
-  &:visited {
-    color: ${colors.white}
-  }
-
-  &:hover {
-    color: ${colors.red};
-    cursor: pointer;
-  }
-`
-
 const Header = ({ header, subHeader }) => (
   <StyledHeader>
     <Baseline>
@@ -100,18 +70,13 @@ const Header = ({ header, subHeader }) => (
         <Logo>{`${header}`}</Logo>
       </Link>
       <CatchPhrase>{subHeader}</CatchPhrase>
-      <NavBar>
-        <NavItem>
-          {/* <Link to='/about'> */}
-            About
-          {/* </Link> */}
-        </NavItem>
-        <NavItem>
-          {/* <Link to='/contact'> */}
-            Contact
-          {/* </Link> */}
-        </NavItem>
-      </NavBar>
+      <Media query={{ minWidth: breakpoints._600} }>
+        {matches => matches ? (
+          <DesktopNav />
+        ) : (
+          <MobileNav />
+        )}
+      </Media>
     </Baseline>
   </StyledHeader>
 )
