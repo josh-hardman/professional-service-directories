@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { colors, shadow, displayFlex, fontSize } from 'src/constants'
+import { shadow, displayFlex, fontSize } from 'src/constants'
 
 import './result-card.less'
 
@@ -81,7 +81,8 @@ const ResultCard = ({ name, rating, social }) => (
 
 ResultCard.propTypes = {
   name:   PropTypes.string,
-  rating: PropTypes.number
+  rating: PropTypes.number,
+  social: PropTypes.object
 }
 
 export default ResultCard

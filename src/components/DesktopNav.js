@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { colors, fontSize } from 'src/constants'
 
@@ -32,10 +31,10 @@ const NavItem = styled.li`
   }
 `
 
-const DesktopNav = (props) => (
+const DesktopNav = () => (
   <NavBar>
     <NavItem>
-      Contact
+      Contact2
     </NavItem>
     <NavItem>
       About
