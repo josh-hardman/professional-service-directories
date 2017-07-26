@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --ext .js --cache",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --hot"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -14,18 +14,22 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.1.0",
     "html-webpack-plugin": "^2.29.0",
     "html-webpack-react-root-plugin": "^0.9.0",
+    "inline-source-map": "^0.6.2",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "react-hot-loader": "next",
     "style-loader": "^0.18.2",
     "transform-runtime": "^0.0.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "graphql-tag": "^2.4.2",
     "gsap": "^1.20.2",

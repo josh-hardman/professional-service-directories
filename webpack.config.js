@@ -1,13 +1,20 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRootPlugin = require('html-webpack-react-root-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'babel-polyfill',
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -31,11 +38,14 @@ module.exports = {
     ]
   },
   devServer: {
+    hot: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Dentto',
       filename: 'index.html'
