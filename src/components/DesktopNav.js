@@ -34,7 +34,7 @@ const NavItem = styled.li`
 const DesktopNav = () => (
   <NavBar>
     <NavItem>
-      Contact2
+      Contact
     </NavItem>
     <NavItem>
       About

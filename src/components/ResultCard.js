@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { shadow, displayFlex, fontSize } from 'src/constants'
 
-import './result-card.less'
-
 const Card = styled.div`
   width: 48%;
   padding: 14px;

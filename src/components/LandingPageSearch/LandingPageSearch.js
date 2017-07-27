@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import styled from 'styled-components'

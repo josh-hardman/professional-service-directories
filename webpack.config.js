@@ -1,20 +1,29 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRootPlugin = require('html-webpack-react-root-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-  entry: [
-    'babel-polyfill',
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
-  output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
-  },
   devtool: 'inline-source-map',
+  entry: {
+    app: [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      './src/index.js'
+    ],
+    vendor: [
+      'react',
+      'react-dom',
+      'styled-components',
+      'react-router'
+    ]},
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js',
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -39,24 +48,37 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, 'dist'),
+    // contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'Dentto',
-      filename: 'index.html'
+    // new CleanWebpackPlugin(['dist']),
+    // new HtmlWebpackPlugin({
+    //   title: 'Dentto',
+    //   filename: 'index.html'
+    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: [
+        'vendor',
+        'manifest'
+      ]
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new BundleAnalyzerPlugin(),
     new ReactRootPlugin('root')
   ],
   resolve: {
     alias: {
       src: path.resolve(__dirname, 'src')
     },
+    // modules: [
+    //   path.resolve('./src'),
+    //   'node_modules'
+    // ]
     extensions: ['.js', '.jsx', '.json'],
-    modules: ['node_modules']
+    modules: [
+      'node_modules']
   }
 }

@@ -7,7 +7,10 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import filters from 'src/redux/reducers/filter'
 import thunk from 'redux-thunk'
 // router
-import { Route, Router, hashHistory } from 'react-router'
+import {
+  HashRouter as Router,
+  Route
+} from 'react-router-dom'
 // child components
 import LandingPage from './components/LandingPage.js'
 import SearchPage from './components/SearchPage.js'
@@ -40,10 +43,12 @@ class App extends Component {
     return(
       <Provider store={configureStore()}>
         <ApolloProvider client={client}>
-          <Router history={hashHistory}>
-            <Route path='/' component={LandingPage} />
-            <Route path="/search" component={SearchPage} />
-            <Route path="/about" component={About} />
+          <Router>
+            <div>
+              <Route exact path='/' component={LandingPage}/>
+              <Route path='/search' component={SearchPage}/>
+              <Route path='/about' component={About}/>
+            </div>
           </Router>
         </ApolloProvider>
       </Provider>
