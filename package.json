@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --ext .js --cache",
-    "dev": "webpack-dev-server --hot --history-api-fallback"
+    "dev": "webpack-dev-server --history-api-fallback"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

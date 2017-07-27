@@ -35,7 +35,7 @@ const Info = styled.div`
   width: 140px;
   height: 140px;
   border: 1px solid green;
-  padding: 12px;
+  padding: 120px;
 `
 
 const PracticeName = styled.h1`
@@ -66,7 +66,7 @@ const ResultCard = ({ name, rating, social }) => (
       <Image />
       <Info>
         <PracticeName>{name}</PracticeName>
-        <Rating>rating: {rating ? rating : 'N/A'}</Rating>
+        <Rating>ratingz: {rating ? rating : 'N/A'}</Rating>
         { social &&
           <Social>
             <MediaLink>{social.website}</MediaLink>

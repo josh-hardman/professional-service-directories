@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRootPlugin = require('html-webpack-react-root-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
@@ -10,14 +10,15 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      'react-hot-loader/patch',
+      // 'react-hot-loader/patch',
+      // 'webpack/hot/only-dev-server',
       './src/index.js'
     ],
     vendor: [
       'react',
       'react-dom',
-      'styled-components',
-      'react-router'
+      'react-router-dom',
+      'styled-components'
     ]},
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -47,13 +48,14 @@ module.exports = {
     ]
   },
   devServer: {
-    hot: true,
+    // hot: true,
     // contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     // new CleanWebpackPlugin(['dist']),
     // new HtmlWebpackPlugin({
     //   title: 'Dentto',
@@ -79,6 +81,7 @@ module.exports = {
     // ]
     extensions: ['.js', '.jsx', '.json'],
     modules: [
-      'node_modules']
+      'node_modules'
+    ]
   }
 }
