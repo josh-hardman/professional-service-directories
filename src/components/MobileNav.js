@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-// import { colors, fontSize } from 'src/constants'
+import { fontSize } from 'src/constants'
 
-const NavBar = styled.ul`
+const Button = styled.ul`
   display: block;
   position: absolute;
   margin: 0;
@@ -11,31 +11,26 @@ const NavBar = styled.ul`
   text-align: right;
   list-style: none;
   line-height: 36px;
+  ${fontSize(48)}
+
+  &:hover {
+    color: red;
+    cursor: pointer;
+  }
 `
 
-// const NavItem = styled.li`
-//   color: ${colors.white};
-//   ${fontSize(18)};
-//   font-weight: 200;
-//   float: right;
-//   padding: 8px;
-//   padding-right: 40px;
-//
-//   &:visited {
-//     color: ${colors.white}
-//   }
-//
-//   &:hover {
-//     color: ${colors.red};
-//     cursor: pointer;
-//   }
-// `
+class MobileNav extends Component {
+  state = {
+    open: false
+  }
 
-const MobileNav = () => (
-  <NavBar>
-    <span>Mobile Nav</span>
-  </NavBar>
-)
+  render() {
+
+    return (
+      <Button>=</Button>
+    )
+  }
+}
 
 MobileNav.propTypes = {
 

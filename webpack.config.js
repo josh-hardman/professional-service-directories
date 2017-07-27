@@ -6,7 +6,7 @@ const ReactRootPlugin = require('html-webpack-react-root-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   entry: {
     app: [
       'babel-polyfill',

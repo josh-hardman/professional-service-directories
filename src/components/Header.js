@@ -9,6 +9,7 @@ import MobileNav from 'src/components/MobileNav.js'
 import DesktopNav from 'src/components/DesktopNav.js'
 
 const StyledHeader = styled.div`
+  position: relative;
   width: 100%;
   height: 40px;
   background: ${colors.blue};
