@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { colors, fontSize } from 'src/constants'
+import { colors, fontSize, shadow } from 'src/constants'
 import MenuIcon from 'react-icons/lib/md/menu'
 
 const Button = styled.button`
   position: absolute;
   margin: 0;
-  padding: 0;
+  padding-right: 8px;
   top: 0;
   height: 100%;
   right: 0;
@@ -16,6 +16,7 @@ const Button = styled.button`
   background: none;
   border: none;
   color: ${colors.white};
+  ${fontSize(24)}
 
   &:hover {
     color: red;
@@ -39,12 +40,14 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
-  color: ${colors.white};
+  color: ${colors.textMedium};
   ${fontSize(36)}
   width: 100%;
   text-align: center;
   padding: 20px;
   cursor: pointer;
+  ${shadow};
+  background: ${colors.white};
 
   &:hover {
     color: red;
@@ -53,10 +56,12 @@ const Item = styled.li`
 
 class MobileNav extends Component {
   state = {
-    open: false
+    open: true
   }
 
-  handleToggleOpen = () => this.setState({ open: this.state.open ? false : true })
+  handleToggleOpen = () => this.setState({
+    open: this.state.open ? false : true
+  })
 
   render() {
 
