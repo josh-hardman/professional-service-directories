@@ -23,7 +23,7 @@ const StyledLanding = styled.div`
 const IslandPosition = styled.div`
   position: absolute;
   top: 0;
-  bottom:0;
+  height: 75%;
   left: 0;
   right: 0;
   ${ displayFlex() }

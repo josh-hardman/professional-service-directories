@@ -16,13 +16,9 @@ const Button = styled.button`
   line-height: 36px;
   background: none;
   border: none;
-  color: ${colors.white};
+  color: ${props => props.isOpen? colors.red : colors.white};
   ${fontSize(24)}
 
-  &:hover {
-    color: red;
-    cursor: pointer;
-  }
 `
 
 const List = styled.ul`
@@ -68,6 +64,7 @@ class MobileNav extends Component {
       <div>
         <Button
           onClick={this.handleToggleOpen}
+          isOpen={this.state.open}
         >
           <MenuIcon />
         </Button>
