@@ -7,27 +7,26 @@ import styled from 'styled-components'
 import { colors, fontSize, displayFlex } from 'src/constants'
 // child components
 import SearchDropdown from 'src/components/SearchDropdown'
+import SearchIcon from 'react-icons/lib/md/search'
 
 const StyledPageSearch = styled.div`
   padding: 20px;
 `
 
 const Header = styled.div`
-  ${ fontSize(64) }
-  font-weight: 200;
+  ${ fontSize(36) }
   text-align: center;
   color: ${colors.textDefault};
 `
 
 const Info = styled.div`
-  ${ fontSize(18) }
+  ${ fontSize(14) }
   text-align: center;
-  font-weight: 200;
   color: ${colors.textDefault};
 `
 
 const FilterWrapper = styled.div`
-  ${ displayFlex() }
+  ${displayFlex()}
   padding: 20px;
   justify-content: center;
 `
@@ -41,7 +40,18 @@ const SearchButton = styled.button`
   position: absolute;
   right: 0;
   top: 0;
-  height: 100%;
+  bottom: 0;
+  padding: 10px;
+  color: ${colors.white};
+  background: ${colors.blue};
+  ${fontSize(20)}
+  border-radius: 3px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: none;
+  ${displayFlex()}
+  justify-content: center;
+  align-items: center;
 `
 
 const LandingPageSearch = ({ cityValue, update, data: { allCities=[] } }) => (
@@ -58,11 +68,11 @@ const LandingPageSearch = ({ cityValue, update, data: { allCities=[] } }) => (
           options={allCities}
         />
         { cityValue &&
-          <SearchButton>
-            <Link to='/search'>
-              Search
-            </Link>
-          </SearchButton>
+          <Link to='/search'>
+            <SearchButton>
+              <SearchIcon />
+            </SearchButton>
+          </Link>
         }
       </Filter>
     </FilterWrapper>
