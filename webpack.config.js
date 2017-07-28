@@ -50,6 +50,8 @@ module.exports = {
   devServer: {
     // hot: true,
     // contentBase: path.join(__dirname, 'dist'),
+    host: '0.0.0.0',
+    disableHostCheck: true,
     compress: true,
     port: 9000
   },
@@ -68,7 +70,7 @@ module.exports = {
       ]
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new ReactRootPlugin('root')
   ],
   resolve: {
