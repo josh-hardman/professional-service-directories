@@ -41,22 +41,24 @@ const List = styled.ul`
 
 const Item = styled.li`
   color: ${colors.textMedium};
-  ${fontSize(36)}
+  ${fontSize(18)}
   width: 100%;
   text-align: center;
   padding: 20px;
+  margin-bottom: 1px;
   cursor: pointer;
   ${shadow};
   background: ${colors.white};
 
   &:hover {
     color: red;
+    background: ${colors.lightGray};
   }
 `
 
 class MobileNav extends Component {
   state = {
-    open: true
+    open: false
   }
 
   handleToggleOpen = () => this.setState({
