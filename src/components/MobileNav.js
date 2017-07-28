@@ -17,13 +17,13 @@ const Button = styled.button`
   background: none;
   border: none;
   color: ${props => props.isOpen? colors.red : colors.white};
-  ${fontSize(24)}
+  ${fontSize(34)}
 
 `
 
 const List = styled.ul`
   position: absolute;
-  top: 40px;
+  top: 50px;
   height: 30%;
   right: 0;
   width: 50%;

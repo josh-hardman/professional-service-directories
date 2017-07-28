@@ -35,7 +35,7 @@ const LandingPage = () => (
   <StyledLanding>
     <Header
       header={'Dentto'}
-      subHeader={'Discover your perfect Dentist'}
+      subHeader={'Discover your perfect Dentist.'}
     />
     <IslandPosition>
       <LandingPageFilterContainer />

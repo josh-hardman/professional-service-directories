@@ -11,27 +11,22 @@ import DesktopNav from 'src/components/DesktopNav.js'
 const StyledHeader = styled.div`
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 50px;
   background: ${colors.blue};
-  z-index: 10;
   transition: all .2s;
-
-  @media (min-width: ${breakpoints._600}) {
-    height: 60px;
-	}
 `
 
 const Baseline = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 8px;
+  padding-top: 14px;
   display: flex;
   align-items: baseline;
   transition: all .2s;
 
   @media (min-width: ${breakpoints._600}) {
-    padding-top: 12px;
+    padding-top: 6px;
 	}
 `
 
@@ -41,7 +36,7 @@ const Logo = styled.h1`
   color: ${colors.white};
   display: inline-block;
   font-weight: bold;
-  ${fontSize(24)};
+  ${fontSize(26)};
   transition: all .2s;
 
   @media (min-width: ${breakpoints._600}) {
@@ -57,11 +52,6 @@ const CatchPhrase = styled.p`
   display: inline-block;
   font-weight: 100;
   ${fontSize(14)};
-  transition: all .2s;
-
-  @media (min-width: ${breakpoints._600}) {
-    ${fontSize(16)};
-	}
 `
 
 const Header = ({ header, subHeader }) => (
