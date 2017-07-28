@@ -5,10 +5,11 @@ import MenuIcon from 'react-icons/lib/md/menu'
 
 const Button = styled.button`
   position: absolute;
+  z-index: 100;
   margin: 0;
   padding-right: 8px;
   top: 0;
-  height: 100%;
+  bottom: 0;
   right: 0;
   text-align: right;
   list-style: none;
@@ -24,27 +25,23 @@ const Button = styled.button`
   }
 `
 
-const Overlay = styled.div`
-  position: fixed;
-  top: 40px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: ${colors.transparentGrey};
-`
-
 const List = styled.ul`
+  position: absolute;
+  top: 40px;
   height: 30%;
+  right: 0;
+  width: 50%;
+  list-style: none;
   margin: 0;
   padding: 0;
 `
 
 const Item = styled.li`
   color: ${colors.textMedium};
-  ${fontSize(18)}
+  ${fontSize(14)}
   width: 100%;
   text-align: center;
-  padding: 20px;
+  padding: 12px;
   margin-bottom: 1px;
   cursor: pointer;
   ${shadow};
@@ -75,12 +72,10 @@ class MobileNav extends Component {
           <MenuIcon />
         </Button>
         { this.state.open &&
-          <Overlay>
-            <List>
-              <Item>Contact</Item>
-              <Item>About</Item>
-            </List>
-          </Overlay>
+          <List>
+            <Item>Contact</Item>
+            <Item>About</Item>
+          </List>
         }
       </div>
     )

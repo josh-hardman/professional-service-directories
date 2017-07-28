@@ -56,7 +56,7 @@ const CatchPhrase = styled.p`
   color: ${colors.white};
   display: inline-block;
   font-weight: 100;
-  ${fontSize(12)};
+  ${fontSize(14)};
   transition: all .2s;
 
   @media (min-width: ${breakpoints._600}) {
