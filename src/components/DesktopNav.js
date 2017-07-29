@@ -16,7 +16,6 @@ const NavBar = styled.ul`
 const NavItem = styled.li`
   color: ${colors.white};
   ${fontSize(16)};
-  font-weight: 200;
   float: right;
   padding: 8px;
   padding-right: 40px;

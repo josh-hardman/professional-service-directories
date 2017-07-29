@@ -43,7 +43,7 @@ const Item = styled.li`
   ${fontSize(14)}
   width: 100%;
   text-align: center;
-  padding: 14px;
+  padding: 18px;
   margin-bottom: 1px;
   cursor: pointer;
   ${shadow};

@@ -13,7 +13,7 @@ const StyledHeader = styled.div`
   width: 100%;
   height: 50px;
   background: ${colors.blue};
-  transition: all .2s;
+  z-index: 3;
 `
 
 const Baseline = styled.div`
@@ -23,7 +23,7 @@ const Baseline = styled.div`
   padding-top: 14px;
   display: flex;
   align-items: baseline;
-  transition: all .2s;
+  transition: all .5s;
 
   @media (min-width: ${breakpoints._600}) {
     padding-top: 6px;
@@ -37,7 +37,7 @@ const Logo = styled.h1`
   display: inline-block;
   font-weight: bold;
   ${fontSize(26)};
-  transition: all .2s;
+  transition: all .5s;
 
   @media (min-width: ${breakpoints._600}) {
     ${fontSize(35)};
@@ -50,7 +50,6 @@ const CatchPhrase = styled.p`
   padding-left: 12px;
   color: ${colors.white};
   display: inline-block;
-  font-weight: 100;
   ${fontSize(14)};
 `
 
