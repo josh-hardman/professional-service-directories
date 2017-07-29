@@ -25,7 +25,7 @@ const ResultsAside = styled.div`
   width: 80%;
 `
 
-const SearchPageWrapper = (props) => (
+const SearchPage = (props) => (
   <Media query={{ minWidth: breakpoints._600} }>
     {matches => matches ? (
       <FlexContainer>
@@ -49,4 +49,4 @@ const SearchPageWrapper = (props) => (
 
 )
 
-export default SearchPageWrapper
+export default SearchPage

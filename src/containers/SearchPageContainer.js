@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import SearchPageWrapper from 'src/components/searchPage/SearchPageWrapper'
+import SearchPage from 'src/components/searchPage/SearchPage'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
@@ -30,7 +30,7 @@ class SearchPageFilterContainer extends Component {
   render() {
 
     return (
-      <SearchPageWrapper
+      <SearchPage
         {...this.props}
       />
     )

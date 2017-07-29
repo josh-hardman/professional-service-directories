@@ -26,7 +26,9 @@ class FilterContainer extends Component {
 
   render() {
     return (
-      <LandingPage {...this.props}/>
+      <LandingPage
+        {...this.props}
+      />
     )
   }
 }
