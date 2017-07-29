@@ -4,7 +4,7 @@ import LandingPageSearch from 'src/components/landingPage/LandingPageSearch'
 import {
   Background,
   IslandPosition
-} from './Style.js'
+} from './styles.js'
 
 const LandingPage = ({cityValue, update}) => (
   <Background>
