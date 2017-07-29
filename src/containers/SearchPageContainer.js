@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import SearchPage from 'src/components/searchPage/SearchPage'
+import SearchPageGQLContainer from 'src/containers/SearchPageGQLContainer'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
@@ -30,7 +30,7 @@ class SearchPageFilterContainer extends Component {
   render() {
 
     return (
-      <SearchPage
+      <SearchPageGQLContainer
         {...this.props}
       />
     )
