@@ -24,12 +24,12 @@ const Button = styled.button`
 const List = styled.ul`
   position: absolute;
   top: 50px;
-  height: 30%;
   right: 0;
-  width: 50%;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
+  z-index: -1;
 `
 
 const Item = styled.li`
@@ -37,7 +37,7 @@ const Item = styled.li`
   ${fontSize(14)}
   width: 100%;
   text-align: center;
-  padding: 12px;
+  padding: 14px;
   margin-bottom: 1px;
   cursor: pointer;
   ${shadow};

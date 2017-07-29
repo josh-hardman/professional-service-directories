@@ -22,24 +22,25 @@ const StyledLanding = styled.div`
 
 const IslandPosition = styled.div`
   position: absolute;
-  top: 0;
+  top: 50px;
   height: 75%;
   left: 0;
   right: 0;
   ${ displayFlex() }
   justify-content: center;
   align-items: center;
+  z-index: -1;
 `
 
 const LandingPage = () => (
   <StyledLanding>
+    <IslandPosition>
+      <LandingPageFilterContainer />
+    </IslandPosition>
     <Header
       header={'Dentto'}
       subHeader={'Discover your perfect Dentist.'}
     />
-    <IslandPosition>
-      <LandingPageFilterContainer />
-    </IslandPosition>
   </StyledLanding>
 )
 
