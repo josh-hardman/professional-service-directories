@@ -1,5 +1,6 @@
 /* global TweenMax, Power2 */
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { colors, fontSize, shadow } from 'src/constants'
 import MenuIcon from 'react-icons/lib/md/menu'
@@ -34,7 +35,7 @@ const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  transform: translate(0, 0);
+  opacity: 1;
 `
 
 const Item = styled.li`
@@ -49,12 +50,15 @@ const Item = styled.li`
   background: ${colors.white};
 
   &:hover {
-    color: red;
     background: ${colors.lightGray};
   }
 `
 
 class DropdownList extends Component {
+  static propTypes = {
+    onClickOutside: PropTypes.func
+  }
+
   componentDidEnter() {
     document.addEventListener('click', this.props.onClickOutside)
   }
@@ -63,21 +67,20 @@ class DropdownList extends Component {
   componentWillEnter (callback) {
     TweenMax.from(
       this.node,
-      1,
-      {
-        // autoAlpha: 0,
-        y: 100,
-        ease: Power2.easeOut,
+      .3, {
+        autoAlpha: 0,
+        ease: Power2.easeInOut,
         onComplete: callback
       }
     )
   }
 
   componentWillLeave (callback) {
-    TweenMax.to(this.node, 1, {
-      // autoAlpha: 0,
-      y: 100,
-      ease: Power2.easeOut,
+    TweenMax.to(
+      this.node,
+      .3, {
+      autoAlpha: 0,
+      ease: Power2.easeInOut,
       onComplete: callback
     })
     document.removeEventListener('click', this.props.onClickOutside)
@@ -85,12 +88,14 @@ class DropdownList extends Component {
 
   render() {
     return(
-      <List
+      <div
         ref={ node => this.node = node }
       >
-        <Item>Contact</Item>
-        <Item>About</Item>
-      </List>
+        <List>
+          <Item>Contact</Item>
+          <Item>About</Item>
+        </List>
+      </div>
     )
   }
 }
