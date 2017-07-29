@@ -6,7 +6,7 @@ import { graphql } from 'react-apollo'
 import styled from 'styled-components'
 import { colors, fontSize, displayFlex } from 'src/constants'
 // child components
-import SearchDropdown from 'src/components/SearchDropdown'
+import SearchDropdown from 'src/components/common/SearchDropdown'
 import SearchIcon from 'react-icons/lib/md/search'
 
 const StyledPageSearch = styled.div`

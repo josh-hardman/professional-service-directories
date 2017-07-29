@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import LandingPageSearch from 'src/components/LandingPageSearch'
+import LandingPageSearch from 'src/components/landingPage/LandingPageSearch'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'

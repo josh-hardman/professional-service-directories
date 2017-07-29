@@ -4,7 +4,7 @@ import LandingPageFilterContainer from 'src/containers/LandingPageFilterContaine
 import styled from 'styled-components'
 import { displayFlex } from 'src/constants.js'
 
-const StyledLanding = styled.div`
+const Background = styled.div`
 
   &:before {
   content: "";
@@ -32,11 +32,11 @@ const IslandPosition = styled.div`
 `
 
 const LandingPage = () => (
-  <StyledLanding>
+  <Background>
     <IslandPosition>
       <LandingPageFilterContainer />
     </IslandPosition>
-  </StyledLanding>
+  </Background>
 )
 
 export default LandingPage

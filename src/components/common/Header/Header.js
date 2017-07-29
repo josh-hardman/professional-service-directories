@@ -5,8 +5,8 @@ import Media from 'react-media'
 import styled from 'styled-components'
 import { colors, fontSize, breakpoints } from 'src/constants'
 
-import MobileNav from 'src/components/MobileNav.js'
-import DesktopNav from 'src/components/DesktopNav.js'
+import MobileNav from './MobileNav.js'
+import DesktopNav from './DesktopNav.js'
 
 const StyledHeader = styled.div`
   position: relative;

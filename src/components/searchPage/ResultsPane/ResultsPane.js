@@ -5,7 +5,7 @@ import { graphql } from 'react-apollo'
 import styled from 'styled-components'
 import { displayFlex, colors } from 'src/constants.js'
 // child components
-import ResultCard from 'src/components/ResultCard.js'
+import ResultCard from 'src/components/searchPage/ResultCard'
 
 const StyledResultsPane = styled.div`
   width: 100%;

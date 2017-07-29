@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TransitionGroup from 'react-addons-transition-group'
-import FirstChild from 'src/components/FirstChild'
+import FirstChild from 'src/components/common/FirstChild'
 import SearchMenu from './SearchMenu'
 // import Icon from 'common/components/Icon'
 // utils

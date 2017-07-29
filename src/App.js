@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from 'src/components/Header.js'
+import Header from 'src/components/common/Header'
 // apollo
 import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
 // redux
@@ -13,9 +13,8 @@ import {
   Route
 } from 'react-router-dom'
 // child components
-import LandingPage from './components/LandingPage.js'
-import SearchPage from './components/SearchPage.js'
-import About from './components/About'
+import LandingPage from './components/landingPage/Main'
+import SearchPage from './components/searchPage/Main'
 // styling
 import 'normalize.css'
 import './app.less'
@@ -54,7 +53,6 @@ class App extends Component {
               />
               <Route exact path='/' component={LandingPage}/>
               <Route path='/search' component={SearchPage}/>
-              <Route path='/about' component={About}/>
             </div>
           </Router>
         </ApolloProvider>

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { colors, fontSize, shadow } from 'src/constants'
 import MenuIcon from 'react-icons/lib/md/menu'
 import TransitionGroup from 'react-addons-transition-group'
-import FirstChild from 'src/components/FirstChild'
+import FirstChild from 'src/components/common/FirstChild'
 // utils
 import contains from 'src/utils/contains'
 

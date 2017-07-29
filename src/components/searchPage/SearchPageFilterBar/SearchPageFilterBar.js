@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
-import SearchDropdown from 'src/components/SearchDropdown'
+import SearchDropdown from 'src/components/common/SearchDropdown'
 import styled from 'styled-components'
 import { colors, shadow, displayFlex } from 'src/constants'
 
