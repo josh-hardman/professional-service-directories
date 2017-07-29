@@ -2,6 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { breakpoints } from 'src/constants'
 import Media from 'react-media'
+import styled from 'styled-components'
+import FilterIcon from 'react-icons/lib/md/filter-list'
+// import SearchDropdown from 'src/components/common/SearchDropdown'
+
+const FilterButton = styled.button`
+
+`
 
 const Filters = (
 //   {
@@ -16,27 +23,10 @@ const Filters = (
 //   update
 // }
 ) => (
-  <Media query={{ minWidth: breakpoints._600} }>
-    {matches => matches ? (
-      // <FlexContainer>
-      //   <FlexInner>
-      //     <FilterAside>
-      //       <SearchPageFilterBar
-      //         {...props}
-      //       />
-      //     </FilterAside>
-      //     <ResultsAside>
-      //       <ResultsPane
-      //         {...props}
-      //       />
-      //     </ResultsAside>
-      //   </FlexInner>
-      // </FlexContainer>
-      <h1>desktop filters</h1>
-    ) : (
-      <h1>mobile filters</h1>
-    )}
-  </Media>
+  <FilterButton>
+    <FilterIcon />
+    Filters
+  </FilterButton>
 )
 
 Filters.propTypes = {
