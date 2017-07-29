@@ -1,10 +1,7 @@
-import React from 'react'
-import LandingPageFilterContainer from 'src/containers/LandingPageFilterContainer'
-
 import styled from 'styled-components'
 import { displayFlex } from 'src/constants.js'
 
-const Background = styled.div`
+export const Background = styled.div`
 
   &:before {
   content: "";
@@ -19,7 +16,7 @@ const Background = styled.div`
 }
 `
 
-const IslandPosition = styled.div`
+export const IslandPosition = styled.div`
   position: absolute;
   top: 50px;
   height: 50%;
@@ -30,13 +27,3 @@ const IslandPosition = styled.div`
   align-items: center;
   z-index: -1;
 `
-
-const LandingPage = () => (
-  <Background>
-    <IslandPosition>
-      <LandingPageFilterContainer />
-    </IslandPosition>
-  </Background>
-)
-
-export default LandingPage

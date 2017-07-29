@@ -13,7 +13,7 @@ import {
   Route
 } from 'react-router-dom'
 // child components
-import LandingPage from './components/landingPage/Main'
+import LandingPageContainer from './containers/landingPageContainer'
 import SearchPage from './components/searchPage/Main'
 // styling
 import 'normalize.css'
@@ -51,7 +51,7 @@ class App extends Component {
                 header={'Dentto'}
                 subHeader={'Discover your perfect Dentist.'}
               />
-              <Route exact path='/' component={LandingPage}/>
+              <Route exact path='/' component={LandingPageContainer}/>
               <Route path='/search' component={SearchPage}/>
             </div>
           </Router>

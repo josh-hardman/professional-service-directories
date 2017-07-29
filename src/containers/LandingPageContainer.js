@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // child components
-import LandingPageSearch from 'src/components/landingPage/LandingPageSearch'
+import LandingPage from 'src/components/landingPage/LandingPage'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
@@ -25,13 +25,8 @@ class FilterContainer extends Component {
   }
 
   render() {
-    const { cityValue, update } = this.props
-
     return (
-      <LandingPageSearch
-        cityValue={cityValue}
-        update={update}
-      />
+      <LandingPage {...this.props}/>
     )
   }
 }
