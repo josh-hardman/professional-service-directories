@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from 'src/components/Header.js'
 // apollo
 import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
 // redux
@@ -47,6 +48,10 @@ class App extends Component {
         <ApolloProvider client={client}>
           <Router>
             <div>
+              <Header
+                header={'Dentto'}
+                subHeader={'Discover your perfect Dentist.'}
+              />
               <Route exact path='/' component={LandingPage}/>
               <Route path='/search' component={SearchPage}/>
               <Route path='/about' component={About}/>

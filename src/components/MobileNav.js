@@ -1,7 +1,12 @@
+/* global TweenMax, Power2 */
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { colors, fontSize, shadow } from 'src/constants'
 import MenuIcon from 'react-icons/lib/md/menu'
+import TransitionGroup from 'react-addons-transition-group'
+import FirstChild from 'src/components/FirstChild'
+// utils
+import contains from 'src/utils/contains'
 
 const Button = styled.button`
   position: absolute;
@@ -29,7 +34,7 @@ const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  z-index: -1;
+  transform: translate(0, 0);
 `
 
 const Item = styled.li`
@@ -49,14 +54,63 @@ const Item = styled.li`
   }
 `
 
+class DropdownList extends Component {
+  componentDidEnter() {
+    document.addEventListener('click', this.props.onClickOutside)
+  }
+
+  // animation hooks
+  componentWillEnter (callback) {
+    TweenMax.from(
+      this.node,
+      1,
+      {
+        // autoAlpha: 0,
+        y: 100,
+        ease: Power2.easeOut,
+        onComplete: callback
+      }
+    )
+  }
+
+  componentWillLeave (callback) {
+    TweenMax.to(this.node, 1, {
+      // autoAlpha: 0,
+      y: 100,
+      ease: Power2.easeOut,
+      onComplete: callback
+    })
+    document.removeEventListener('click', this.props.onClickOutside)
+  }
+
+  render() {
+    return(
+      <List
+        ref={ node => this.node = node }
+      >
+        <Item>Contact</Item>
+        <Item>About</Item>
+      </List>
+    )
+  }
+}
+
 class MobileNav extends Component {
   state = {
     open: false
   }
 
-  handleToggleOpen = () => this.setState({
-    open: this.state.open ? false : true
-  })
+  handleClickOutside = (e) => {
+    if (!contains(this.node, e.target)) {
+      this.setState({
+        open: false
+      })
+    }
+  }
+
+  handleToggleOpen = () => this.setState( prevState => ({
+    open: prevState
+  }))
 
   render() {
 
@@ -68,12 +122,13 @@ class MobileNav extends Component {
         >
           <MenuIcon />
         </Button>
-        { this.state.open &&
-          <List>
-            <Item>Contact</Item>
-            <Item>About</Item>
-          </List>
-        }
+        <TransitionGroup component={FirstChild}>
+          { this.state.open &&
+            <DropdownList
+              onClickOutside={this.handleClickOutside}
+            />
+          }
+        </TransitionGroup>
       </div>
     )
   }

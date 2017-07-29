@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from 'src/components/Header.js'
 import LandingPageFilterContainer from 'src/containers/LandingPageFilterContainer'
 
 import styled from 'styled-components'
@@ -23,7 +22,7 @@ const StyledLanding = styled.div`
 const IslandPosition = styled.div`
   position: absolute;
   top: 50px;
-  height: 75%;
+  height: 50%;
   left: 0;
   right: 0;
   ${ displayFlex() }
@@ -37,10 +36,6 @@ const LandingPage = () => (
     <IslandPosition>
       <LandingPageFilterContainer />
     </IslandPosition>
-    <Header
-      header={'Dentto'}
-      subHeader={'Discover your perfect Dentist.'}
-    />
   </StyledLanding>
 )
 
