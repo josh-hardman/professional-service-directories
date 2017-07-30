@@ -3,6 +3,7 @@ import { breakpoints } from 'src/constants'
 import Media from 'react-media'
 import DesktopFilters from 'src/components/searchPage/DesktopFilters'
 import MobileFilters from 'src/components/searchPage/MobileFilters'
+import SearchPageResultsContainer from 'src/containers/SearchPageResultsContainer'
 
 const SearchPage = (props) => (
   <div>
@@ -10,7 +11,10 @@ const SearchPage = (props) => (
       {matches => matches ? (
         <DesktopFilters {...props}/>
       ) : (
-        <MobileFilters {...props}/>
+        <div>
+          <MobileFilters {...props}/>
+          <SearchPageResultsContainer {...props}/>
+        </div>
       )}
     </Media>
   </div>

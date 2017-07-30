@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { shadow, displayFlex, fontSize } from 'src/constants'
 
 const Card = styled.div`
-  width: 48%;
+  width: 100%;
   padding: 14px;
-  margin: 1%;
+  margin-top: 8px;
   float: left;
   display: flex;
   justify-content: center;
