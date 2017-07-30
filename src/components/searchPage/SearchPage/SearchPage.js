@@ -1,22 +1,19 @@
 import React from 'react'
-import Filters from 'src/components/searchPage/Filters'
-import styled from 'styled-components'
-import { displayFlex } from 'src/constants'
-
-const SpacerBar = styled.div`
-  width: 100%;
-  height: 50px;
-  ${displayFlex()}
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px;
-`
+import { breakpoints } from 'src/constants'
+import Media from 'react-media'
+import DesktopFilters from 'src/components/searchPage/DesktopFilters'
+import MobileFilters from 'src/components/searchPage/MobileFilters'
 
 const SearchPage = (props) => (
-  <SpacerBar>
-    <span>5 Results</span>
-    <Filters {...props}/>
-  </SpacerBar>
+  <div>
+    <Media query={{ minWidth: breakpoints._600} }>
+      {matches => matches ? (
+        <DesktopFilters {...props}/>
+      ) : (
+        <MobileFilters {...props}/>
+      )}
+    </Media>
+  </div>
 )
 
 export default SearchPage

@@ -1,14 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { breakpoints } from 'src/constants'
-import Media from 'react-media'
-import styled from 'styled-components'
-import FilterIcon from 'react-icons/lib/md/filter-list'
+// import styled from 'styled-components'
+// import FilterIcon from 'react-icons/lib/md/filter-list'
+// import { colors, fontSize, displayFlex } from 'src/constants'
 // import SearchDropdown from 'src/components/common/SearchDropdown'
-
-const FilterButton = styled.button`
-
-`
 
 const Filters = (
 //   {
@@ -23,10 +18,10 @@ const Filters = (
 //   update
 // }
 ) => (
-  <FilterButton>
-    <FilterIcon />
-    Filters
-  </FilterButton>
+  <div>
+    <h1>Desktop Filters!</h1>
+  </div>
+
 )
 
 Filters.propTypes = {

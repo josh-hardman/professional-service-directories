@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import styled from 'styled-components'
-import { colors, fontSize, displayFlex } from 'src/constants'
+import {
+  colors,
+  fontSize,
+  displayFlex
+} from 'src/constants'
 // child components
 import SearchDropdown from 'src/components/common/SearchDropdown'
 import SearchIcon from 'react-icons/lib/md/search'
