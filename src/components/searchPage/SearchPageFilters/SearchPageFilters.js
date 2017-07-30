@@ -72,6 +72,11 @@ class SearchPageFilters extends Component {
                                             PropTypes.object
                                           ),
                       }),
+    practices:       PropTypes.shape({
+                        allDentists:      PropTypes.arrayOf(
+                                            PropTypes.object
+                                          )
+                      }),
     cityValue:        PropTypes.string,
     insuranceValue:   PropTypes.string,
     visitReasonValue: PropTypes.string,
@@ -84,10 +89,13 @@ class SearchPageFilters extends Component {
 
   render() {
     const {
-       filterData: {
-         allCities=[],
-         allInsurances=[],
-         allVisitReasons=[]
+      filterData: {
+        allCities=[],
+        allInsurances=[],
+        allVisitReasons=[]
+      },
+      practices: {
+        allDentists=[]
       },
       cityValue,
       insuranceValue,
@@ -98,7 +106,7 @@ class SearchPageFilters extends Component {
     return(
       <div>
         <SpacerBar>
-          <span>5 Results</span>
+          <span>{`${allDentists.length} Results`}</span>
           <FilterButton
             onClick={this.handleToggleOpen}
           >
