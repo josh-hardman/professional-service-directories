@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `
 
-class Filters extends Component {
+class SearchPageFilters extends Component {
 
   state = {
     open: true
@@ -102,7 +102,7 @@ class Filters extends Component {
           <FilterButton
             onClick={this.handleToggleOpen}
           >
-            <Icon />
+            <Icon/>
             <Text>Filters</Text>
           </FilterButton>
         </SpacerBar>
@@ -137,4 +137,4 @@ class Filters extends Component {
   }
 }
 
-export default Filters
+export default SearchPageFilters
