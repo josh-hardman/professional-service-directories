@@ -19,13 +19,18 @@ const averageReview = reviews => {
 const ResultList = ({ data: { allDentists=[] } }) => (
   <List>
     {
-      allDentists.map( (dentist, i) =>
-        <ResultCard
-          key={i}
-          name={dentist.name}
-          rating={averageReview(dentist.reviews)}
-        />
-      )
+      allDentists.length > 0 &&
+        allDentists.map( (dentist, i) =>
+          <ResultCard
+            key={i}
+            name={dentist.name}
+            rating={averageReview(dentist.reviews)}
+          />
+        )
+    }
+    {
+      allDentists.length == 0 &&
+        <span>No results found</span>
     }
   </List>
 )

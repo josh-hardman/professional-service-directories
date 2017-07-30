@@ -19,7 +19,7 @@ export const Background = styled.div`
 export const IslandPosition = styled.div`
   position: absolute;
   top: 50px;
-  height: 50%;
+  height: 80%;
   left: 0;
   right: 0;
   ${ displayFlex() }

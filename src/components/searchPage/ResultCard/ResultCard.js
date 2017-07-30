@@ -64,10 +64,9 @@ const Card = styled.li`
 //
 // `
 
-const ResultCard = ({ name, rating }) => (
+const ResultCard = ({ name }) => (
   <Card>
-    <h4>{name}</h4>
-    <h4>{rating}</h4>
+    <span>{name}</span>
     {/* <InfoSection>
       <Image />
       <Info>
