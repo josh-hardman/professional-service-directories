@@ -23,7 +23,6 @@ const FilterButton = styled.button`
   align-items: center;
   padding-left: 6px;
   padding-right: 6px;
-  ${fontSize(14)}
 
   &:hover {
     border-color: ${colors.highlightBlue};
@@ -36,12 +35,12 @@ const FilterButton = styled.button`
 
 const Icon = styled(FilterIcon)`
   display: inline-block;
-  ${fontSize(20)}
+  ${fontSize(24)}
   padding-right: 4px;
 `
 
 const Text = styled.span`
-  ${fontSize(14)}
+  ${fontSize(16)}
   vertical-align: middle;
 `
 

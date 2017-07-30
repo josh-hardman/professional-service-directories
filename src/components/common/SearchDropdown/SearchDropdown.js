@@ -225,7 +225,8 @@ class SearchDropdown extends Component {
           className={
             classnames({
               'sys-field': true,
-              'sys-field--large': true
+              // 'sys-field--large': true
+              'sys-field--small': true
             })
           }
           disabled={disabled}
