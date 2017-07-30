@@ -43,7 +43,11 @@ export default graphql(gql`
       }
     }
   }
-`, {
+`,
+{ 
+  name: "practices"
+},
+{
   options: (props) => ({
     variables: {
       insuranceValue: props.insuranceValue

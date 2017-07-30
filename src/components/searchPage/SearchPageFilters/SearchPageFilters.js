@@ -61,7 +61,7 @@ class SearchPageFilters extends Component {
   }
 
   static propTypes = {
-    data:             PropTypes.shape({
+    filterData:       PropTypes.shape({
                         allCities:        PropTypes.arrayOf(
                                             PropTypes.object
                                           ),
@@ -84,7 +84,7 @@ class SearchPageFilters extends Component {
 
   render() {
     const {
-       data: {
+       filterData: {
          allCities=[],
          allInsurances=[],
          allVisitReasons=[]

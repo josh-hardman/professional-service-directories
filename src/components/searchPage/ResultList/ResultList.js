@@ -16,7 +16,7 @@ const averageReview = reviews => {
   return reviews.length ? total/reviews.length : null
 }
 
-const ResultList = ({ data: { allDentists=[] } }) => (
+const ResultList = ({ practices: { allDentists=[] } }) => (
   <List>
     {
       allDentists.length > 0 &&
@@ -36,7 +36,7 @@ const ResultList = ({ data: { allDentists=[] } }) => (
 )
 
 ResultList.propTypes = {
-  data:         PropTypes.object
+  practices:  PropTypes.object
 }
 
 export default ResultList

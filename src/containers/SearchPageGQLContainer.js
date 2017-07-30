@@ -22,4 +22,6 @@ export default graphql(gql`
       id
     }
   }
-`)(SearchPageGQLContainer)
+`,
+{ name: "filterData" }
+)(SearchPageGQLContainer)
