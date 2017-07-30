@@ -46,9 +46,9 @@ const Text = styled.span`
 `
 
 const Wrapper = styled.div`
-  background: ${colors.darkGray};
+  background: ${colors.lightGray};
   padding: 10px;
-  height: 200px;
+  height: 160px;
   ${displayFlex()}
   justify-content: space-around;
   align-items: center;
@@ -58,7 +58,7 @@ const Wrapper = styled.div`
 class Filters extends Component {
 
   state = {
-    open: false
+    open: true
   }
 
   static propTypes = {
@@ -72,7 +72,7 @@ class Filters extends Component {
                         allVisitReasons:  PropTypes.arrayOf(
                                             PropTypes.object
                                           ),
-                      }).required,
+                      }),
     cityValue:        PropTypes.string,
     insuranceValue:   PropTypes.string,
     visitReasonValue: PropTypes.string,
@@ -80,7 +80,7 @@ class Filters extends Component {
   }
 
   handleToggleOpen = () => this.setState( prevState => ({
-    open: prevState
+    open: !prevState.open
   }))
 
   render() {
@@ -107,29 +107,32 @@ class Filters extends Component {
             <Text>Filters</Text>
           </FilterButton>
         </SpacerBar>
-        <Wrapper>
-          <SearchDropdown
-            placeholder='City Name'
-            filterKey='city'
-            value={cityValue}
-            onChange={update}
-            options={allCities}
-          />
-          <SearchDropdown
-            placeholder='Insurance Provider'
-            filterKey='insurance'
-            value={insuranceValue}
-            onChange={update}
-            options={allInsurances}
-          />
-          <SearchDropdown
-            placeholder='Visit Reason'
-            filterKey='reason'
-            value={visitReasonValue}
-            onChange={update}
-            options={allVisitReasons}
-          />
-        </Wrapper>
+        {
+          this.state.open &&
+            <Wrapper>
+              <SearchDropdown
+                placeholder='City Name'
+                filterKey='city'
+                value={cityValue}
+                onChange={update}
+                options={allCities}
+              />
+              <SearchDropdown
+                placeholder='Insurance Provider'
+                filterKey='insurance'
+                value={insuranceValue}
+                onChange={update}
+                options={allInsurances}
+              />
+              <SearchDropdown
+                placeholder='Visit Reason'
+                filterKey='reason'
+                value={visitReasonValue}
+                onChange={update}
+                options={allVisitReasons}
+              />
+            </Wrapper>
+        }
       </div>
     )
   }
