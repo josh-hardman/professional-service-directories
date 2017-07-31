@@ -65,7 +65,7 @@ class SearchPageFilters extends Component {
                         allCities:        PropTypes.arrayOf(
                                             PropTypes.object
                                           ),
-                        allInsurances:    PropTypes.arrayOf(
+                        allPracticeTypes:    PropTypes.arrayOf(
                                             PropTypes.object
                                           ),
                         allVisitReasons:  PropTypes.arrayOf(
@@ -91,7 +91,7 @@ class SearchPageFilters extends Component {
     const {
       filterData: {
         allCities=[],
-        allInsurances=[],
+        allPracticeTypes=[],
         allVisitReasons=[]
       },
       practices: {
@@ -129,7 +129,7 @@ class SearchPageFilters extends Component {
                 filterKey='insurance'
                 value={insuranceValue}
                 onChange={update}
-                options={allInsurances}
+                options={allPracticeTypes}
               />
               <SearchDropdown
                 placeholder='Visit Reason'

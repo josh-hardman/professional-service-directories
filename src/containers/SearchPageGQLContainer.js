@@ -15,7 +15,7 @@ export default compose(
           name,
           id
         },
-        allInsurances {
+        allPracticeTypes {
           name,
           id
         },
@@ -30,16 +30,16 @@ export default compose(
     }
   ),
   graphql(gql`
+    query( $insuranceValue: ID! )
     {
-      # query( $insuranceValue: ID! )
       allPractices
-      # (
-      #   filter: {
-      #     insurances_some: {
-      #       id: $insuranceValue
-      #     }
-      #   }
-      # )
+      (
+        filter: {
+          practiceType: {
+            id: $insuranceValue
+          }
+        }
+      )
       {
         name,
         id,

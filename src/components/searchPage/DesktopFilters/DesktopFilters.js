@@ -9,7 +9,7 @@ const Filters = (
 //   {
 //    data: {
 //      allCities=[],
-//      allInsurances=[],
+//      allPracticeTypes=[],
 //      allVisitReasons=[]
 //   },
 //   cityValue,
@@ -29,7 +29,7 @@ Filters.propTypes = {
                       allCities:        PropTypes.arrayOf(
                                           PropTypes.object
                                         ),
-                      allInsurances:    PropTypes.arrayOf(
+                      allPracticeTypes:    PropTypes.arrayOf(
                                           PropTypes.object
                                         ),
                       allVisitReasons:  PropTypes.arrayOf(
