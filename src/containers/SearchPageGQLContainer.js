@@ -50,6 +50,9 @@ export default compose(
           name,
           rating
         }
+        file {
+          url
+        }
       }
     }
   `,
