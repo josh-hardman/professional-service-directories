@@ -38,12 +38,12 @@ class ResultsPane extends Component {
   }
 
   render() {
-    const { data: { allDentists=[] } } = this.props
+    const { data: { allPractices=[] } } = this.props
 
     return(
       <StyledResultsPane>
         <FlexContainer>
-            { allDentists && allDentists.map( (dentist, i) => (
+            { allPractices && allPractices.map( (dentist, i) => (
               <ResultCard
                 key={i}
                 name={dentist.name}
@@ -61,7 +61,7 @@ export default graphql(gql`
   query
   {
     # ( $insuranceValue: ID! )
-    allDentists
+    allPractices
     # (
     #   filter: {
     #     insurances_some: {

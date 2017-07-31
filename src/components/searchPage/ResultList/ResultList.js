@@ -16,11 +16,11 @@ const averageReview = reviews => {
   return reviews.length ? total/reviews.length : null
 }
 
-const ResultList = ({ practices: { allDentists=[] } }) => (
+const ResultList = ({ practices: { allPractices=[] } }) => (
   <List>
     {
-      allDentists.length > 0 &&
-        allDentists.map( (dentist, i) =>
+      allPractices.length > 0 &&
+        allPractices.map( (dentist, i) =>
           <ResultCard
             key={i}
             name={dentist.name}
@@ -30,7 +30,7 @@ const ResultList = ({ practices: { allDentists=[] } }) => (
         )
     }
     {
-      allDentists.length == 0 &&
+      allPractices.length == 0 &&
         <span>No results found</span>
     }
   </List>

@@ -73,7 +73,7 @@ class SearchPageFilters extends Component {
                                           ),
                       }),
     practices:       PropTypes.shape({
-                        allDentists:      PropTypes.arrayOf(
+                        allPractices:      PropTypes.arrayOf(
                                             PropTypes.object
                                           )
                       }),
@@ -95,7 +95,7 @@ class SearchPageFilters extends Component {
         allVisitReasons=[]
       },
       practices: {
-        allDentists=[]
+        allPractices=[]
       },
       cityValue,
       insuranceValue,
@@ -106,7 +106,7 @@ class SearchPageFilters extends Component {
     return(
       <div>
         <SpacerBar>
-          <span>{`${allDentists.length} Results`}</span>
+          <span>{`${allPractices.length} Results`}</span>
           <FilterButton
             onClick={this.handleToggleOpen}
           >
