@@ -78,7 +78,7 @@ class SearchPageFilters extends Component {
                                           )
                       }),
     cityValue:        PropTypes.string,
-    insuranceValue:   PropTypes.string,
+    practiceTypeValue:   PropTypes.string,
     visitReasonValue: PropTypes.string,
     update:           PropTypes.func
   }
@@ -98,7 +98,7 @@ class SearchPageFilters extends Component {
         allPractices=[]
       },
       cityValue,
-      insuranceValue,
+      practiceTypeValue,
       visitReasonValue,
       update
     } = this.props
@@ -125,9 +125,9 @@ class SearchPageFilters extends Component {
                 options={allCities}
               />
               <SearchDropdown
-                placeholder='Insurance Provider'
-                filterKey='insurance'
-                value={insuranceValue}
+                placeholder='Practice Type'
+                filterKey='practiceType'
+                value={practiceTypeValue}
                 onChange={update}
                 options={allPracticeTypes}
               />

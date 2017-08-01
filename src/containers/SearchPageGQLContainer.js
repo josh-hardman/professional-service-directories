@@ -30,14 +30,26 @@ export default compose(
     }
   ),
   graphql(gql`
-    query( $insuranceValue: ID! )
+    query(
+      $practiceTypeValue: ID!,
+      $cityValue: ID!
+    )
     {
       allPractices
       (
         filter: {
-          practiceType: {
-            id: $insuranceValue
-          }
+          OR: [
+            {
+              city: {
+                id: $cityValue
+              }
+            },
+            {
+              practiceType: {
+                id: $practiceTypeValue
+              }
+            }
+          ]
         }
       )
       {
@@ -51,7 +63,7 @@ export default compose(
           rating
         }
         file {
-          url
+          secret
         }
       }
     }
@@ -62,7 +74,8 @@ export default compose(
   {
     options: (props) => ({
       variables: {
-        insuranceValue: props.insuranceValue
+        practiceTypeValue: props.practiceTypeValue,
+        cityValue: props.cityValue
       }
     })
   })

@@ -8,7 +8,7 @@ import { updateFilter } from 'src/redux/actions/filterActions'
 
 const mapStateToProps = state => ({
   cityValue:          state.filters.city ? state.filters.city : '',
-  insuranceValue:     state.filters.insurance ? state.filters.insurance : '',
+  practiceTypeValue:     state.filters.practiceType ? state.filters.practiceType : '',
   visitReasonValue:   state.filters.reason ? state.filters.reason : ''
 })
 
@@ -23,7 +23,7 @@ class SearchPageFilterContainer extends Component {
   static propTypes = {
     update:             PropTypes.func,
     cityValue:          PropTypes.string,
-    insuranceValue:     PropTypes.string,
+    practiceTypeValue:     PropTypes.string,
     visitReasonValue:   PropTypes.string
   }
 

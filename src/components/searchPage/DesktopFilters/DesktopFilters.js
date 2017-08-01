@@ -13,7 +13,7 @@ const Filters = (
 //      allVisitReasons=[]
 //   },
 //   cityValue,
-//   insuranceValue,
+//   practiceTypeValue,
 //   visitReasonValue,
 //   update
 // }
@@ -37,7 +37,7 @@ Filters.propTypes = {
                                         ),
                     }).required,
   cityValue:        PropTypes.string,
-  insuranceValue:   PropTypes.string,
+  practiceTypeValue:   PropTypes.string,
   visitReasonValue: PropTypes.string,
   update:           PropTypes.func
 }

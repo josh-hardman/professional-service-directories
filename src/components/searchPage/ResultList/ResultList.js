@@ -25,7 +25,7 @@ const ResultList = ({ practices: { allPractices=[] } }) => (
             key={i}
             name={dentist.name}
             rating={averageReview(dentist.reviews)}
-            image={dentist.file ? dentist.file.url : ''}
+            image={dentist.file ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${dentist.file.secret}/500x` : ''}
           />
         )
     }

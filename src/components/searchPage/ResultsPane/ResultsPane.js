@@ -23,7 +23,7 @@ const FlexContainer = styled.div`
 class ResultsPane extends Component {
   static propTypes = {
     location:     PropTypes.string,
-    insurance:    PropTypes.string,
+    practiceType:    PropTypes.string,
     reason:       PropTypes.string,
     update:       PropTypes.func,
     data:         PropTypes.object
@@ -60,12 +60,12 @@ class ResultsPane extends Component {
 export default graphql(gql`
   query
   {
-    # ( $insuranceValue: ID! )
+    # ( $practiceTypeValue: ID! )
     allPractices
     # (
     #   filter: {
-    #     insurances_some: {
-    #       id: $insuranceValue
+    #     practiceTypes_some: {
+    #       id: $practiceTypeValue
     #     }
     #   }
     # )
@@ -84,7 +84,7 @@ export default graphql(gql`
 `, {
   options: (props) => ({
     variables: {
-      insuranceValue: props.insuranceValue
+      practiceTypeValue: props.practiceTypeValue
     }
   })
 })(ResultsPane)
