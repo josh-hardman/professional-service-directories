@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 // redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
-import { fetchAllCities } from 'src/redux/actions/filterOptionsActions'
+import { fetchGQLData } from 'src/redux/actions/filterOptionsActions'
 // child components
 import LandingPageSearch from 'src/components/LandingPageSearch'
+// queries
+import { cities,  } from 'src/queries/filterOptions'
 
 const mapStateToProps = state => ({
   city: state.filterValues.city ? state.filterValues.city : '',
@@ -13,7 +15,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchCities: () => dispatch(fetchAllCities()),
+    fetchCities: () => dispatch(fetchGQLData(cities)),
     update: ({ filterKey, value }) => dispatch(updateFilter({
       filterKey,
       value

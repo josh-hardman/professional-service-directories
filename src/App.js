@@ -11,7 +11,8 @@ import {
 } from 'react-router-dom'
 // child components
 import Header from 'src/components/common/Header'
-import LandingPage from './components/landingPage'
+import LandingPage from './components/LandingPage'
+import SearchPage from './components/SearchPage'
 // import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
 // styling
 import 'normalize.css'
@@ -38,7 +39,7 @@ class App extends Component {
               subHeader={'Discover your perfect Dentist.'}
             />
             <Route exact path='/' component={LandingPage}/>
-            {/* <Route path='/search' component={SearchPageContainerOptions}/> */}
+            <Route path='/search' component={SearchPage}/>
           </div>
         </Router>
       </Provider>
