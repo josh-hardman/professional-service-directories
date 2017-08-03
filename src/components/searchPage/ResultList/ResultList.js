@@ -16,7 +16,11 @@ const averageReview = reviews => {
   return reviews.length ? total/reviews.length : null
 }
 
-const ResultList = ({ practices: { allPractices=[] } }) => (
+const ResultList = ({
+  practices: {
+    allPractices=[]
+  }
+}) => (
   <List>
     {
       allPractices.length > 0 &&

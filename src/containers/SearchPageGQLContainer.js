@@ -31,25 +31,23 @@ export default compose(
   ),
   graphql(gql`
     query(
+      $cityValue: ID!,
       $practiceTypeValue: ID!,
-      $cityValue: ID!
+      $visitReasonValue: ID!
     )
     {
       allPractices
       (
         filter: {
-          OR: [
-            {
-              city: {
-                id: $cityValue
-              }
-            },
-            {
-              practiceType: {
-                id: $practiceTypeValue
-              }
-            }
-          ]
+          city: {
+            id: $cityValue
+          }
+          practiceType: {
+            id: $practiceTypeValue
+          }
+          visitReason: {
+            id: $visitReasonValue
+          }
         }
       )
       {
@@ -72,10 +70,10 @@ export default compose(
     name: "practices"
   },
   {
-    options: (props) => ({
+    options: ({practiceTypeValue, cityValue }) => ({
       variables: {
-        practiceTypeValue: props.practiceTypeValue,
-        cityValue: props.cityValue
+        practiceTypeValue,
+        cityValue
       }
     })
   })

@@ -87,13 +87,20 @@ class SearchPageFilters extends Component {
     open: !prevState.open
   }))
 
+  static contextTypes = {
+    filterData: PropTypes.object
+  }
+
   render() {
     const {
       filterData: {
         allCities=[],
         allPracticeTypes=[],
         allVisitReasons=[]
-      },
+      }
+    } = this.context
+
+    const {
       practices: {
         allPractices=[]
       },

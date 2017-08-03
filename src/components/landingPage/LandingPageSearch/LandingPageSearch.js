@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import gql from 'graphql-tag'
-import { graphql } from 'react-apollo'
 import styled from 'styled-components'
 import {
   colors,
@@ -57,7 +55,7 @@ const SearchButton = styled.button`
   align-items: center;
 `
 
-const LandingPageSearch = ({ cityValue, update, data: { allCities=[] } }) => (
+const LandingPageSearch = ({ cityValue, update }) => (
   <StyledPageSearch>
     <Header>Find Your Dentist</Header>
     <Info>Search our curated list of highly reputable dentists near you</Info>
@@ -68,7 +66,7 @@ const LandingPageSearch = ({ cityValue, update, data: { allCities=[] } }) => (
           filterKey='city'
           value={cityValue}
           onChange={update}
-          options={allCities}
+          options={[]}
         />
         { cityValue &&
           <Link to='/search'>
@@ -92,11 +90,4 @@ LandingPageSearch.propTypes = {
               })
 }
 
-export default graphql(gql`
-  query {
-    allCities {
-      name,
-      id
-    }
-  }
-`)(LandingPageSearch)
+export default LandingPageSearch

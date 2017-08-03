@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
   }))
 })
 
-class SearchPageFilterContainer extends Component {
+class SearchPageFilterOptions extends Component {
   static propTypes = {
     update:             PropTypes.func,
     cityValue:          PropTypes.string,
@@ -40,4 +40,4 @@ class SearchPageFilterContainer extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchPageFilterContainer)
+)(SearchPageFilterOptions)
