@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPageSearch from 'src/components/landingPageSearch'
+import LandingPageContainer from 'src/containers/LandingPageContainer'
 import styled from 'styled-components'
 import { displayFlex } from 'src/constants.js'
 
@@ -33,7 +33,7 @@ const IslandPosition = styled.div`
 const LandingPage = () => (
   <Background>
     <IslandPosition>
-      <LandingPageSearch />
+      <LandingPageContainer />
     </IslandPosition>
   </Background>
 )

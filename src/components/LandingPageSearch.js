@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// redux
-import { connect } from 'react-redux'
-import { updateFilter } from 'src/redux/actions/filterActions'
-import { fetchAllCities } from 'src/redux/actions/filterOptionsActions'
 // router
 import { Link } from 'react-router-dom'
 // styles
@@ -58,19 +54,6 @@ const SearchButton = styled.button`
   align-items: center;
 `
 
-const mapStateToProps = state => ({
-  city: state.filterValues.city ? state.filterValues.city : '',
-  allCities: state.filterOptions.allCities ? state.filterOptions.allCities : []
-})
-
-const mapDispatchToProps = dispatch => ({
-    fetchCities: () => dispatch(fetchAllCities()),
-    update: ({ filterKey, value }) => dispatch(updateFilter({
-      filterKey,
-      value
-    }))
-})
-
 class LandingPageSearch extends Component {
   static propTypes = {
     city:         PropTypes.string,
@@ -79,11 +62,6 @@ class LandingPageSearch extends Component {
     allCities:    PropTypes.arrayOf(
                     PropTypes.object
                   )
-  }
-
-  componentDidMount() {
-    this.props.allCities.length == 0 &&
-      this.props.fetchCities()
   }
 
   render() {
@@ -116,7 +94,4 @@ class LandingPageSearch extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LandingPageSearch)
+export default LandingPageSearch

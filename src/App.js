@@ -12,7 +12,7 @@ import {
 // child components
 import Header from 'src/components/common/Header'
 import LandingPage from './components/landingPage'
-import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
+// import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
 // styling
 import 'normalize.css'
 import './app.less'
@@ -38,7 +38,7 @@ class App extends Component {
               subHeader={'Discover your perfect Dentist.'}
             />
             <Route exact path='/' component={LandingPage}/>
-            <Route path='/search' component={SearchPageContainerOptions}/>
+            {/* <Route path='/search' component={SearchPageContainerOptions}/> */}
           </div>
         </Router>
       </Provider>
