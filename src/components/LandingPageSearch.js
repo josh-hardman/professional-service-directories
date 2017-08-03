@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+// redux
 import { connect } from 'react-redux'
 import { updateFilter } from 'src/redux/actions/filterActions'
-import styled from 'styled-components'
 import { fetchAllCities } from 'src/redux/actions/filterOptionsActions'
+// router
+import { Link } from 'react-router-dom'
+// styles
+import styled from 'styled-components'
 import { colors, fontSize, displayFlex } from 'src/constants'
 // child components
 import SearchDropdown from 'src/components/common/SearchDropdown'
@@ -68,7 +71,6 @@ const mapDispatchToProps = dispatch => ({
     }))
 })
 
-
 class LandingPageSearch extends Component {
   static propTypes = {
     city:         PropTypes.string,
@@ -80,7 +82,8 @@ class LandingPageSearch extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchCities()
+    this.props.allCities.length == 0 &&
+      this.props.fetchCities()
   }
 
   render() {

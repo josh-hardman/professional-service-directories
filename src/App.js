@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from 'src/components/common/Header'
 // redux
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -11,6 +10,7 @@ import {
   Route
 } from 'react-router-dom'
 // child components
+import Header from 'src/components/common/Header'
 import LandingPage from './components/landingPage'
 import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
 // styling
@@ -31,16 +31,16 @@ class App extends Component {
 
     return(
       <Provider store={configureStore()}>
-          <Router>
-            <div>
-              <Header
-                header={'Dentto'}
-                subHeader={'Discover your perfect Dentist.'}
-              />
-              <Route exact path='/' component={LandingPage}/>
-              <Route path='/search' component={SearchPageContainerOptions}/>
-            </div>
-          </Router>
+        <Router>
+          <div>
+            <Header
+              header={'Dentto'}
+              subHeader={'Discover your perfect Dentist.'}
+            />
+            <Route exact path='/' component={LandingPage}/>
+            <Route path='/search' component={SearchPageContainerOptions}/>
+          </div>
+        </Router>
       </Provider>
     )
   }
