@@ -8,6 +8,8 @@ import {
 } from 'src/redux/actions/filterOptionsActions'
 // queries
 import { searchPageFiltersOptions } from 'src/queries/filterOptions'
+// components
+import SearchPageFilters from 'src/components/SearchPageFilters'
 
 const mapStateToProps = ({
   filterValues: {
@@ -42,7 +44,6 @@ class SearchPageContainer extends Component {
     city:                 PropTypes.string,
     practiceType:         PropTypes.string,
     insurance:            PropTypes.string,
-    update:               PropTypes.func,
     fetchCities:          PropTypes.func,
     fetchFilterOptions:   PropTypes.func,
     allCities:            PropTypes.arrayOf(
@@ -53,7 +54,8 @@ class SearchPageContainer extends Component {
                           ),
     allInsurances:        PropTypes.arrayOf(
                             PropTypes.object
-                          )
+                          ),
+    update:               PropTypes.func,
   }
 
   componentDidMount() {
@@ -62,10 +64,33 @@ class SearchPageContainer extends Component {
         fetchFilterOptions()
   }
 
+  static propTypes = {
+    filterValues: PropTypes.object,
+    filterOptions: PropTypes.object
+  }
+
   render() {
 
+    const {
+      city=[],
+      practiceType=[],
+      insurance=[],
+      allCities,
+      allPracticeTypes,
+      allInsurances,
+      update
+    } = this.props
+
     return (
-      <h1>Search Page Container</h1>
+      <SearchPageFilters
+        city={city}
+        practiceType={practiceType}
+        insurance={insurance}
+        allCities={allCities}
+        allPracticeTypes={allPracticeTypes}
+        allInsurances={allInsurances}
+        update={update}
+      />
     )
   }
 }

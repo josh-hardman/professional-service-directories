@@ -61,59 +61,41 @@ class SearchPageFilters extends Component {
   }
 
   static propTypes = {
-    filterData:       PropTypes.shape({
-                        allCities:        PropTypes.arrayOf(
-                                            PropTypes.object
-                                          ),
-                        allPracticeTypes:    PropTypes.arrayOf(
-                                            PropTypes.object
-                                          ),
-                        allVisitReasons:  PropTypes.arrayOf(
-                                            PropTypes.object
-                                          ),
-                      }),
-    practices:       PropTypes.shape({
-                        allPractices:      PropTypes.arrayOf(
-                                            PropTypes.object
-                                          )
-                      }),
-    cityValue:        PropTypes.string,
-    practiceTypeValue:   PropTypes.string,
-    visitReasonValue: PropTypes.string,
-    update:           PropTypes.func
+    city:                 PropTypes.string,
+    practiceType:         PropTypes.string,
+    insurance:            PropTypes.string,
+    allCities:            PropTypes.arrayOf(
+                            PropTypes.object
+                          ),
+    allPracticeTypes:     PropTypes.arrayOf(
+                            PropTypes.object
+                          ),
+    allInsurances:        PropTypes.arrayOf(
+                            PropTypes.object
+                          ),
+    update:               PropTypes.func,
   }
 
   handleToggleOpen = () => this.setState( prevState => ({
     open: !prevState.open
   }))
 
-  static contextTypes = {
-    filterData: PropTypes.object
-  }
-
   render() {
-    const {
-      filterData: {
-        allCities=[],
-        allPracticeTypes=[],
-        allVisitReasons=[]
-      }
-    } = this.context
 
     const {
-      practices: {
-        allPractices=[]
-      },
-      cityValue,
-      practiceTypeValue,
-      visitReasonValue,
+      city,
+      practiceType,
+      insurance,
+      allCities,
+      allPracticeTypes,
+      allInsurances,
       update
     } = this.props
 
     return(
       <div>
         <SpacerBar>
-          <span>{`${allPractices.length} Results`}</span>
+          {/* <span>{`${allPractices.length} Results`}</span> */}
           <FilterButton
             onClick={this.handleToggleOpen}
           >
@@ -127,23 +109,23 @@ class SearchPageFilters extends Component {
               <SearchDropdown
                 placeholder='City Name'
                 filterKey='city'
-                value={cityValue}
+                value={city}
                 onChange={update}
                 options={allCities}
               />
               <SearchDropdown
                 placeholder='Practice Type'
                 filterKey='practiceType'
-                value={practiceTypeValue}
+                value={practiceType}
                 onChange={update}
                 options={allPracticeTypes}
               />
               <SearchDropdown
-                placeholder='Visit Reason'
-                filterKey='reason'
-                value={visitReasonValue}
+                placeholder='Insurance Provider'
+                filterKey='insurance'
+                value={insurance}
                 onChange={update}
-                options={allVisitReasons}
+                options={allInsurances}
               />
             </Wrapper>
         }
