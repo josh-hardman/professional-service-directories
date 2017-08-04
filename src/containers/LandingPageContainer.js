@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter } from 'src/redux/actions/filterActions'
+import { updateFilter } from 'src/redux/actions/filterValuesActions'
 import { fetchGQLData } from 'src/redux/actions/filterOptionsActions'
 // child components
 import LandingPageSearch from 'src/components/LandingPageSearch'
 // queries
-import { cities,  } from 'src/queries/filterOptions'
+import { cities } from 'src/queries/filterOptions'
 
 const mapStateToProps = state => ({
   city: state.filterValues.city ? state.filterValues.city : '',

@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // redux
 import { connect } from 'react-redux'
-import { updateFilter } from 'src/redux/actions/filterActions'
+import { updateFilter } from 'src/redux/actions/filterValuesActions'
 import {
   fetchGQLData
 } from 'src/redux/actions/filterOptionsActions'
 // queries
-import { searchPageFiltersOptions } from 'src/queries/filterOptions'
+import { searchPageFiltersOptions,  } from 'src/queries/filterOptions'
 // components
 import SearchPageFilters from 'src/components/SearchPageFilters'
 
@@ -31,15 +31,22 @@ const mapStateToProps = ({
   allInsurances: allInsurances ? allInsurances : []
 })
 
-const mapDispatchToProps = dispatch => ({
-    fetchFilterOptions: () => dispatch(fetchGQLData(searchPageFiltersOptions)),
-    update: ({ filterKey, value }) => dispatch(updateFilter({
-      filterKey,
-      value
-    }))
-})
+const mapDispatchToProps = dispatch => {
 
-class SearchPageContainer extends Component {
+  return {
+    fetchFilterOptions: () => dispatch(
+      fetchGQLData(searchPageFiltersOptions)
+    ),
+    update: ({ filterKey, value }) => dispatch(
+      updateFilter({
+        filterKey,
+        value
+      })
+    )
+  }
+}
+
+class SearchPageFilterContainer extends Component {
   static propTypes = {
     city:                 PropTypes.string,
     practiceType:         PropTypes.string,
@@ -56,17 +63,20 @@ class SearchPageContainer extends Component {
                             PropTypes.object
                           ),
     update:               PropTypes.func,
+    numResults:           PropTypes.number
   }
 
   componentDidMount() {
-    const { allCities, allPracticeTypes, allInsurances, fetchFilterOptions } = this.props
-      !allCities.length && !allPracticeTypes.length && !allInsurances.length &&
-        fetchFilterOptions()
-  }
+    const {
+      allCities,
+      allPracticeTypes,
+      allInsurances,
+      fetchFilterOptions
+    } = this.props
 
-  static propTypes = {
-    filterValues: PropTypes.object,
-    filterOptions: PropTypes.object
+    !allCities.length && !allPracticeTypes.length && !allInsurances.length &&
+      fetchFilterOptions()
+
   }
 
   render() {
@@ -78,7 +88,8 @@ class SearchPageContainer extends Component {
       allCities,
       allPracticeTypes,
       allInsurances,
-      update
+      update,
+      numResults=0
     } = this.props
 
     return (
@@ -90,6 +101,7 @@ class SearchPageContainer extends Component {
         allPracticeTypes={allPracticeTypes}
         allInsurances={allInsurances}
         update={update}
+        numResults={numResults}
       />
     )
   }
@@ -98,4 +110,4 @@ class SearchPageContainer extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchPageContainer)
+)(SearchPageFilterContainer)

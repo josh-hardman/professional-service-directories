@@ -3,7 +3,7 @@ import * as ActionTypes from 'src/redux/actionTypes'
 const api = 'https://api.graph.cool/simple/v1/cj590hy2dfdtl0105kwjxsfpv'
 
 const receiveGQLData = data => ({
-  type: ActionTypes.RECEIVE_GQL_DATA,
+  type: ActionTypes.RECEIVE_FILTER_OPTIONS,
   data: data.data
 })
 

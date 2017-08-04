@@ -1,5 +1,6 @@
 import React from 'react'
-import SearchPageContainer from 'src/containers/SearchPageContainer'
+import SearchPageFilterContainer from 'src/containers/SearchPageFilterContainer'
+import SearchPageResultsContainer from 'src/containers/SearchPageResultsContainer'
 // import SearchPageFilters from 'src/components/searchPage/SearchPageFilters'
 // import ResultList from 'src/components/searchPage/ResultList'
 
@@ -28,9 +29,8 @@ export const ResultsAside = styled.div`
 
 const SearchPage = () => (
   <div>
-    <SearchPageContainer />
-    {/* <SearchPageFilters {...props}/>
-    <ResultList {...props}/> */}
+    <SearchPageFilterContainer />
+    <SearchPageResultsContainer />
   </div>
 )
 
