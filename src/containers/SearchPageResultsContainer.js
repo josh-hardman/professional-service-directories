@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGQLData } from 'src/redux/actions/resultsActions'
 // components
-// import SearchPageFilters from 'src/components/SearchPageFilters'
+import ResultList from 'src/components/ResultList'
 
 const mapStateToProps = ({
   results: {
@@ -61,11 +61,9 @@ class SearchPageResultsContainer extends Component {
     const { results } = this.props
 
     return (
-      <ul>
-        {results.map( (result, i) => (
-          <li key={i}>{result.name}</li>
-        ))}
-      </ul>
+      <ResultList
+        results={results}
+      />
     )
   }
 }

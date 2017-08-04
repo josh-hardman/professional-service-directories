@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import ResultCard from 'src/components/searchPage/ResultCard'
+import ResultCard from 'src/components/ResultCard'
 
 const List = styled.ul`
   margin: 0;
@@ -17,14 +17,12 @@ const averageReview = reviews => {
 }
 
 const ResultList = ({
-  practices: {
-    allPractices=[]
-  }
+  results
 }) => (
   <List>
     {
-      allPractices.length > 0 &&
-        allPractices.map( (dentist, i) =>
+      results.length > 0 &&
+        results.map( (dentist, i) =>
           <ResultCard
             key={i}
             name={dentist.name}
@@ -34,14 +32,14 @@ const ResultList = ({
         )
     }
     {
-      allPractices.length == 0 &&
+      results.length == 0 &&
         <span>No results found</span>
     }
   </List>
 )
 
 ResultList.propTypes = {
-  practices:  PropTypes.object
+  results:  PropTypes.object
 }
 
 export default ResultList
