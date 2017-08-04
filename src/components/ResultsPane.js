@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import gql from 'graphql-tag'
-import { graphql } from 'react-apollo'
 import styled from 'styled-components'
 import { displayFlex, colors } from 'src/constants.js'
 // child components
-import ResultCard from 'src/components/searchPage/ResultCard'
+import ResultCard from 'src/components/ResultCard'
 
 const StyledResultsPane = styled.div`
   width: 100%;
@@ -20,13 +18,11 @@ const FlexContainer = styled.div`
   width: 100%;
 `
 
-class ResultsPane extends Component {
+export default class ResultsPane extends Component {
   static propTypes = {
-    location:     PropTypes.string,
-    practiceType:    PropTypes.string,
-    reason:       PropTypes.string,
-    update:       PropTypes.func,
-    data:         PropTypes.object
+    results:  PropTypes.arrayOf(
+                PropTypes.object
+              )
   }
 
   averageReview = reviews => {
@@ -38,12 +34,12 @@ class ResultsPane extends Component {
   }
 
   render() {
-    const { data: { allPractices=[] } } = this.props
+    const { results } = this.props
 
     return(
       <StyledResultsPane>
         <FlexContainer>
-            { allPractices && allPractices.map( (dentist, i) => (
+            { results && results.map( (dentist, i) => (
               <ResultCard
                 key={i}
                 name={dentist.name}
@@ -56,35 +52,3 @@ class ResultsPane extends Component {
     )
   }
 }
-
-export default graphql(gql`
-  query
-  {
-    # ( $practiceTypeValue: ID! )
-    allPractices
-    # (
-    #   filter: {
-    #     practiceTypes_some: {
-    #       id: $practiceTypeValue
-    #     }
-    #   }
-    # )
-    {
-      name,
-      id,
-      contact {
-        website
-      }
-      reviews {
-        name,
-        rating
-      }
-    }
-  }
-`, {
-  options: (props) => ({
-    variables: {
-      practiceTypeValue: props.practiceTypeValue
-    }
-  })
-})(ResultsPane)
