@@ -4,7 +4,6 @@ import Rating from 'src/components/Rating'
 import styled from 'styled-components'
 import {
   shadow,
-  displayFlex,
   fontSize
 } from 'src/constants'
 
@@ -48,31 +47,26 @@ const Image = styled.img`
   border-radius: 3px;
 `
 
-const Info = styled.div`
+const Info = styled.ul`
   height: 100%;
   ${'' /* border: 1px solid green; */}
   padding: 12px;
   float: left;
 `
 
-const PracticeName = styled.h1`
+const PracticeName = styled.li`
   width: 100%;
   margin: 0;
   font-weight: 400;
   ${ fontSize(18) }
 `
 
-const Social = styled.ul`
-  list-style: none;
-  padding: 0;
-  ${ fontSize(12) }
-`
-
-const MediaLink = styled.li`
-
-`
-
-const ResultCard = ({ name }) => (
+const ResultCard = ({ 
+  name,
+  // rating,
+  address,
+  phone
+}) => (
   <Card>
     <InfoSection>
       <Frame>
@@ -80,7 +74,11 @@ const ResultCard = ({ name }) => (
       </Frame>
       <Info>
         <PracticeName>{name}</PracticeName>
-        <Rating />
+        <Rating
+          // rating={rating}
+        />
+        <li>{address}</li>
+        <li>{phone}</li>
         {/* { social &&
           <Social>
             <MediaLink>{social.website}</MediaLink>
@@ -92,9 +90,11 @@ const ResultCard = ({ name }) => (
 )
 
 ResultCard.propTypes = {
-  name:   PropTypes.string,
-  rating: PropTypes.number,
-  social: PropTypes.object
+  address:  PropTypes.string,
+  phone:    PropTypes.string,
+  name:     PropTypes.string,
+  rating:   PropTypes.number,
+  social:   PropTypes.object
 }
 
 export default ResultCard

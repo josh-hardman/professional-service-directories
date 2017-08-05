@@ -47,13 +47,19 @@ export const fetchGQLData = ({ city, insurance, practiceType }) => {
                }
              )
              {
-               name,
-               id,
+               name
+               id
+               city {
+                 name
+               }
+               state {
+                 name
+               }
                contact {
                  website
                }
                reviews {
-                 name,
+                 name
                  rating
                }
              }

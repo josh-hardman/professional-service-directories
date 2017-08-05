@@ -39,12 +39,19 @@ export default class ResultsPane extends Component {
     return(
       <StyledResultsPane>
         <FlexContainer>
-            { results && results.map( (dentist, i) => (
+            { results && results.map( ({
+              name,
+              reviews,
+              city,
+              state
+            }, i) => (
               <ResultCard
                 key={i}
-                name={dentist.name}
-                rating={this.averageReview(dentist.reviews)}
-                social={dentist.contact}
+                name={name}
+                rating={this.averageReview(reviews)}
+                address={`${city.name}, ${state.name}`}
+                phone='303-791-1510'
+                // social={practice.contact}
               />
             ))}
         </FlexContainer>

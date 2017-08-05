@@ -1,26 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StarOutline from 'react-icons/lib/md/star-outline'
-import StarHalf from 'react-icons/lib/md/star-half'
-import StarFull from 'react-icons/lib/md/star'
+import styled from 'styled-components'
+// child components
+import Star from 'src/components/Star'
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`
 
 const stars = [1,2,3,4,5]
 
-const Rating = ({ rating=5 }) => (
-  <div>
-    <span>{rating}</span>
+const Rating = ({ rating=3.5 }) => (
+  <List>
     {
       stars.map( (star, i) => (
-        rating >= star
-          ? <StarFull key={i} />
-          : (
-            rating + .5 >= star
-              ? <StarHalf key={i} />
-              : <StarOutline key={i} />
-          )
+        <Star
+          type={ rating >= star ? 'full' : ( rating + .5 >= star ? 'half' : 'outline' )}
+          key={i}
+        />
       ))
     }
-  </div>
+  </List>
 )
 
 Rating.propTypes = {
