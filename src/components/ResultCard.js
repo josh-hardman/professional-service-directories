@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Rating from 'src/components/Rating'
 import styled from 'styled-components'
 import {
   shadow,
@@ -28,8 +29,8 @@ const Frame = styled.div`
   position: relative;
   float: left;
   ${'' /* width: 40%; */}
-  width: 25vw;
-  height: 25vw;
+  width: 30vw;
+  height: 30vw;
   border: 1px solid green;
 
   ${'' /* &:after {
@@ -48,7 +49,6 @@ const Image = styled.img`
 `
 
 const Info = styled.div`
-  width: 75%;
   height: 100%;
   ${'' /* border: 1px solid green; */}
   padding: 12px;
@@ -60,12 +60,6 @@ const PracticeName = styled.h1`
   margin: 0;
   font-weight: 400;
   ${ fontSize(18) }
-`
-
-const Rating = styled.p`
-  width: 100%;
-  margin: 0;
-  ${ fontSize(12) }
 `
 
 const Social = styled.ul`
@@ -86,7 +80,7 @@ const ResultCard = ({ name }) => (
       </Frame>
       <Info>
         <PracticeName>{name}</PracticeName>
-        {/* <Rating>ratingz: {rating ? rating : 'N/A'}</Rating> */}
+        <Rating />
         {/* { social &&
           <Social>
             <MediaLink>{social.website}</MediaLink>
