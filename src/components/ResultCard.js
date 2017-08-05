@@ -21,25 +21,29 @@ const Card = styled.li`
 
 const InfoSection = styled.div`
   width: 100%;
-  height: 160px;
-  padding: 12px;
   ${'' /* border: 1px solid red; */}
 `
 
 const Frame = styled.div`
   position: relative;
-  overflow: hidden;
-  width: 25%;
-  height: 140px;
   float: left;
-  ${'' /* max-width: 200px; */}
+  ${'' /* width: 40%; */}
+  width: 25vw;
+  height: 25vw;
+  border: 1px solid green;
+
+  ${'' /* &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+    border: 1px solid red;
+  } */}
 `
 
 const Image = styled.img`
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  width: 100%;
   height: 100%;
-  width: auto;
   border-radius: 3px;
 `
 
