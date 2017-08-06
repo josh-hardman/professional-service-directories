@@ -14,7 +14,7 @@ import Phone from 'react-icons/lib/md/local-phone'
 const LinkableContent = ({ Icon, href, text }) => (
   <li>
     <a
-      href={href ? href : 'javascript:void(0);'} 
+      href={href ? href : 'javascript:void(0);'}
       target="_blank"
     >
       <Icon />
@@ -24,10 +24,10 @@ const LinkableContent = ({ Icon, href, text }) => (
 )
 
 LinkableContent.propTypes = {
-  Icon:     PropTypes.node,
+  Icon:     PropTypes.func,
   href:     PropTypes.string,
   text:     PropTypes.string,
-  link:     PropTypes.boolean
+  link:     PropTypes.bool
 }
 
 const Card = styled.li`
@@ -77,7 +77,7 @@ const PracticeName = styled.li`
 
 const ResultCard = ({
   name,
-  rating,
+  // rating,
   address,
   phone,
   website
