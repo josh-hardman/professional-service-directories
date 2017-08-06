@@ -6,6 +6,29 @@ import {
   shadow,
   fontSize
 } from 'src/constants'
+// components
+import Address from 'react-icons/lib/md/location-on'
+import Website from 'react-icons/lib/fa/globe'
+import Phone from 'react-icons/lib/md/local-phone'
+
+const LinkableContent = ({ Icon, href, text }) => (
+  <li>
+    <a
+      href={href ? href : 'javascript:void(0);'} 
+      target="_blank"
+    >
+      <Icon />
+      {text}
+    </a>
+  </li>
+)
+
+LinkableContent.propTypes = {
+  Icon:     PropTypes.node,
+  href:     PropTypes.string,
+  text:     PropTypes.string,
+  link:     PropTypes.boolean
+}
 
 const Card = styled.li`
   width: 100%;
@@ -21,23 +44,13 @@ const Card = styled.li`
 
 const InfoSection = styled.div`
   width: 100%;
-  ${'' /* border: 1px solid red; */}
 `
 
 const Frame = styled.div`
   position: relative;
   float: left;
-  ${'' /* width: 40%; */}
   width: 30vw;
   height: 30vw;
-  border: 1px solid green;
-
-  ${'' /* &:after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-    border: 1px solid red;
-  } */}
 `
 
 const Image = styled.img`
@@ -48,8 +61,9 @@ const Image = styled.img`
 `
 
 const Info = styled.ul`
+  width: 40vw;
   height: 100%;
-  ${'' /* border: 1px solid green; */}
+  list-style: none;
   padding: 12px;
   float: left;
 `
@@ -76,16 +90,22 @@ const ResultCard = ({
       <Info>
         <PracticeName>{name}</PracticeName>
         <Rating
-          rating={rating}
+          // rating={rating}
         />
-        <li>{address}</li>
-        <li>{website}</li>
-        <li>{phone}</li>
-        {/* { social &&
-          <Social>
-            <MediaLink>{social.website}</MediaLink>
-          </Social>
-        } */}
+        <LinkableContent
+          Icon={Address}
+          text={address}
+        />
+        <LinkableContent
+          Icon={Website}
+          href={website}
+          text={website}
+        />
+        <LinkableContent
+          Icon={Phone}
+          href={phone}
+          text={phone}
+        />
       </Info>
     </InfoSection>
   </Card>

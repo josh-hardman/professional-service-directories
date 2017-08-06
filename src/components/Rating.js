@@ -11,7 +11,7 @@ const List = styled.ul`
 
 const stars = [1,2,3,4,5]
 
-const Rating = ({ rating=3.5 }) => (
+const Rating = ({ rating=4.5 }) => (
   <List>
     {
       stars.map( (star, i) => (
