@@ -61,11 +61,12 @@ const PracticeName = styled.li`
   ${ fontSize(18) }
 `
 
-const ResultCard = ({ 
+const ResultCard = ({
   name,
-  // rating,
+  rating,
   address,
-  phone
+  phone,
+  website
 }) => (
   <Card>
     <InfoSection>
@@ -75,9 +76,10 @@ const ResultCard = ({
       <Info>
         <PracticeName>{name}</PracticeName>
         <Rating
-          // rating={rating}
+          rating={rating}
         />
         <li>{address}</li>
+        <li>{website}</li>
         <li>{phone}</li>
         {/* { social &&
           <Social>
@@ -93,6 +95,8 @@ ResultCard.propTypes = {
   address:  PropTypes.string,
   phone:    PropTypes.string,
   name:     PropTypes.string,
+  website:  PropTypes.string,
+  facebook: PropTypes.string,
   rating:   PropTypes.number,
   social:   PropTypes.object
 }

@@ -41,6 +41,8 @@ export default class ResultsPane extends Component {
         <FlexContainer>
             { results && results.map( ({
               name,
+              phone,
+              website,
               reviews,
               city,
               state
@@ -50,8 +52,8 @@ export default class ResultsPane extends Component {
                 name={name}
                 rating={this.averageReview(reviews)}
                 address={`${city.name}, ${state.name}`}
-                phone='303-791-1510'
-                // social={practice.contact}
+                website={website}
+                phone={phone}
               />
             ))}
         </FlexContainer>
