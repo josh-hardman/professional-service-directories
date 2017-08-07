@@ -10,6 +10,7 @@ const Link = styled.a`
   ${fontSize(12)}
   color: ${colors.textDark};
   text-decoration: none;
+  white-space: nowrap;
 
   &:visited {
     color: ${colors.textDark};

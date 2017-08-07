@@ -31,8 +31,8 @@ const InfoSection = styled.div`
 const Frame = styled.div`
   position: relative;
   float: left;
-  width: 30vw;
-  height: 30vw;
+  width: 140px;
+  height: 140px;
 `
 
 const Image = styled.img`

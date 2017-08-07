@@ -8,6 +8,7 @@ import Star from 'src/components/Star'
 const List = styled.ul`
   list-style: none;
   padding: 0;
+  margin-bottom: 24px;
 `
 
 const AvgRating = styled.span`
