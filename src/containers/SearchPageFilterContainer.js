@@ -68,14 +68,10 @@ class SearchPageFilterContainer extends Component {
 
   componentDidMount() {
     const {
-      allCities,
-      allPracticeTypes,
-      allInsurances,
       fetchFilterOptions
     } = this.props
 
-    !allCities.length && !allPracticeTypes.length && !allInsurances.length &&
-      fetchFilterOptions()
+    fetchFilterOptions()
 
   }
 
