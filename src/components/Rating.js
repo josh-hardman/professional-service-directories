@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { colors } from 'src/constants'
+import { colors, fontSize } from 'src/constants'
 // child components
 import Star from 'src/components/Star'
 
@@ -11,12 +11,20 @@ const List = styled.ul`
 `
 
 const AvgRating = styled.span`
-  color: ${colors.red}
+  ${fontSize(14)}
+  color: ${colors.red};
+  padding-right: 4px;
+`
+
+const NumReviews = styled.span`
+${fontSize(12)}
+color: ${colors.mediumGray};
+padding-left: 4px;
 `
 
 const stars = [1,2,3,4,5]
 
-const Rating = ({ rating=4.5 }) => (
+const Rating = ({ rating=4.5, numReviews }) => (
   <List>
     <AvgRating>{rating}</AvgRating>
     {
@@ -28,11 +36,13 @@ const Rating = ({ rating=4.5 }) => (
         />
       ))
     }
+    <NumReviews>{`(${numReviews})`}</NumReviews>
   </List>
 )
 
 Rating.propTypes = {
-  rating: PropTypes.number
+  rating: PropTypes.number,
+  numReviews: PropTypes.number
 }
 
 export default Rating

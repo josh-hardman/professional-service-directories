@@ -53,6 +53,7 @@ const Info = styled.ul`
 
 const PracticeName = styled.li`
   width: 100%;
+  padding-bottom: 4px;
   margin: 0;
   font-weight: 400;
   ${ fontSize(18) }
@@ -74,6 +75,7 @@ const ResultCard = ({
         <PracticeName>{name}</PracticeName>
         <Rating
           // rating={rating}
+          numReviews={5}
         />
         <LinkableContent
           Icon={Address}
