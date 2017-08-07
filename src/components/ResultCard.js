@@ -4,7 +4,8 @@ import Rating from 'src/components/Rating'
 import styled from 'styled-components'
 import {
   shadow,
-  fontSize
+  fontSize,
+  displayFlex
 } from 'src/constants'
 // components
 import Address from 'react-icons/lib/go/location'
@@ -12,6 +13,61 @@ import Website from 'react-icons/lib/fa/globe'
 import Phone from 'react-icons/lib/md/local-phone'
 import LinkableContent from 'src/components/LinkableContent'
 
+const imageDimention = 140
+
+const InfoRow = styled.div`
+  width: 100%;
+  height: ${imageDimention}px;
+  ${displayFlex()}
+  border: 1px solid black;
+`
+
+const Frame = styled.div`
+  position: relative;
+  width: ${imageDimention}px;
+  ${'' /* height: ${imageDimention}px; */}
+  ${'' /* border: 1px solid red; */}
+`
+
+const Image = styled.img`
+  position: absolute;
+  width: ${imageDimention}px;
+  height: ${imageDimention}px;
+  border-radius: 3px;
+`
+
+const Info = styled.div`
+  border: 1px solid green;
+  flex-grow: 1;
+  ${displayFlex()}
+  flex-direction: column;
+`
+
+const InfoTop = styled.div`
+  flex: 1;
+  list-style: none;
+  border: 1px solid blue;
+`
+
+const InfoBottom = styled.ul`
+  flex: 1;
+  ${displayFlex()}
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+`
+
+const PracticeName = styled.h1`
+  width: 100%;
+  margin: 0;
+  padding-bottom: 4px;
+  margin: 0;
+  font-weight: 400;
+  ${ fontSize(18) }
+`
 const Card = styled.li`
   width: 100%;
   padding: 14px;
@@ -24,41 +80,6 @@ const Card = styled.li`
   ${ shadow }
 `
 
-const InfoSection = styled.div`
-  width: 100%;
-`
-
-const Frame = styled.div`
-  position: relative;
-  float: left;
-  width: 140px;
-  height: 140px;
-`
-
-const Image = styled.img`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-`
-
-const Info = styled.ul`
-  width: 40vw;
-  height: 100%;
-  list-style: none;
-  margin: 0;
-  padding-left: 12px;
-  float: left;
-`
-
-const PracticeName = styled.li`
-  width: 100%;
-  padding-bottom: 4px;
-  margin: 0;
-  font-weight: 400;
-  ${ fontSize(18) }
-`
-
 const ResultCard = ({
   name,
   // rating,
@@ -67,32 +88,42 @@ const ResultCard = ({
   website
 }) => (
   <Card>
-    <InfoSection>
+    <InfoRow>
       <Frame>
         <Image src='https://expertbeacon.com/sites/default/files/pain-free_dentistry_can_help_you_get_over_your_fear_of_the_dentist.jpg'/>
       </Frame>
       <Info>
-        <PracticeName>{name}</PracticeName>
-        <Rating
-          // rating={rating}
-          numReviews={5}
-        />
-        <LinkableContent
-          Icon={Address}
-          text={address}
-        />
-        <LinkableContent
-          Icon={Website}
-          href={website}
-          text={website}
-        />
-        <LinkableContent
-          Icon={Phone}
-          href={phone}
-          text={phone}
-        />
+        <InfoTop>
+          <PracticeName>{name}</PracticeName>
+          <Rating
+            // rating={rating}
+            numReviews={5}
+          />
+        </InfoTop>
+        <InfoBottom>
+          <LinkableContent
+            Icon={Address}
+            text={address}
+          />
+          <LinkableContent
+            Icon={Website}
+            href={website}
+            text={website}
+          />
+          <LinkableContent
+            Icon={Phone}
+            href={phone}
+            text={phone}
+          />
+        </InfoBottom>
       </Info>
-    </InfoSection>
+      {/* <Frame>
+        <Image src='https://expertbeacon.com/sites/default/files/pain-free_dentistry_can_help_you_get_over_your_fear_of_the_dentist.jpg'/>
+      </Frame>
+      <Info>
+
+      </Info> */}
+    </InfoRow>
   </Card>
 )
 
