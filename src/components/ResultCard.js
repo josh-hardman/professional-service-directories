@@ -25,8 +25,6 @@ const InfoRow = styled.div`
 const Frame = styled.div`
   position: relative;
   width: ${imageDimention}px;
-  ${'' /* height: ${imageDimention}px; */}
-  ${'' /* border: 1px solid red; */}
 `
 
 const Image = styled.img`
@@ -117,12 +115,6 @@ const ResultCard = ({
           />
         </InfoBottom>
       </Info>
-      {/* <Frame>
-        <Image src='https://expertbeacon.com/sites/default/files/pain-free_dentistry_can_help_you_get_over_your_fear_of_the_dentist.jpg'/>
-      </Frame>
-      <Info>
-
-      </Info> */}
     </InfoRow>
   </Card>
 )
