@@ -7,28 +7,10 @@ import {
   fontSize
 } from 'src/constants'
 // components
-import Address from 'react-icons/lib/md/location-on'
+import Address from 'react-icons/lib/go/location'
 import Website from 'react-icons/lib/fa/globe'
 import Phone from 'react-icons/lib/md/local-phone'
-
-const LinkableContent = ({ Icon, href, text }) => (
-  <li>
-    <a
-      href={href ? href : 'javascript:void(0);'}
-      target="_blank"
-    >
-      <Icon />
-      {text}
-    </a>
-  </li>
-)
-
-LinkableContent.propTypes = {
-  Icon:     PropTypes.func,
-  href:     PropTypes.string,
-  text:     PropTypes.string,
-  link:     PropTypes.bool
-}
+import LinkableContent from 'src/components/LinkableContent'
 
 const Card = styled.li`
   width: 100%;
@@ -64,7 +46,8 @@ const Info = styled.ul`
   width: 40vw;
   height: 100%;
   list-style: none;
-  padding: 12px;
+  margin: 0;
+  padding-left: 12px;
   float: left;
 `
 
