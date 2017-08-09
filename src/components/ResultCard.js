@@ -4,6 +4,7 @@ import Rating from 'src/components/Rating'
 import styled from 'styled-components'
 import {
   shadow,
+  colors,
   fontSize,
   displayFlex
 } from 'src/constants'
@@ -39,6 +40,7 @@ const Info = styled.div`
   flex-grow: 1;
   ${displayFlex()}
   flex-direction: column;
+  padding-left: 12px;
 `
 
 const InfoTop = styled.div`
@@ -77,8 +79,35 @@ const Card = styled.li`
 
 const ButtonRow = styled.div`
   ${displayFlex()}
-  background: red;
-  padding: 12px;
+  ${'' /* background: red; */}
+  padding-top: 12px;
+`
+
+const ButtonLeft = styled.div`
+  width: ${imageDimention}px;
+`
+
+const ButtonRight = styled.div`
+  flex-grow: 1;
+  padding-left: 12px;
+`
+
+const ProfileButton = styled.button`
+  border-radius: 3px;
+  background: ${colors.blue};
+  color: ${colors.white};
+  border: none;
+  padding: 6px;
+  width: 100%;
+`
+
+const ScheduleButton = styled.button`
+  border-radius: 3px;
+  background: ${colors.white};
+  color: ${colors.blue};
+  border: 1px solid ${colors.blue};
+  padding: 6px;
+  width: 100%;
 `
 
 const ResultCard = ({
@@ -120,7 +149,16 @@ const ResultCard = ({
       </Info>
     </InfoRow>
     <ButtonRow>
-      buttons
+      <ButtonLeft>
+        <ProfileButton>
+          View Profile
+        </ProfileButton>
+      </ButtonLeft>
+      <ButtonRight>
+        <ScheduleButton>
+          Book Appointment
+        </ScheduleButton>
+      </ButtonRight>
     </ButtonRow>
   </Card>
 )
