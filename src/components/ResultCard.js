@@ -70,12 +70,15 @@ const Card = styled.li`
   width: 100%;
   padding: 14px;
   margin-top: 8px;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  list-style: none;
   background: white;
   ${ shadow }
+`
+
+const ButtonRow = styled.div`
+  ${displayFlex()}
+  background: red;
+  padding: 12px;
 `
 
 const ResultCard = ({
@@ -116,6 +119,9 @@ const ResultCard = ({
         </InfoBottom>
       </Info>
     </InfoRow>
+    <ButtonRow>
+      buttons
+    </ButtonRow>
   </Card>
 )
 
