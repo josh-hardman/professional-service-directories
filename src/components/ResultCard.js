@@ -6,7 +6,8 @@ import {
   shadow,
   colors,
   fontSize,
-  displayFlex
+  displayFlex,
+  breakpoints
 } from 'src/constants'
 // components
 import Address from 'react-icons/lib/go/location'
@@ -14,40 +15,45 @@ import Website from 'react-icons/lib/fa/globe'
 import Phone from 'react-icons/lib/md/local-phone'
 import LinkableContent from 'src/components/LinkableContent'
 
-const imageDimention = 140
+const imageDimention = `30vw`
+const padding = {
+  small: '14px',
+  medium: '18px',
+  large: '24px',
+}
 
 const InfoRow = styled.div`
   width: 100%;
-  height: ${imageDimention}px;
+  height: ${imageDimention};
   ${displayFlex()}
-  border: 1px solid black;
 `
 
 const Frame = styled.div`
   position: relative;
-  width: ${imageDimention}px;
-  min-width: ${imageDimention}px;
+  width: ${imageDimention};
+  min-width: ${imageDimention};
 `
 
 const Image = styled.img`
   position: absolute;
-  width: ${imageDimention}px;
-  height: ${imageDimention}px;
-  border-radius: 3px;
+  width: ${imageDimention};
+  height: ${imageDimention};
+  border-radius: 6px;
 `
 
 const Info = styled.div`
-  border: 1px solid green;
-  ${'' /* flex-grow: 1; */}
   ${displayFlex()}
   flex-direction: column;
-  padding-left: 12px;
+  padding-left: ${padding.small};
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    padding-left: ${padding.medium};
+	}
 `
 
 const InfoTop = styled.div`
   flex: 1;
   list-style: none;
-  border: 1px solid blue;
 `
 
 const InfoBottom = styled.ul`
@@ -58,7 +64,6 @@ const InfoBottom = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 1px solid red;
 `
 
 const PracticeName = styled.h1`
@@ -68,10 +73,18 @@ const PracticeName = styled.h1`
   margin: 0;
   font-weight: 400;
   ${ fontSize(18) }
+
+  @media screen and (min-width: ${breakpoints._500}) {
+    ${ fontSize(24) }
+	}
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    ${ fontSize(32) }
+	}
 `
 const Card = styled.li`
   width: 100%;
-  padding: 14px;
+  padding: ${padding.small};
   margin-top: 8px;
   list-style: none;
   background: white;
@@ -80,16 +93,19 @@ const Card = styled.li`
 
 const ButtonRow = styled.div`
   ${displayFlex()}
-  ${'' /* background: red; */}
-  padding-top: 12px;
+  padding-top: ${padding.small};
+  margin-top: ${padding.small};
+  border-top: 1px solid ${colors.lightGray};
 `
 
 const ButtonLeft = styled.div`
-  width: ${imageDimention}px;
+  width: ${imageDimention};
+  min-width: ${imageDimention};
 `
 
 const ButtonRight = styled.div`
-  padding-left: 12px;
+  min-width: ${imageDimention};
+  padding-left: ${padding.small};
 `
 
 const ProfileButton = styled.button`
@@ -97,7 +113,8 @@ const ProfileButton = styled.button`
   background: ${colors.blue};
   border: 1px solid ${colors.blue};
   color: ${colors.white};
-  padding: 6px;
+  ${fontSize(14)}
+  padding: 4px;
   width: 100%;
 `
 
@@ -105,9 +122,14 @@ const ScheduleButton = styled.button`
   border-radius: 3px;
   background: ${colors.white};
   color: ${colors.blue};
+  ${fontSize(14)}
   border: 1px solid ${colors.blue};
-  padding: 6px;
+  padding: 4px;
   width: 100%;
+`
+
+const StyledLinkableContent = styled(LinkableContent)`
+  ${fontSize(34)}
 `
 
 const ResultCard = ({
@@ -131,16 +153,16 @@ const ResultCard = ({
           />
         </InfoTop>
         <InfoBottom>
-          <LinkableContent
+          <StyledLinkableContent
             Icon={Address}
             text={address}
           />
-          <LinkableContent
+          <StyledLinkableContent
             Icon={Website}
             href={website}
             text={website}
           />
-          <LinkableContent
+          <StyledLinkableContent
             Icon={Phone}
             href={phone}
             text={phone}
