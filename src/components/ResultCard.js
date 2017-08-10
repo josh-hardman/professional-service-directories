@@ -26,6 +26,7 @@ const InfoRow = styled.div`
 const Frame = styled.div`
   position: relative;
   width: ${imageDimention}px;
+  min-width: ${imageDimention}px;
 `
 
 const Image = styled.img`
@@ -37,7 +38,7 @@ const Image = styled.img`
 
 const Info = styled.div`
   border: 1px solid green;
-  flex-grow: 1;
+  ${'' /* flex-grow: 1; */}
   ${displayFlex()}
   flex-direction: column;
   padding-left: 12px;
@@ -88,15 +89,14 @@ const ButtonLeft = styled.div`
 `
 
 const ButtonRight = styled.div`
-  flex-grow: 1;
   padding-left: 12px;
 `
 
 const ProfileButton = styled.button`
   border-radius: 3px;
   background: ${colors.blue};
+  border: 1px solid ${colors.blue};
   color: ${colors.white};
-  border: none;
   padding: 6px;
   width: 100%;
 `
