@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { displayFlex, colors } from 'src/constants.js'
+import { displayFlex, colors, breakpoints } from 'src/constants.js'
 // child components
 import ResultCard from 'src/components/ResultCard'
 
@@ -12,10 +12,15 @@ const StyledResultsPane = styled.div`
   justify-content: center;
   align-items: center;
   padding: 12px;
+  background: ${colors.gray};
 `
 
 const FlexContainer = styled.div`
   width: 100%;
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    max-width: 950px;
+  }
 `
 
 export default class ResultsPane extends Component {
