@@ -7,7 +7,7 @@ import {
   fetchGQLData
 } from 'src/redux/actions/filterOptionsActions'
 // queries
-import { searchPageFiltersOptions,  } from 'src/queries/filterOptions'
+import { searchPageFiltersOptions } from 'src/queries/filterOptions'
 // components
 import SearchPageFilters from 'src/components/SearchPageFilters'
 

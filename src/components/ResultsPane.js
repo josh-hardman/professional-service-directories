@@ -7,16 +7,26 @@ import ResultCard from 'src/components/ResultCard'
 
 const StyledResultsPane = styled.div`
   width: 100%;
+  margin-top: 30px;
+  float: left;
   background: ${ colors.lightGray };
   ${ displayFlex() }
   justify-content: center;
   align-items: center;
-  padding: 12px;
-  background: ${colors.gray};
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    width: 75%;
+	}
 `
 
-const FlexContainer = styled.div`
+const FlexContainer = styled.ul`
   width: 100%;
+  margin: 0;
+  list-style: none;
+  ${displayFlex()}
+  flex-wrap: wrap;
+  padding: 0;
+  background: ${colors.gray};
 
   @media screen and (min-width: ${breakpoints._600}) {
     max-width: 950px;

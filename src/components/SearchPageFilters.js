@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import FilterIcon from 'react-icons/lib/md/filter-list'
-import { colors, fontSize, displayFlex } from 'src/constants'
+import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
 import SearchDropdown from 'src/components/common/SearchDropdown'
+import Media from 'react-media'
 
 const SpacerBar = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ const SpacerBar = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  background: ${colors.lightGray}
+  background: ${colors.lightGray};
 `
 
 const FilterButton = styled.button`
@@ -45,13 +46,22 @@ const Text = styled.span`
 `
 
 const Wrapper = styled.div`
-  background: ${colors.lightGray};
-  padding: 10px;
-  height: 160px;
-  ${displayFlex()}
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  top: 100px;
+  width: 100%;
+  float: left;
+  padding: 30px;
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    width: 25%;
+	}
+
+  @media screen and (min-width: ${breakpoints._960}) {
+    height: 160px;
+    ${displayFlex()}
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+	}
 `
 
 class SearchPageFilters extends Component {
@@ -94,17 +104,21 @@ class SearchPageFilters extends Component {
 
     return(
       <div>
-        <SpacerBar>
-          {/* <span>{`${allPractices.length} Results`}</span> */}
-          <FilterButton
-            onClick={this.handleToggleOpen}
-          >
-            <Icon/>
-            <Text>Filters</Text>
-          </FilterButton>
-        </SpacerBar>
-        {
-          this.state.open &&
+        <Media query={{ maxWidth: breakpoints._600 }}>
+          {matches => matches && (
+            <SpacerBar>
+              <FilterButton
+                onClick={this.handleToggleOpen}
+              >
+                <Icon/>
+                <Text>Filters</Text>
+              </FilterButton>
+            </SpacerBar>
+          )}
+        </Media>
+
+        {/* {
+          this.state.open && */}
             <Wrapper>
               <SearchDropdown
                 placeholder='City Name'
@@ -128,7 +142,7 @@ class SearchPageFilters extends Component {
                 options={allInsurances}
               />
             </Wrapper>
-        }
+        {/* } */}
       </div>
     )
   }

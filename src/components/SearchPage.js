@@ -7,6 +7,11 @@ import SearchPageResultsContainer from 'src/containers/SearchPageResultsContaine
 import styled from 'styled-components'
 import { displayFlex } from 'src/constants'
 
+export const MaxWidth = styled.div`
+  width: 100%;
+  max-width: 1200px;
+`
+
 export const FlexContainer = styled.div`
   ${displayFlex()}
   justify-content: center;
@@ -19,19 +24,13 @@ export const FlexInner = styled.div`
   justify-content: space-around;
 `
 
-export const FilterAside = styled.div`
-  width: 20%;
-`
-
-export const ResultsAside = styled.div`
-  width: 80%;
-`
-
 const SearchPage = () => (
-  <div>
-    <SearchPageFilterContainer />
-    <SearchPageResultsContainer />
-  </div>
+  <FlexContainer>
+    <MaxWidth>
+      <SearchPageFilterContainer />
+      <SearchPageResultsContainer />
+    </MaxWidth>
+  </FlexContainer>
 )
 
 export default SearchPage
