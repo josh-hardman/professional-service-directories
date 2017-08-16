@@ -33,6 +33,15 @@ const FlexContainer = styled.ul`
   }
 `
 
+const CardSlot = styled.li`
+  padding: 8px;
+  width: 100%;
+
+  @media screen and (min-width: ${breakpoints._768}) {
+    width: 50%;
+	}
+`
+
 export default class ResultsPane extends Component {
   static propTypes = {
     results:  PropTypes.arrayOf(
@@ -62,14 +71,15 @@ export default class ResultsPane extends Component {
               city,
               state
             }, i) => (
-              <ResultCard
-                key={i}
-                name={name}
-                rating={this.averageReview(reviews)}
-                address={`${city.name}, ${state.name}`}
-                website={website}
-                phone={phone}
-              />
+              <CardSlot key={i}>
+                <ResultCard
+                  name={name}
+                  rating={this.averageReview(reviews)}
+                  address={`${city.name}, ${state.name}`}
+                  website={website}
+                  phone={phone}
+                />
+              </CardSlot>
             ))}
         </FlexContainer>
       </StyledResultsPane>
