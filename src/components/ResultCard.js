@@ -21,6 +21,8 @@ const Card = styled.div`
   margin-top: 8px;
   list-style: none;
   background: white;
+  min-width: 340px;
+  max-width: 465px;
   ${ shadow }
 `
 
@@ -68,7 +70,7 @@ const ResultCard = ({
   phone,
   website
 }) => (
-  <Card className="clearfix">
+  <Card>
     <Image
       src="https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300"
     />

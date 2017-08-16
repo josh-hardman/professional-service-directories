@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   top: 100px;
   width: 100%;
   float: left;
-  padding: 30px;
+  padding-top: 30px;
 
   @media screen and (min-width: ${breakpoints._600}) {
     width: 25%;

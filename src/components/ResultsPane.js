@@ -27,17 +27,17 @@ const FlexContainer = styled.ul`
   flex-wrap: wrap;
   padding: 0;
   background: ${colors.gray};
-
-  @media screen and (min-width: ${breakpoints._600}) {
-    max-width: 950px;
-  }
+  max-width: 950px;
 `
 
 const CardSlot = styled.li`
   padding: 8px;
   width: 100%;
+  ${displayFlex()}
+  align-items: center;
+  flex-direction: column;
 
-  @media screen and (min-width: ${breakpoints._768}) {
+  @media screen and (min-width: ${breakpoints._960}) {
     width: 50%;
 	}
 `
