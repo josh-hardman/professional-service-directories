@@ -59,10 +59,10 @@ const Wrapper = styled.div`
 
   @media screen and (min-width: ${breakpoints._960}) {
     height: 160px;
-    ${displayFlex()}
+    ${'' /* ${displayFlex()}
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */}
 	}
 `
 

@@ -4,9 +4,11 @@ import {colors} from 'src/constants'
 import styled from 'styled-components'
 
 const StyledCheckbox = styled.div`
-  width: 25px;
-  margin: 20px 100px;
+  width: 35px;
+  height: 21px;
   position: relative;
+  display: inline-block;
+  background: ${colors.red};
 
   &input:checked + label:after {
     opacity: 1;

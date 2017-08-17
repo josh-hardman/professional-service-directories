@@ -1,7 +1,25 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import {colors} from 'src/constants'
 import Checkbox from 'src/components/Checkbox'
 import SearchDropdown from 'src/components/common/SearchDropdown'
+
+// styles
+const StyledToggleFilter = styled.div`
+  width: 100%;
+  background: ${colors.red};
+`
+
+const CheckboxRow = styled.div`
+  width: 100%;
+  padding: 12px 32px;
+`
+
+const Label = styled.h3`
+  display: inline-block;
+  font-weight: 400;
+`
 
 class ToggleFilter extends Component {
 
@@ -25,12 +43,15 @@ class ToggleFilter extends Component {
     const {city, update, allCities} = this.props
 
     return (
-      <div>
-        <Checkbox
-          checked={this.state.active}
-          onCheck={this.handleToggle}
-        />
-        <br></br>
+      <StyledToggleFilter>
+        <CheckboxRow>
+          <Checkbox
+            checked={this.state.active}
+            onCheck={this.handleToggle}
+          />
+          <Label>Label</Label>
+        </CheckboxRow>
+
         {
           this.state.active &&
             <SearchDropdown
@@ -41,7 +62,7 @@ class ToggleFilter extends Component {
               options={allCities}
             />
         }
-      </div>
+      </StyledToggleFilter>
     )
   }
 }
