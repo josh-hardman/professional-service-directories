@@ -27,7 +27,7 @@ const Card = styled.div`
 `
 
 const Image = styled.img`
-  width: 40%;
+  width: 140px;
   display: inline-block;
 `
 
@@ -36,7 +36,7 @@ const InfoList = styled.div`
   padding: 0;
   width: 60%;
   float: right;
-  padding-left: 12px;
+  padding-left: 24px;
 `
 
 const PracticeName = styled.h1`
@@ -61,6 +61,42 @@ const InfoBottom = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+`
+
+const ButtonRow = styled.div`
+  ${displayFlex()}
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px solid ${colors.lightGray};
+`
+
+const ButtonLeft = styled.div`
+  width: 40%;
+  max-width: 160px;
+`
+
+const ButtonRight = styled.div`
+  padding-left: 24px;
+`
+
+const ProfileButton = styled.button`
+  border-radius: 3px;
+  background: ${colors.blue};
+  border: 1px solid ${colors.blue};
+  color: ${colors.white};
+  ${fontSize(14)}
+  padding: 4px;
+  width: 100%;
+`
+
+const ScheduleButton = styled.button`
+  border-radius: 3px;
+  background: ${colors.white};
+  color: ${colors.blue};
+  ${fontSize(14)}
+  border: 1px solid ${colors.blue};
+  padding: 4px 12px 4px 12px;
+  width: 100%;
 `
 
 const ResultCard = ({
@@ -99,6 +135,18 @@ const ResultCard = ({
         />
       </InfoBottom>
     </InfoList>
+    <ButtonRow>
+      <ButtonLeft>
+        <ProfileButton>
+          View Profile
+        </ProfileButton>
+      </ButtonLeft>
+      <ButtonRight>
+        <ScheduleButton>
+          Book Appointment
+        </ScheduleButton>
+      </ButtonRight>
+    </ButtonRow>
   </Card>
 )
 

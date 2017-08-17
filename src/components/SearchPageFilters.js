@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import FilterIcon from 'react-icons/lib/md/filter-list'
 import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
 import SearchDropdown from 'src/components/common/SearchDropdown'
+import Checkbox from 'src/components/Checkbox'
+
 import Media from 'react-media'
 
 const SpacerBar = styled.div`
@@ -120,27 +122,7 @@ class SearchPageFilters extends Component {
         {/* {
           this.state.open && */}
             <Wrapper>
-              <SearchDropdown
-                placeholder='City Name'
-                filterKey='city'
-                value={city}
-                onChange={update}
-                options={allCities}
-              />
-              <SearchDropdown
-                placeholder='Practice Type'
-                filterKey='practiceType'
-                value={practiceType}
-                onChange={update}
-                options={allPracticeTypes}
-              />
-              <SearchDropdown
-                placeholder='Insurance Provider'
-                filterKey='insurance'
-                value={insurance}
-                onChange={update}
-                options={allInsurances}
-              />
+              <Checkbox />
             </Wrapper>
         {/* } */}
       </div>
