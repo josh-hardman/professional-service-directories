@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import FilterIcon from 'react-icons/lib/md/filter-list'
 import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
 import SearchDropdown from 'src/components/common/SearchDropdown'
-import Checkbox from 'src/components/Checkbox'
+import ToggleFilter from 'src/components/ToggleFilter'
 
 import Media from 'react-media'
 
@@ -122,7 +122,7 @@ class SearchPageFilters extends Component {
         {/* {
           this.state.open && */}
             <Wrapper>
-              <Checkbox />
+              <ToggleFilter {...this.props}/>
             </Wrapper>
         {/* } */}
       </div>

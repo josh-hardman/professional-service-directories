@@ -46,19 +46,19 @@ const CheckboxInput = styled.input`
   display: none;
 `
 
-const Checkbox = ({ checked, handleCheck }) => (
+const Checkbox = ({ checked, onCheck }) => (
   <StyledCheckbox>
     <CheckboxInput type="checkbox" value="1" />
     <CheckboxLabel
       open={checked}
-      onClick={handleCheck}
+      onClick={onCheck}
       htmlFor="checkbox"
     />
   </StyledCheckbox>
 )
 
 Checkbox.propTypes = {
-  handleCheck: PropTypes.func,
+  onCheck: PropTypes.func,
   checked: PropTypes.bool
 }
 
