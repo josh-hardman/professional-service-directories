@@ -77,27 +77,9 @@ class SearchPageFilterContainer extends Component {
 
   render() {
 
-    const {
-      city=[],
-      practiceType=[],
-      insurance=[],
-      allCities,
-      allPracticeTypes,
-      allInsurances,
-      update,
-      numResults=0
-    } = this.props
-
     return (
       <SearchPageFilters
-        city={city}
-        practiceType={practiceType}
-        insurance={insurance}
-        allCities={allCities}
-        allPracticeTypes={allPracticeTypes}
-        allInsurances={allInsurances}
-        update={update}
-        numResults={numResults}
+        {...this.props}
       />
     )
   }

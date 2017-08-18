@@ -98,9 +98,9 @@ class SearchPageFilters extends Component {
       city,
       practiceType,
       insurance,
-      allCities,
-      allPracticeTypes,
-      allInsurances,
+      allCities=[],
+      allPracticeTypes=[],
+      allInsurances=[],
       update
     } = this.props
 
@@ -122,7 +122,27 @@ class SearchPageFilters extends Component {
         {/* {
           this.state.open && */}
             <Wrapper>
-              <ToggleFilter {...this.props}/>
+              <ToggleFilter
+                placeholder='City Name'
+                filterKey='city'
+                value={city}
+                onUpdate={update}
+                options={allCities}
+              />
+              <ToggleFilter
+                placeholder='Practice Type'
+                filterKey='practiceType'
+                value={practiceType}
+                onUpdate={update}
+                options={allPracticeTypes}
+              />
+              <ToggleFilter
+                placeholder='Insurance Provider'
+                filterKey='insurance'
+                value={insurance}
+                onUpdate={update}
+                options={allInsurances}
+              />
             </Wrapper>
         {/* } */}
       </div>

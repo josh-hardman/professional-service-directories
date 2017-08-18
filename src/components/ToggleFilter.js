@@ -1,34 +1,46 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {colors} from 'src/constants'
+import {colors, displayFlex} from 'src/constants'
 import Checkbox from 'src/components/Checkbox'
 import SearchDropdown from 'src/components/common/SearchDropdown'
 
 // styles
 const StyledToggleFilter = styled.div`
   width: 100%;
-  background: ${colors.red};
+  background: ${({active}) => active ? colors.gray : 'none'}
 `
 
-const CheckboxRow = styled.div`
+const Row = styled.div`
   width: 100%;
-  padding: 12px 32px;
+  padding: 8px;
+  ${displayFlex()}
+  justify-content: center;
+  align-items: center;
 `
 
-const Label = styled.h3`
+const Rest = styled.div`
+  flex-grow: 1;
+  padding-left: 12px;
+`
+
+const Label = styled.h4`
   display: inline-block;
   font-weight: 400;
+  color: ${colors.textMedium};
+  margin: 0;
 `
 
 class ToggleFilter extends Component {
 
   static propTypes = {
-    city:                 PropTypes.string,
-    update:               PropTypes.func,
-    allCities:            PropTypes.arrayOf(
+    value:                PropTypes.string,
+    onUpdate:               PropTypes.func,
+    options:              PropTypes.arrayOf(
                             PropTypes.object
-                          )
+                          ),
+    filterKey:            PropTypes.string,
+    placeholder:          PropTypes.string
   }
 
   state = {
@@ -40,28 +52,33 @@ class ToggleFilter extends Component {
   }))
 
   render() {
-    const {city, update, allCities} = this.props
+    const {value, onUpdate, options, filterKey, placeholder} = this.props
 
     return (
-      <StyledToggleFilter>
-        <CheckboxRow>
+      <StyledToggleFilter
+        active={this.state.active}
+      >
+        <Row>
           <Checkbox
             checked={this.state.active}
             onCheck={this.handleToggle}
           />
-          <Label>Label</Label>
-        </CheckboxRow>
-
-        {
-          this.state.active &&
+          <Rest>
+            <Label>{placeholder}</Label>
+          </Rest>
+        </Row>
+        <Row>
+          {
+            this.state.active &&
             <SearchDropdown
-              placeholder='City Name'
-              filterKey='city'
-              value={city}
-              onChange={update}
-              options={allCities}
+              placeholder={placeholder}
+              filterKey={filterKey}
+              value={value}
+              onChange={onUpdate}
+              options={options}
             />
-        }
+          }
+        </Row>
       </StyledToggleFilter>
     )
   }
