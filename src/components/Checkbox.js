@@ -4,8 +4,8 @@ import {colors} from 'src/constants'
 import styled from 'styled-components'
 
 const StyledCheckbox = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   position: relative;
   display: inline-block;
 
@@ -29,11 +29,11 @@ const CheckboxLabel = styled.label`
   &::after {
   	content: '';
   	position: absolute;
-  	width: 14px;
-  	height: 6px;
-  	background: transparent;
-  	top: 5px;
-  	left: 4px;
+    width: 10px;
+    height: 4px;
+    background: transparent;
+    top: 3px;
+    left: 2px;
   	border: 3px solid ${colors.white};
   	border-top: none;
   	border-right: none;
