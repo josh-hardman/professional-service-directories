@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import FilterIcon from 'react-icons/lib/md/filter-list'
-import { colors, fontSize, displayFlex, breakpoints } from 'src/constants'
-import SearchDropdown from 'src/components/common/SearchDropdown'
+import { colors, fontSize, displayFlex, breakpoints, shadow } from 'src/constants'
 import ToggleFilter from 'src/components/ToggleFilter'
 
 import Media from 'react-media'
@@ -51,19 +50,18 @@ const Wrapper = styled.div`
   top: 100px;
   width: 100%;
   float: left;
-  padding-top: 30px;
 
   @media screen and (min-width: ${breakpoints._600}) {
     width: 25%;
+    padding-top: 30px;
+    padding-right: 20px;
 	}
+`
 
-  @media screen and (min-width: ${breakpoints._960}) {
-    height: 160px;
-    ${'' /* ${displayFlex()}
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; */}
-	}
+const ShadowBox = styled.div`
+  ${shadow()}
+  background: ${colors.white};
+  width: 100%;
 `
 
 class SearchPageFilters extends Component {
@@ -122,27 +120,29 @@ class SearchPageFilters extends Component {
         {/* {
           this.state.open && */}
             <Wrapper>
-              <ToggleFilter
-                placeholder='City Name'
-                filterKey='city'
-                value={city}
-                onUpdate={update}
-                options={allCities}
-              />
-              <ToggleFilter
-                placeholder='Practice Type'
-                filterKey='practiceType'
-                value={practiceType}
-                onUpdate={update}
-                options={allPracticeTypes}
-              />
-              <ToggleFilter
-                placeholder='Insurance Provider'
-                filterKey='insurance'
-                value={insurance}
-                onUpdate={update}
-                options={allInsurances}
-              />
+              <ShadowBox>
+                <ToggleFilter
+                  placeholder='City Name'
+                  filterKey='city'
+                  value={city}
+                  onUpdate={update}
+                  options={allCities}
+                />
+                <ToggleFilter
+                  placeholder='Practice Type'
+                  filterKey='practiceType'
+                  value={practiceType}
+                  onUpdate={update}
+                  options={allPracticeTypes}
+                />
+                <ToggleFilter
+                  placeholder='Insurance Provider'
+                  filterKey='insurance'
+                  value={insurance}
+                  onUpdate={update}
+                  options={allInsurances}
+                />
+              </ShadowBox>
             </Wrapper>
         {/* } */}
       </div>
