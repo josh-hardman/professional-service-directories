@@ -4,6 +4,7 @@ import TransitionGroup from 'react-addons-transition-group'
 import FirstChild from 'src/components/common/FirstChild'
 import SearchMenu from './SearchMenu'
 // import Icon from 'common/components/Icon'
+import Icon from 'react-icons/lib/md/arrow-drop-down'
 // utils
 import classnames from 'classnames'
 import contains from 'src/utils/contains'
@@ -210,7 +211,7 @@ class SearchDropdown extends Component {
         className='search-dropdown'
         ref={ node => this.node = node }
       >
-        {/* <span
+        <span
           className={
             classnames({
               'search-dropdown__arrow': true,
@@ -218,14 +219,13 @@ class SearchDropdown extends Component {
             })
           }
         >
-          <Icon icon="down_arrow" color="grey" size={12} />
-        </span> */}
+          <Icon fill='gray'/>
+        </span>
         <input
           onChange={this.handleSearchChange}
           className={
             classnames({
               'sys-field': true,
-              // 'sys-field--large': true
               'sys-field--small': true
             })
           }

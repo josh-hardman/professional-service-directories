@@ -17,20 +17,18 @@
   position: absolute;
   right: 0;
   top: 0;
+  font-size: 24px;
   height: 100%;
-  line-height: 40px;
-  padding-right: 14px;
+  line-height: 29px;
+  margin-right: 8px;
 }
 
-.search-dropdown__arrow > .icon {
+.search-dropdown__arrow {
   transition: all .3s;
 }
 
 .search-dropdown--active {
-  > .icon {
-    fill: blue;
-    .transform(rotate(90deg));
-  }
+  .transform(rotate(180deg));
 }
 
 
