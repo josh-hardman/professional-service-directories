@@ -8,12 +8,16 @@ import SearchDropdown from 'src/components/common/SearchDropdown'
 // styles
 const StyledToggleFilter = styled.div`
   width: 100%;
-  background: ${({active}) => active ? colors.gray : 'none'}
+  background: ${({active}) => active ? colors.gray : 'none'};
+  padding-bottom: 10px;
+  padding-top: 10px;
 `
 
 const Row = styled.div`
   width: 100%;
-  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 8px;
   ${displayFlex()}
   justify-content: center;
   align-items: center;
@@ -47,9 +51,17 @@ class ToggleFilter extends Component {
     active: true
   }
 
-  handleToggle = () => this.setState( prevState => ({
-    active: prevState.active ? false : true
-  }))
+  handleToggle = () => this.setState( prevState => {
+    prevState.active && this.props.onUpdate({
+      filterKey: this.props.filterKey,
+      value: ''
+    })
+
+    return {
+      active: prevState.active ? false : true
+    }
+  })
+
 
   render() {
     const {value, onUpdate, options, filterKey, placeholder} = this.props
