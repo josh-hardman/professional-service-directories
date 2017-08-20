@@ -48,7 +48,7 @@ class ToggleFilter extends Component {
   }
 
   state = {
-    active: true
+    active: false
   }
 
   handleToggle = () => this.setState( prevState => {
@@ -66,13 +66,15 @@ class ToggleFilter extends Component {
   render() {
     const {value, onUpdate, options, filterKey, placeholder} = this.props
 
+    const isOpen = this.state.active || value
+
     return (
       <StyledToggleFilter
-        active={this.state.active}
+        active={isOpen}
       >
         <Row>
           <Checkbox
-            checked={this.state.active}
+            checked={isOpen}
             onCheck={this.handleToggle}
           />
           <Rest>
@@ -81,7 +83,7 @@ class ToggleFilter extends Component {
         </Row>
         <Row>
           {
-            this.state.active &&
+            isOpen &&
             <SearchDropdown
               placeholder={placeholder}
               filterKey={filterKey}
