@@ -66,7 +66,7 @@ class ToggleFilter extends Component {
   render() {
     const {value, onUpdate, options, filterKey, placeholder} = this.props
 
-    const isOpen = this.state.active || value
+    const isOpen = this.state.active || !!value
 
     return (
       <StyledToggleFilter
