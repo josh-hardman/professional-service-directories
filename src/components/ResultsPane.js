@@ -71,20 +71,18 @@ export default class ResultsPane extends Component {
               city,
               state,
               file
-            }, i) => {
-              return (
-                <CardSlot key={i}>
-                  <ResultCard
-                    name={name}
-                    rating={this.averageReview(reviews)}
-                    address={`${city ? city.name : ''}, ${city ? state.name : ''}`}
-                    website={website}
-                    phone={phone}
-                    imageSecret={file ? file.secret : ''}
-                  />
-                </CardSlot>
-              )
-            })}
+            }, i) =>
+              <CardSlot key={i}>
+                <ResultCard
+                  name={name}
+                  rating={this.averageReview(reviews)}
+                  address={`${city ? city.name : ''}, ${state ? state.name : ''}`}
+                  website={website}
+                  phone={phone}
+                  imageSecret={file ? file.secret : ''}
+                />
+              </CardSlot>
+            )}
         </FlexContainer>
       </StyledResultsPane>
     )

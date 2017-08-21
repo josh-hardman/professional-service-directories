@@ -110,7 +110,7 @@ const ResultCard = ({
   <Card>
     <Image
       src={ imageSecret
-        ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${imageSecret}/100x100:300x300`
+        ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${imageSecret}/300x`
         : 'https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300'
       }
     />
