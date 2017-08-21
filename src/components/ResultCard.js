@@ -6,8 +6,7 @@ import {
   shadow,
   colors,
   fontSize,
-  displayFlex,
-  breakpoints
+  displayFlex
 } from 'src/constants'
 // components
 import Address from 'react-icons/lib/go/location'
@@ -156,14 +155,15 @@ const ResultCard = ({
 )
 
 ResultCard.propTypes = {
-  address:  PropTypes.string,
-  phone:    PropTypes.string,
-  name:     PropTypes.string,
-  src:      PropTypes.string,
-  website:  PropTypes.string,
-  facebook: PropTypes.string,
-  rating:   PropTypes.number,
-  social:   PropTypes.object
+  address:      PropTypes.string,
+  phone:        PropTypes.string,
+  name:         PropTypes.string,
+  src:          PropTypes.string,
+  website:      PropTypes.string,
+  facebook:     PropTypes.string,
+  rating:       PropTypes.number,
+  social:       PropTypes.object,
+  imageSecret:  PropTypes.string
 }
 
 export default ResultCard
