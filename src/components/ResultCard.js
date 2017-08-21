@@ -29,6 +29,7 @@ const Card = styled.div`
 const Image = styled.img`
   width: 140px;
   display: inline-block;
+  border-radius: 3px;
 `
 
 const InfoList = styled.div`
@@ -104,11 +105,15 @@ const ResultCard = ({
   // rating,
   address,
   phone,
-  website
+  website,
+  imageSecret
 }) => (
   <Card>
     <Image
-      src="https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300"
+      src={ imageSecret
+        ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${imageSecret}/100x100:300x300`
+        : 'https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300'
+      }
     />
     <InfoList>
       <InfoTop>

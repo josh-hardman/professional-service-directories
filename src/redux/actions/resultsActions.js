@@ -50,7 +50,7 @@ export const fetchGQLData = ({ city, insurance, practiceType }) => {
                id
                name
                website
-               phone
+               phone,
                city {
                  name
                }
@@ -60,6 +60,9 @@ export const fetchGQLData = ({ city, insurance, practiceType }) => {
                reviews {
                  name
                  rating
+               }
+               file {
+                 secret
                }
              }
            }
