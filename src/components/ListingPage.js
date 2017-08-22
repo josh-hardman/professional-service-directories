@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { displayFlex, shadow, colors } from 'src/constants'
-import SearchDropdown from 'src/components/common/SearchDropdown'
+import { displayFlex } from 'src/constants'
+// import SearchDropdown from 'src/components/common/SearchDropdown'
 import Backdrop from 'src/components/Backdrop'
 import Card from 'src/components/Card'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { colors, displayFlex } from 'src/constants'
+import { colors, displayFlex, breakpoints } from 'src/constants'
 
 const BackdropWrapper = styled.div`
   width: 100%;
@@ -15,7 +15,10 @@ const StyledBackdrop = styled.div`
   background-color: ${colors.gray};
   width: 100%;
   max-width: 950px;
-  padding: 18px;
+
+  @media screen and (min-width: ${breakpoints._600}) {
+    padding: 18px;
+	}
 `
 
 const Backdrop = ({children}) => (
