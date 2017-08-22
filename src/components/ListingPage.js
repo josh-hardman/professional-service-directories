@@ -13,17 +13,25 @@ const FlexWrap = styled.ul`
   padding: 0;
 `
 
-const ListingPage = ({match}) => (
+const ListingPage = ({practice}) => (
   <Backdrop>
-    <FlexWrap>
-      <Card width='full'/>
-      <Card width='half'/>
-    </FlexWrap>
+    {
+      !practice &&
+        <span>LOADING...</span>
+    }
+    {
+      practice &&
+        <FlexWrap>
+          <Card width='full'>{practice.name}</Card>
+          <Card width='half'/>
+          <Card width='half'/>
+        </FlexWrap>
+    }
   </Backdrop>
 )
 
 ListingPage.propTypes = {
-  match: PropTypes.object
+  practice: PropTypes.object
 }
 
 export default ListingPage

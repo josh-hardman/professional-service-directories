@@ -13,7 +13,7 @@ import {
 import Header from 'src/components/common/Header'
 import LandingPage from './components/LandingPage'
 import SearchPage from './components/SearchPage'
-import ListingPage from './components/ListingPage'
+import ListingPageContainer from 'src/containers/ListingPageContainer'
 // import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
 // styling
 import 'normalize.css'
@@ -41,7 +41,7 @@ class App extends Component {
             />
             <Route exact path='/' component={LandingPage}/>
             <Route path='/search' component={SearchPage}/>
-            <Route path='/listing/:id' component={ListingPage}/>
+            <Route path='/listing/:id' component={ListingPageContainer}/>
           </div>
         </Router>
       </Provider>
