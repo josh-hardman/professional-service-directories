@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Rating from 'src/components/Rating'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import {
   shadow,
   colors,
@@ -39,13 +40,15 @@ const InfoList = styled.div`
   padding-left: 24px;
 `
 
-const PracticeName = styled.h1`
+const PracticeName = styled(Link)`
   width: 100%;
   margin: 0;
   padding-bottom: 4px;
   margin: 0;
   font-weight: 400;
   ${ fontSize(18) }
+  color: ${colors.textDefault};
+  text-decoration: none;
 `
 
 const InfoTop = styled.div`
@@ -100,6 +103,7 @@ const ScheduleButton = styled.button`
 `
 
 const ResultCard = ({
+  id,
   name,
   // rating,
   address,
@@ -108,15 +112,21 @@ const ResultCard = ({
   imageSecret
 }) => (
   <Card>
-    <Image
-      src={ imageSecret
-        ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${imageSecret}/300x`
-        : 'https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300'
-      }
-    />
+    <Link to={`/listing/${id}`}>
+      <Image
+        src={ imageSecret
+          ? `https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/${imageSecret}/300x`
+          : 'https://images.graph.cool/v1/cj590hy2dfdtl0105kwjxsfpv/cj5rn4aft01ay0131ckukd97e/100x0:300x300'
+        }
+      />
+    </Link>
     <InfoList>
       <InfoTop>
-        <PracticeName>{name}</PracticeName>
+          <PracticeName
+            to={`/listing/${id}`}
+          >
+            {name}
+          </PracticeName>
         <Rating
           // rating={rating}
           numReviews={5}
@@ -155,6 +165,7 @@ const ResultCard = ({
 )
 
 ResultCard.propTypes = {
+  id:           PropTypes.string,
   address:      PropTypes.string,
   phone:        PropTypes.string,
   name:         PropTypes.string,

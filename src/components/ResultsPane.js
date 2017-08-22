@@ -64,6 +64,7 @@ export default class ResultsPane extends Component {
       <StyledResultsPane>
         <FlexContainer>
             { results && results.map( ({
+              id,
               name,
               phone,
               website,
@@ -74,6 +75,7 @@ export default class ResultsPane extends Component {
             }, i) =>
               <CardSlot key={i}>
                 <ResultCard
+                  id={id}
                   name={name}
                   rating={this.averageReview(reviews)}
                   address={`${city ? city.name : ''}, ${state ? state.name : ''}`}
