@@ -1,8 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { displayFlex, shadow, colors } from 'src/constants'
+import SearchDropdown from 'src/components/common/SearchDropdown'
+import Backdrop from 'src/components/Backdrop'
+import Card from 'src/components/Card'
+
+// {match.params.id}
+const FlexWrap = styled.ul`
+  ${displayFlex()}
+  flex-wrap: wrap;
+  padding: 0;
+`
 
 const ListingPage = ({match}) => (
-  <h1>ListingPage {match.params.id}</h1>
+  <Backdrop>
+    <FlexWrap>
+      <Card width='full'/>
+      <Card width='half'/>
+    </FlexWrap>
+  </Backdrop>
 )
 
 ListingPage.propTypes = {
