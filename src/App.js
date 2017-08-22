@@ -6,13 +6,14 @@ import rootReducer from 'src/redux/reducers/rootReducer'
 import thunk from 'redux-thunk'
 // router
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route
 } from 'react-router-dom'
 // child components
 import Header from 'src/components/common/Header'
 import LandingPage from './components/LandingPage'
 import SearchPage from './components/SearchPage'
+import ListingPage from './components/ListingPage'
 // import SearchPageContainerOptions from './containers/SearchPageFilterOptions'
 // styling
 import 'normalize.css'
@@ -40,6 +41,7 @@ class App extends Component {
             />
             <Route exact path='/' component={LandingPage}/>
             <Route path='/search' component={SearchPage}/>
+            <Route path='/listing/:id' component={ListingPage}/>
           </div>
         </Router>
       </Provider>
