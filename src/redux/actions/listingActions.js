@@ -22,7 +22,8 @@ export const fetchPracticeById = (practiceId) => {
            {
              Practice(id: "${practiceId}") {
                id,
-               name
+               name,
+               about
              }
            }
          `

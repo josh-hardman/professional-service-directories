@@ -10,20 +10,18 @@ const StyledRating = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 24px;
-  float: left;
+  ${displayFlex()}
 `
 
 const AvgRating = styled.span`
   ${fontSize(14)}
   color: ${colors.red};
   padding-right: 4px;
-  float: left;
 `
 
 const List = styled.ul`
   padding: 0;
   ${displayFlex()}
-  float: left;
 `
 
 const NumReviews = styled.span`
