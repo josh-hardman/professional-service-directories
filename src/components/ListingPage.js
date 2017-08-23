@@ -20,6 +20,13 @@ const Title = styled.h3`
   margin: 0;
 `
 
+const Link = styled.a`
+  color: ${colors.gray};
+  padding-left: 8px;
+  ${fontSize(12)}
+  display: inline-block;
+`
+
 const ListingPage = ({practice}) => (
   <Backdrop>
     {
@@ -32,6 +39,7 @@ const ListingPage = ({practice}) => (
           <Card width='full'>
             <Title>{practice.name}</Title>
             <Rating rating={3.5}/>
+            <Link>Read patient reviews</Link>
           </Card>
           <Card width='half'>
             <Title>About Us</Title>
