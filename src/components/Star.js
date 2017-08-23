@@ -8,7 +8,7 @@ import Half from 'react-icons/lib/md/star-half'
 import Full from 'react-icons/lib/md/star'
 
 const StarItem = styled.li`
-  display: inline-block;
+  list-style: none;
   color: ${colors.orange};
   ${fontSize(14)}
 `

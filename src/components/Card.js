@@ -23,7 +23,10 @@ const StyledCard = styled.div`
   ${shadow()}
   width: 100%;
   max-width: 950px;
-  padding: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
 `
 
 const Card = ({width, children}) => (
