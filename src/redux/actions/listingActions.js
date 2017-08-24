@@ -23,7 +23,8 @@ export const fetchPracticeById = (practiceId) => {
              Practice(id: "${practiceId}") {
                id,
                name,
-               about
+               about,
+               welcomeVideo
              }
            }
          `

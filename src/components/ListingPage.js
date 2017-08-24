@@ -22,9 +22,27 @@ const Title = styled.h3`
 
 const Content = styled.p`
   color: ${colors.textMedium};
-  ${fontSize(12)}
+  ${fontSize(16)}
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.4em;
+`
+
+const VideoWrapper = styled.div`
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+`
+
+const Video = styled.iframe`
+  margin-top: 12px;
+  border: none;
+  position:absolute;
+  	top:0;
+  	left:0;
+  	width:100%;
+  	height:100%;
 `
 
 const ListingPage = ({practice}) => (
@@ -46,6 +64,9 @@ const ListingPage = ({practice}) => (
           </Card>
           <Card width='half'>
             <Title>Welcome Video</Title>
+            <VideoWrapper>
+              <Video src={practice.welcomeVideo} />
+            </VideoWrapper>
           </Card>
           <Card width='full'>
             <Title>Patient Testimonials</Title>
