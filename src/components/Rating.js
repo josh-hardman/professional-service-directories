@@ -9,7 +9,7 @@ const StyledRating = styled.div`
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 24px;
+  ${'' /* margin-bottom: 24px; */}
   ${displayFlex()}
 `
 
@@ -32,9 +32,12 @@ padding-left: 4px;
 
 const stars = [1,2,3,4,5]
 
-const Rating = ({ rating=4.5, numReviews }) => (
+const Rating = ({ rating=4.5, numReviews, showAverage=true }) => (
   <StyledRating>
-    <AvgRating>{rating}</AvgRating>
+    {
+      rating && showAverage &&
+        <AvgRating>{rating}</AvgRating>
+    }
     <List>
       {
         stars.map( (star, i) => (
@@ -55,7 +58,8 @@ const Rating = ({ rating=4.5, numReviews }) => (
 
 Rating.propTypes = {
   rating: PropTypes.number,
-  numReviews: PropTypes.number
+  numReviews: PropTypes.number,
+  showAverage:  PropTypes.bool
 }
 
 export default Rating

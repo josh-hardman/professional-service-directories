@@ -20,6 +20,7 @@ const CardWrapper = styled.li`
 
 const StyledCard = styled.div`
   background-color: ${colors.white};
+  border: 1px solid ${colors.lightGray};
   ${shadow()}
   width: 100%;
   max-width: 950px;

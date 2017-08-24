@@ -10,29 +10,12 @@ const mapStateToProps = ({practice}) => ({
   practiceData: practice.Practice
 })
 
-//   results: {
-//     allPractices
-//   },
-//   filterValues: {
-//     city,
-//     practiceType,
-//     insurance
-//   }
-// }) => ({
-//   results: allPractices ? allPractices : [],
-//   city: city,
-//   practiceType: practiceType,
-//   insurance: insurance
-
 const mapDispatchToProps = (dispatch) => {
 
   return {
     fetchPractice: (practiceId) => dispatch(
       fetchPracticeById(practiceId)
     )
-    // fetchPractices: ({ city, insurance, practiceType }) => dispatch(
-    //   fetchGQLData({ city, insurance, practiceType })
-    // )
   }
 }
 

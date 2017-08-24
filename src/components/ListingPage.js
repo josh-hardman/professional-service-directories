@@ -6,6 +6,7 @@ import { displayFlex, colors, fontSize } from 'src/constants'
 import Backdrop from 'src/components/Backdrop'
 import Card from 'src/components/Card'
 import Rating from 'src/components/Rating'
+import Tray from 'src/components/Tray'
 
 // {match.params.id}
 const FlexWrap = styled.ul`
@@ -56,7 +57,6 @@ const ListingPage = ({practice}) => (
         <FlexWrap>
           <Card width='full'>
             <Title>{practice.name}</Title>
-            <Rating rating={3.5}/>
           </Card>
           <Card width='half'>
             <Title>About Us</Title>
@@ -70,6 +70,8 @@ const ListingPage = ({practice}) => (
           </Card>
           <Card width='full'>
             <Title>Patient Testimonials</Title>
+            <Rating rating={3.5}/>
+            <Tray />
           </Card>
         </FlexWrap>
     }

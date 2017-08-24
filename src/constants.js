@@ -17,7 +17,7 @@ export const colors = {
 }
 
 export const shadow = () => `
-  box-shadow: 2px 2px 4px rgba(137, 137, 137, .5);
+  box-shadow: 2px 2px 4px rgba(137, 137, 137, .7);
 `
 
 export const fontSize = size => `font-size: ${(size/16).toFixed(5)}rem;`
