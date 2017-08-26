@@ -24,6 +24,11 @@ export const fetchPracticeById = (practiceId) => {
                id,
                name,
                about,
+               reviews {
+                  name,
+                  rating,
+                  review
+               },
                welcomeVideo
              }
            }

@@ -19,25 +19,27 @@ const RatingWrapper = styled.div`
 `
 
 const Details = styled.p`
-  
+
 `
 
-const Review = (props) => (
+const Review = ({name, review, rating}) => (
   <Card width='third'>
     <Name>
-      Iron Man
+      {name}
       <RatingWrapper>
-        <Rating showAverage={false}/>
+        <Rating showAverage={false} rating={rating}/>
       </RatingWrapper>
       <Details>
-        I had a really great experience with Dr. Hyde. He was super nice and gave me a high five afterwards
+        {review}
       </Details>
     </Name>
   </Card>
 )
 
 Review.propTypes = {
-
+  name: PropTypes.string,
+  review: PropTypes.string,
+  rating: PropTypes.number
 }
 
 export default Review

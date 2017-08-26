@@ -6,16 +6,16 @@ import { displayFlex } from 'src/constants.js'
 const Background = styled.div`
 
   &:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: .5;
-  z-index: -1;
-  background: url('http://2oseib2jk7sm2ch5uy3ibuss.wpengine.netdna-cdn.com/wp-content/uploads/2015/08/TheDentistTakesCareofMyTeeth.jpg') no-repeat 50% 0%;
-}
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: -1;
+    background: url('http://2oseib2jk7sm2ch5uy3ibuss.wpengine.netdna-cdn.com/wp-content/uploads/2015/08/TheDentistTakesCareofMyTeeth.jpg') no-repeat 50% 0%;
+  }
 `
 
 const IslandPosition = styled.div`

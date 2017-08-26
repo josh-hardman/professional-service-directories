@@ -71,7 +71,7 @@ const ListingPage = ({practice}) => (
           <Card width='full'>
             <Title>Patient Testimonials</Title>
             <Rating rating={3.5}/>
-            <Tray />
+            <Tray items={practice.reviews}/>
           </Card>
         </FlexWrap>
     }
