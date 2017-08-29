@@ -6,6 +6,7 @@ import { displayFlex, colors, fontSize } from 'src/constants'
 import Backdrop from 'src/components/Backdrop'
 import Card from 'src/components/Card'
 import Rating from 'src/components/Rating'
+import Review from 'src/components/Review'
 import Tray from 'src/components/Tray'
 
 // {match.params.id}
@@ -45,6 +46,20 @@ const Video = styled.iframe`
   	width:100%;
   	height:100%;
 `
+
+const Decorators = [{
+  component: ({
+    position='CenterLeft',
+    style={
+      padding: 20
+    }
+  }) => (
+    <button
+      onClick={this.props.previousSlide}>
+      Previous Slide
+    </button>
+  )
+}]
 
 const ListingPage = ({practice}) => (
   <Backdrop>

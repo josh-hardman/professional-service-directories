@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Card from 'src/components/Card'
@@ -18,28 +18,36 @@ const RatingWrapper = styled.div`
   justify-content: center;
 `
 
-const Details = styled.p`
 
-`
 
-const Review = ({name, review, rating}) => (
-  <Card width='third'>
-    <Name>
-      {name}
-      <RatingWrapper>
-        <Rating showAverage={false} rating={rating}/>
-      </RatingWrapper>
-      <Details>
-        {review}
-      </Details>
-    </Name>
-  </Card>
-)
 
-Review.propTypes = {
-  name: PropTypes.string,
-  review: PropTypes.string,
-  rating: PropTypes.number
+class Review extends Component {
+
+  static propTypes = {
+    name: PropTypes.string,
+    review: PropTypes.string,
+    rating: PropTypes.number
+  }
+
+  render() {
+    const {name, review, rating} = this.props
+
+    return (
+
+          <Card width='half'>
+            <Name>
+              {name}
+              <RatingWrapper>
+                <Rating showAverage={false} rating={rating}/>
+              </RatingWrapper>
+              <p>
+                {review}
+              </p>
+            </Name>
+          </Card>
+
+    )
+  }
 }
 
 export default Review

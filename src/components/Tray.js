@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import Review from 'src/components/Review'
 import styled from 'styled-components'
+import ReactSwipe from 'react-swipe'
 
 const TrayWrapper = styled.div`
   position: relative;
@@ -13,57 +14,55 @@ const Item = styled.div`
   float: left;
 `
 
+const ReviewAnimation = styled.div`
+  transition: all 3s;
+`
+
 export default class Tray extends Component {
 
   state = {
     index: 0,
-    items: [0,1,2,3,4,5,6,7]
+    items: this.props.items
   }
 
   handleVisibleItems = () => {
-    const {items, index} = this.state
+    const {index, items} = this.state
 
-    return items[index]
+    return [items[index]]
   }
 
   handleLeft = () => {
-    const {items, index} = this.state
-
-    index <= 0
-      ?
-        this.setState({
-          index: items[items.length -1]
-        })
-      :
-        this.setState(prevState => ({
-          index: prevState.index - 1
-        }))
+    this.slideshow.prev()
   }
 
   handleRight = () => {
-    const {items, index} = this.state
-
-    index >= ( items.length -1 )
-      ?
-        this.setState({
-          index: 0
-        })
-      :
-        this.setState(prevState => ({
-          index: prevState.index + 1
-        }))
+    this.slideshow.next()
   }
 
   render() {
 
-    const {items, index} = this.state
+    const {items, index, } = this.state
 
     return (
-      <TrayWrapper>
-        <button onClick={this.handleLeft}>left</button>
-        <button onClick={this.handleRight}>right</button>
-        <Item>Item {items[index]}</Item>
-      </TrayWrapper>
+      <div>
+        <button onClick={this.handleRight}>Next</button>
+        <button onClick={this.handleLeft}>Previous</button>
+        <ReactSwipe ref={ node => this.slideshow = node } swipeOptions={{continuous: true}}>
+          {/* <div>item 1</div>
+          <div>item 2</div>
+          <div>item 3</div>
+          <div>item 4</div> */}
+            {items.map((item, i) => (
+              <div key={i}>
+                <Review
+                  name={item.name}
+                  review={item.review}
+                  rating={item.rating}
+                />
+              </div>
+            ))}
+        </ReactSwipe>
+      </div>
     )
   }
 
